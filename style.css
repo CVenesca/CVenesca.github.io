@@ -75,3 +75,17 @@ footer {
   color: #666;
   margin-top: 40px;
 }
+/* Estilos para la lista de servicios */
+.servicios {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.servicios li {
+  padding: 10px 0;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
