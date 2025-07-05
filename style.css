@@ -23,6 +23,9 @@ header {
 .logo {
   max-width: 160px;
   margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav ul {
