@@ -4,27 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.cvenesca.com/">
+  <link rel="canonical" href="https://www.cvenesca.com/" />
   <title>CVenesca Group LLC | Comercio Internacional de Azúcar ICUMSA y Logística Global</title>
   <meta name="description" content="CVenesca Group LLC conecta mercados globales mediante la comercialización de azúcar ICUMSA, nacionalización DDP en EE. UU., certificaciones GACC para China y soluciones logísticas estratégicas.">
-  <link rel="alternate" hreflang="es" href="https://www.cvenesca.com/" />
-  <link rel="alternate" hreflang="en" href="https://www.cvenesca.com/index-en.html" />
-  <link rel="alternate" hreflang="x-default" href="https://www.cvenesca.com/" />
-</head>
-  <title>CVenesca Group LLC – Comercio Internacional de Azúcar</title>
-  <meta name="description" content="CVenesca Group LLC – Comercio internacional de azúcar ICUMSA, nacionalización DDP en EE. UU., certificados GACC para China y consultoría estratégica.">
   <meta name="keywords" content="azúcar ICUMSA, comercio internacional, DDP, GACC, exportación, importación, logística, CVenesca">
   <meta name="author" content="CVenesca Group LLC">
 
+  <!-- Multilingüe -->
+  <link rel="alternate" hreflang="es" href="https://www.cvenesca.com/" />
+  <link rel="alternate" hreflang="en" href="https://www.cvenesca.com/index-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.cvenesca.com/" />
+
   <!-- Estilos -->
-  <link rel="stylesheet" href="aos.css">
+  <link rel="stylesheet" href="aos.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-  <!-- Multilingüe -->
-  <link rel="alternate" hreflang="en" href="https://cvenesca.github.io/index-en.html" />
+  <!-- Redirección inteligente por idioma -->
+  <script>
+    (function () {
+      const langCookie = document.cookie.replace(/(?:(?:^|.*;\s*)langPref\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+      const userLang = navigator.language || navigator.userLanguage;
+      const isEnglish = userLang.toLowerCase().startsWith('en');
+
+      if (!langCookie && isEnglish && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
+        document.cookie = "langPref=en; path=/; max-age=31536000";
+        window.location.href = '/index-en.html';
+      }
+    })();
+  </script>
 </head>
+
 <body>
+  <!-- Selector de idioma -->
+  <nav>
+    <a href="/index-en.html" onclick="document.cookie='langPref=en; path=/; max-age=31536000'">English</a>
+  </nav>
+
+  <!-- Tu contenido aquí -->
+
+</body>
+</html>
 
   <!-- Banner temporal -->
   <div class="banner-aviso" data-aos="fade-down">
