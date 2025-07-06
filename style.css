@@ -6,86 +6,202 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.6;
-  background-color: #f4f6f8;
-  color: #333;
-  padding: 0;
+  color: #222;
+  background-color: #fff;
 }
 
-header {
+h1, h2, h3 {
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+
+.cta-button {
+  background-color: #004080;
+  color: white;
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #002f5f;
+}
+
+.cta-button.secondary {
+  background-color: #c49b0b;
+}
+
+.cta-button.secondary:hover {
+  background-color: #a07e09;
+}
+
+/* Quiénes Somos */
+.content-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.content-block img {
+  flex: 1 1 40%;
+}
+
+.content-block p {
+  flex: 1 1 55%;
+  font-size: 1.1em;
+}
+
+/* Servicios */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.service-card h3 {
+  margin-top: 15px;
+  color: #004080;
+}
+
+/* Tabla ICUMSA */
+.icumsa-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.icumsa-table th, .icumsa-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+.icumsa-table th {
+  background-color: #004080;
+  color: white;
+}
+
+/* Proyecciones */
+.proyecciones-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.proyeccion {
+  flex: 1 1 30%;
+  background: #f4f6f8;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+/* Certificaciones */
+.cert-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.cert {
+  flex: 1 1 45%;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.cert ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Contacto */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+button {
+  background-color: #004080;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #002f5f;
+}
+
+/* Footer */
+footer {
   background-color: #004080;
   color: white;
   text-align: center;
-  padding: 40px 20px;
-}
-
-.logo {
-  max-width: 160px;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-  padding: 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #ffd700;
-}
-
-section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-h2 {
-  color: #004080;
-  margin-bottom: 15px;
-}
-
-ul {
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
-footer {
-  text-align: center;
   padding: 20px;
-  background-color: #eaeaea;
-  font-size: 0.9em;
-  color: #666;
   margin-top: 40px;
-}
-/* Estilos para la lista de servicios */
-.servicios {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.servicios li {
-  padding: 10px 0;
-  font-size: 1.1em;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
