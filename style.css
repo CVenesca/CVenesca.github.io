@@ -278,3 +278,13 @@ img {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
 }
+.banner-aviso {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 2px solid #ffeeba;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
