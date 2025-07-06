@@ -324,3 +324,25 @@ footer {
 .footer-info p {
   margin: 0.25rem 0;
 }
+.footer-legal a {
+  margin: 0 0.5rem;
+  color: #bbb;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: #f0c040;
+}
+
+.footer-social {
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.footer-social img {
+  width: 24px;
+  margin: 0 0.5rem;
+  vertical-align: middle;
+}
