@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -11,41 +10,94 @@
   <meta name="keywords" content="ICUMSA sugar, international trade, DDP, GACC, export, import, logistics, CVenesca">
   <meta name="author" content="CVenesca Group LLC">
 
-  <!-- Multilingüismo -->
+  <!-- Multilingual -->
   <link rel="alternate" hreflang="es" href="https://cvenesca.github.io/index.html" />
 
-  <!-- Estilos y recursos -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <header>
-    <img src="logo-cvenesca.png" alt="CVenesca Logo" class="logo" />
-    <h1>CVenesca Group LLC</h1>
-    <p>Connecting the world through trade</p>
-    <nav>
-      <ul>
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="index.html">ES</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section id="about-us" data-aos="fade-up">
-    <h2>About Us</h2>
-    <p>We are a company specialized in international trade management, DDP clearance in the U.S., secure global exports, and licensing procedures in the U.S. and China.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/hero-sugar-trade.jpg" alt="Global sugar trade" class="hero-bg" />
+    <div class="hero-content">
+      <h1>CVenesca Group LLC</h1>
+      <p>Global trade of ICUMSA sugar and essential goods</p>
+      <a href="#services" class="cta-button">Our Services</a>
+      <a href="#contact" class="cta-button secondary">Contact Us</a>
+    </div>
   </section>
 
-  <section id="services" data-aos="fade-up">
-    <h2>Services</h2>
-    <ul>
-      <li>International logistics</li>
-      <li>Foreign trade consulting</li>
-      <li>DDP clearance in
+  <!-- About Us -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <div class="content-block">
+      <img src="images/about-us.jpg" alt="International trade team" />
+      <p>
+        We are a company specialized in global commercial operations, focused on the trade of ICUMSA sugar and essential goods. Our mission is to connect markets with logistical, regulatory, and strategic solutions that ensure efficiency, compliance, and sustainable growth.
+      </p>
+    </div>
+  </section>
 
-  <script src="aos/aos.js"></script>
-  <script>AOS.init();</script>
-</body>
-</html>
+  <!-- Services -->
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="images/icumsa-trade.jpg" alt="ICUMSA sugar" />
+        <h3>ICUMSA Sugar Trading</h3>
+        <p>ICUMSA 45, 150, and 600–1200 for food, pharmaceutical, and bioenergy industries.</p>
+      </div>
+      <div class="service-card">
+        <img src="images/ddp-usa.jpg" alt="DDP services" />
+        <h3>DDP Services in the U.S.</h3>
+        <p>Complete import management with final delivery and customs compliance.</p>
+      </div>
+      <div class="service-card">
+        <img src="images/gacc-china.jpg" alt="GACC certification" />
+        <h3>GACC Certification for China</h3>
+        <p>Registration with GACC, Chinese labeling, CIQ inspection, and local agent support.</p>
+      </div>
+      <div class="service-card">
+        <img src="images/consultoria.jpg" alt="Strategic consulting" />
+        <h3>Strategic Consulting</h3>
+        <p>Market studies, global expansion, and regulatory compliance advisory.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICUMSA Products -->
+  <section id="products" class="section">
+    <h2>ICUMSA Sugar Types</h2>
+    <table class="icumsa-table">
+      <thead>
+        <tr>
+          <th>Type</th><th>Color</th><th>Applications</th><th>Specifications</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ICUMSA 45</td>
+          <td>Bright white</td>
+          <td>Confectionery, beverages, pharmaceuticals</td>
+          <td>Polarization ≥ 99.8%, moisture ≤ 0.04%</td>
+        </tr>
+        <tr>
+          <td>ICUMSA 150</td>
+          <td>Opaque white</td>
+          <td>Bakeries, local beverages</td>
+          <td>Polarization ≥ 99.5%, color ≤ 150 RBU</td>
+        </tr>
+        <tr>
+          <td>ICUMSA 600–1200</td>
+          <td>Brown</td>
+          <td>Bioethanol, industrial fermentation</td>
+          <td>Raw sugar, high molasses content</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!--
