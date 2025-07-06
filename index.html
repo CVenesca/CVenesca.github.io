@@ -75,7 +75,17 @@
     <p>© 2025 CVenesca Group LLC · Todos los derechos reservados</p>
   </footer>
 
-  <!-- Scripts -->
+ <script>
+  (function () {
+    const userLang = navigator.language || navigator.userLanguage;
+    const isEnglish = userLang.toLowerCase().startsWith('en');
+
+    // Solo redirige si el usuario está en la raíz y no ya en la versión en inglés
+    if (isEnglish && window.location.pathname === '/' || window.location.pathname === '/index.html') {
+      window.location.href = '/index-en.html';
+    }
+  })();
+</script>
   <script src="aos.js"></script>
   <script>
     AOS.init();
