@@ -1,13 +1,14 @@
 User-agent: *
 Allow: /
 
-# Evitar que robots indexen el archivo robots.txt como contenido
+# Evitar que se indexe este archivo
 Disallow: /robots.txt
 
-# Asegurar acceso a recursos importantes
+# Permitir acceso a recursos
 Allow: /assets/css/
 Allow: /assets/images/
 Allow: /assets/js/
 
-# Sitemap actualizado
+# Sitemaps multilingües
 Sitemap: https://www.cvenesca.com/sitemap.xml
+Sitemap: https://www.cvenesca.com/sitemap-en.xml
