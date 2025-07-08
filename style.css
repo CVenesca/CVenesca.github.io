@@ -86,3 +86,23 @@ img {
   max-width: 700px;
   margin: 0 auto 1.5rem;
 
+.fichas-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.fichas-list li {
+  margin-bottom: 10px;
+}
+
+.fichas-list a {
+  color: #004080;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.fichas-list a:hover {
+  color: #c49b0b;
+}
