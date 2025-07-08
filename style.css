@@ -11,6 +11,15 @@ body {
   color: #222;
   background-color: #fff;
 }
+body.landing-page {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 h1, h2, h3 {
   color: #004080;
