@@ -1,4 +1,6 @@
-/* Reset básico */
+/* ------------------------------
+   RESET BÁSICO
+------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -11,377 +13,50 @@ body {
   color: #222;
   background-color: #fff;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+/* ------------------------------
+   LANDING PAGE
+------------------------------ */
 body.landing-page {
-  margin: 0;
-  padding: 0;
   background-color: #0a0a0a;
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-
-h1, h2, h3 {
-  color: #004080;
-  margin-bottom: 10px;
-}
-
-.section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-/* Hero */
-.hero {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.hero-bg {
-  width: 100%;
   height: 100vh;
-  object-fit: cover;
-  filter: brightness(0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  top: 40%;
-  transform: translateY(-50%);
-  padding: 20px;
-}
-
-.cta-button {
-  background-color: #004080;
-  color: white;
-  padding: 12px 24px;
-  margin: 10px;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #002f5f;
-}
-
-.cta-button.secondary {
-  background-color: #c49b0b;
-}
-
-.cta-button.secondary:hover {
-  background-color: #a07e09;
-}
-
-/* Quiénes Somos */
-.content-block {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-}
-
-.content-block img {
-  flex: 1 1 40%;
-}
-
-.content-block p {
-  flex: 1 1 55%;
-  font-size: 1.1em;
-}
-
-/* Servicios */
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.service-card {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.service-card h3 {
-  margin-top: 15px;
-  color: #004080;
-}
-
-/* Tabla ICUMSA */
-.icumsa-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.icumsa-table th, .icumsa-table td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: left;
-}
-
-.icumsa-table th {
-  background-color: #004080;
-  color: white;
-}
-
-/* Proyecciones */
-.proyecciones-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.proyeccion {
-  flex: 1 1 30%;
-  background: #f4f6f8;
-  padding: 20px;
-  border-radius: 6px;
-}
-
-/* Certificaciones */
-.cert-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.cert {
-  flex: 1 1 45%;
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 6px;
-}
-
-.cert ul {
-  list-style: disc;
-  margin-left: 20px;
-}
-
-/* Contacto */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: auto;
-}
-
-input, textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1em;
-}
-
-button {
-  background-color: #004080;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #002f5f;
-}
-
-/* Footer */
-footer {
-  background-color: #004080;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-.main-nav {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo a {
-  font-size: 1.4em;
-  font-weight: bold;
-  color: #004080;
-  text-decoration: none;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #004080;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #c49b0b;
-}
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-/* Hero Section */
-.hero {
-  background: linear-gradient(to right, #f5f5f5, #e0e0e0);
-  padding: 60px 20px;
-  text-align: center;
-  border-bottom: 2px solid #ccc;
-}
-
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.logo {
-  width: 220px;
-  height: auto;
-  margin-bottom: 20px;
+.landing-logo {
+  width: 200px;
+  margin-bottom: 1.5rem;
 }
 
 .slogan {
   font-size: 1.8rem;
   font-weight: 500;
-  color: #333;
+  color: #f0c040;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
 }
-.banner-aviso {
-  background-color: #fff3cd;
-  color: #856404;
-  padding: 15px 20px;
-  text-align: center;
+
+.notice {
   font-size: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-bottom: 2px solid #ffeeba;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-footer {
-  background-color: #111;
-  color: #eee;
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 2rem;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-logo img {
-  max-width: 150px;
-  margin-bottom: 1rem;
-}
-
-.footer-links {
-  margin: 1rem 0;
-}
-
-.footer-links a {
-  margin: 0 0.75rem;
-  color: #eee;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #f0c040;
-}
-
-.footer-info p {
-  margin: 0.25rem 0;
-}
-.footer-legal a {
-  margin: 0 0.5rem;
-  color: #bbb;
-  font-size: 0.85rem;
-  text-decoration: none;
-}
-
-.footer-legal a:hover {
-  color: #f0c040;
-}
-
-.footer-social {
-  margin: 1rem 0;
-  font-size: 0.85rem;
-  color: #aaa;
-}
-
-.footer-social img {
-  width: 24px;
-  margin: 0 0.5rem;
-  vertical-align: middle;
-}
-.language-switcher {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
-  flex-wrap: wrap;
-}
-
-.language-switcher img {
-  width: 32px;
-  height: auto;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.language-switcher img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-}
-
-@media (max-width: 480px) {
-  .language-switcher {
-    gap: 0.75rem;
-  }
-
-  .language-switcher img {
-    width: 28px;
-  }
-}
+/* ------------------------------
+   TIPOGRAFÍA GENERAL
+----------------
