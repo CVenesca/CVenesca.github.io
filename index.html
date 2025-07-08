@@ -3,39 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.cvenesca.com/" />
-  <title>CVenesca Group LLC | Comercio Internacional de Azúcar ICUMSA y Logística Global</title>
-  <meta name="description" content="CVenesca Group LLC conecta mercados globales mediante la comercialización de azúcar ICUMSA, nacionalización DDP en EE. UU., certificaciones GACC para China y soluciones logísticas estratégicas.">
-  <meta name="keywords" content="azúcar ICUMSA, comercio internacional, DDP, GACC, exportación, importación, logística, CVenesca">
-  <meta name="author" content="CVenesca Group LLC">
-
-  <!-- Multilingüe -->
-  <link rel="alternate" hreflang="es" href="https://www.cvenesca.com/" />
-  <link rel="alternate" hreflang="en" href="https://www.cvenesca.com/index-en.html" />
-  <link rel="alternate" hreflang="x-default" href="https://www.cvenesca.com/" />
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="aos.css" />
+  <title>CVenesca Group LLC | Conectando el Mundo a Través del Comercio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <!-- Redirección inteligente por idioma -->
-  <script>
-    (function () {
-      const langCookie = document.cookie.replace(/(?:(?:^|.*;\s*)langPref\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-      const userLang = navigator.language || navigator.userLanguage;
-      const isEnglish = userLang.toLowerCase().startsWith('en');
-
-      if (!langCookie && isEnglish && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
-        document.cookie = "langPref=en; path=/; max-age=31536000";
-        window.location.href = '/index-en.html';
-      }
-    })();
-  </script>
 </head>
+<body class="landing-page">
 
-<body>
+  <div class="landing-container">
+    <img src="assets/images/logo-footer.png" alt="CVenesca Group LLC Logo" class="landing-logo" />
+
+    <h1 class="slogan">Conectando el Mundo a Través del Comercio</h1>
+
+    <p class="notice">🌐 Estamos finalizando la configuración de nuestro dominio.<br>
+    Muy pronto podrás disfrutar de la experiencia completa en <strong>www.cvenesca.com</strong>.</p>
+
+    <div class="language-switcher">
+      <a href="/" onclick="document.cookie='langPref=es; path=/; max-age=31536000'" aria-label="Español">
+        <img src="assets/images/flag-es.svg" alt="Español" />
+      </a>
+      <a href="/index-en.html" onclick="document.cookie='langPref=en; path=/; max-age=31536000'" aria-label="English">
+        <img src="assets/images/flag-en.svg" alt="English" />
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
   <!-- Selector de idioma -->
   <nav>
     <div class="language-switcher">
