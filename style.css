@@ -346,3 +346,33 @@ footer {
   margin: 0 0.5rem;
   vertical-align: middle;
 }
+.language-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.language-switcher img {
+  width: 32px;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.language-switcher img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 480px) {
+  .language-switcher {
+    gap: 0.75rem;
+  }
+
+  .language-switcher img {
+    width: 28px;
+  }
+}
