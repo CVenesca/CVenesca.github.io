@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CVenesca Group LLC | Conectando el Mundo a Través del Comercio</title>
+  <title>CVenesca Group LLC | Uniendo al Mundo a Través del Comercio</title>
+  <meta name="description" content="Impulsamos el comercio internacional de alimentos y bienes esenciales conectando productores con mercados de alto valor.">
+  <meta name="keywords" content="azúcar ICUMSA, comercio internacional, exportación, importación, bienes esenciales, logística global, CVenesca">
+  <meta name="author" content="CVenesca Group LLC">
+  <link rel="canonical" href="https://www.cvenesca.com/" />
+  <link rel="alternate" hreflang="es" href="https://www.cvenesca.com/index.html" />
+  <link rel="alternate" hreflang="en" href="https://www.cvenesca.com/index-en.html" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
@@ -11,46 +17,21 @@
 
   <!-- Banner temporal -->
   <div class="banner-aviso" data-aos="fade-down">
-    🌐 Estamos finalizando la configuración de nuestro dominio. Muy pronto podrás disfrutar de la experiencia completa en <strong>www.cvenesca.com</strong>.<br>
-    🌐 We're finalizing our domain setup. The full experience will be available soon at <strong>www.cvenesca.com</strong>.
+    🌐 Estamos finalizando la configuración de nuestro dominio. Muy pronto podrás disfrutar de la experiencia completa en <strong>www.cvenesca.com</strong>.
   </div>
-
-  <!-- Encabezado con logo y eslogan -->
-  <header class="hero">
-    <div class="hero-content">
-      <img src="images/logo-cvenesca.png" alt="CVenesca Group LLC Logo" class="logo" />
-      <h1 class="slogan">Conectando el Mundo a Través del Comercio</h1>
-    </div>
-  </header>
-
-  <!-- Navegación -->
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="logo"><a href="index.html">CVenesca</a></div>
-      <ul class="nav-links">
-        <li><a href="#quienes">Quiénes Somos</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#proyecciones">Proyecciones</a></li>
-        <li><a href="#certificaciones">Certificaciones</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="index-en.html">EN</a></li>
-      </ul>
-    </div>
-  </nav>
 
   <!-- Hero principal -->
   <section class="hero">
-    <img src="images/hero-sugar-trade.jpg" alt="Comercio internacional de azúcar" class="hero-bg" />
+    <img src="images/portada-actualizada.jpg" alt="Uniendo al Mundo a Través del Comercio" class="hero-bg" />
     <div class="hero-content">
-      <h1>CVenesca Group LLC</h1>
-      <p>Comercio internacional de azúcar ICUMSA y bienes esenciales</p>
+      <h1>Uniendo al Mundo a Través del Comercio</h1>
+      <p>Impulsamos el comercio internacional de alimentos y bienes esenciales conectando productores con mercados de alto valor.</p>
       <a href="#servicios" class="cta-button">Nuestros Servicios</a>
       <a href="#contacto" class="cta-button secondary">Contáctanos</a>
     </div>
   </section>
 
-  <!-- Selector de idioma con banderas -->
+  <!-- Selector de idioma -->
   <div class="language-switcher">
     <a href="/" onclick="document.cookie='langPref=es; path=/; max-age=31536000'" aria-label="Español">
       <img src="images/flag-es.svg" alt="Español" />
@@ -58,4 +39,46 @@
     <a href="/index-en.html" onclick="document.cookie='langPref=en; path=/; max-age=31536000'" aria-label="English">
       <img src="images/flag-en.svg" alt="English" />
     </a>
-  </div
+  </div>
+
+  <!-- Aquí irán las secciones: Quiénes somos, Servicios, Productos, etc. -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="images/logo-footer.png" alt="CVenesca Group LLC" />
+      </div>
+      <div class="footer-links">
+        <a href="#quienes">Quiénes somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+        <a href="/index-en.html">English</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 CVenesca Group LLC. Todos los derechos reservados.</p>
+        <p><a href="mailto:contacto@cvenesca.com">contacto@cvenesca.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Redirección automática por idioma -->
+  <script>
+    (function () {
+      const userLang = navigator.language || navigator.userLanguage;
+      const isEnglish = userLang.toLowerCase().startsWith('en');
+      if (isEnglish && window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        window.location.href = '/index-en.html';
+      }
+    })();
+  </script>
+
+  <!-- Animaciones -->
+  <script src="aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>
