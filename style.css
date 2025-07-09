@@ -50,7 +50,7 @@ img {
 }
 .service-card img {
   width: 250%;
-  max-height: 100px;
+  max-height: 60px;
   object-fit: contain;
   margin-bottom: 50px;
 }
