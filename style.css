@@ -30,7 +30,7 @@ h1, h2, h3 {
 
 /* Secciones generales */
 .section {
-  padding: 120px 150px;
+  padding: 120px 30px;
   max-width: 900px;
   margin: auto;
 }
