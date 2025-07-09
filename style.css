@@ -42,7 +42,7 @@ h1, h2, h3 {
 }
 /* Imágenes */
 img {
-  max-width: 120%;
+  max-width: 70%;
   height: auto;
   border-radius: 6px;
   display: block;
