@@ -67,7 +67,13 @@ img {
   left: 0;
   z-index: 0;
 }
-
+.hero-logo {
+  position: relative;
+  z-index: 2;
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+}
 .hero-content {
   position: relative;
   top: 40%;
