@@ -27,12 +27,6 @@ h1, h2, h3 {
   color: #004080;
   margin-bottom: 10px;
 }
-.language-switcher img {
-  width: 20px;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.2s ease;
-}
 
 /* Secciones generales */
 .section {
@@ -75,8 +69,8 @@ img {
 .hero-logo {
   position: relative;
   z-index: 2;
-  width: 800px;
-  margin: 20px auto;
+  width: 600px;
+  margin: 10px auto;
   display: block;
 }
 .hero-content {
@@ -113,4 +107,10 @@ img {
 
 .fichas-list a:hover {
   color: #c49b0b;
+}
+.language-switcher img {
+  width: 20px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
 }
