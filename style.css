@@ -30,8 +30,8 @@ h1, h2, h3 {
 
 /* Secciones generales */
 .section {
-  padding: 40px 30px;
-  max-width: 300px;
+  padding: 90px 70px;
+  max-width: 600px;
   margin: auto;
 }
 .language-switcher img {
