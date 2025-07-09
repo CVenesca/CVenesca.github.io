@@ -30,8 +30,8 @@ h1, h2, h3 {
 
 /* Secciones generales */
 .section {
-  padding: 60px 30px;
-  max-width: 800px;
+  padding: 80px 20px;
+  max-width: 1200px;
   margin: auto;
 }
 .language-switcher img {
@@ -42,17 +42,17 @@ h1, h2, h3 {
 }
 /* Imágenes */
 img {
-  max-width: 80%;
+  max-width: 120%;
   height: auto;
   border-radius: 6px;
   display: block;
   margin: 0 auto;
 }
 .service-card img {
-  width: 100%;
-  max-height: 250px;
+  width: 180%;
+  max-height: 150px;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 /* Hero principal */
 .hero {
@@ -74,15 +74,15 @@ img {
 .hero-logo {
   position: relative;
   z-index: 2;
-  width: 600px;
-  margin: 0px auto;
+  width: 800px;
+  margin: 10px auto;
   display: block;
 }
 .hero-content {
   position: relative;
   top: 30%;
-  transform: translateY(-50%);
-  padding: 30
+  transform: translateY(-30%);
+  padding: 50
 }
 
 .hero-content h1 {
@@ -90,7 +90,7 @@ img {
 
 .hero-content p {
   font-size: 1.1rem;
-  max-width: 500px;
+  max-width: 200px;
   margin: 0 auto 1.5rem;
 
 .fichas-list {
