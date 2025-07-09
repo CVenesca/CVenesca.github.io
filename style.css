@@ -34,7 +34,12 @@ h1, h2, h3 {
   max-width: 800px;
   margin: auto;
 }
-
+.language-switcher img {
+  width: 20px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
 /* Imágenes */
 img {
   max-width: 80%;
@@ -108,9 +113,4 @@ img {
 .fichas-list a:hover {
   color: #c49b0b;
 }
-.language-switcher img {
-  width: 20px;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.2s ease;
-}
+
