@@ -44,15 +44,15 @@ h1, h2, h3 {
 img {
   max-width: 60%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 80px;
   display: block;
   margin: 0 auto;
 }
 .service-card img {
-  width: 70%;
-  max-height: 100px;
+  width: 120%;
+  max-height: 120px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 /* Hero principal */
 .hero {
