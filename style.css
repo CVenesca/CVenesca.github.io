@@ -92,24 +92,24 @@ img {
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: 80vh;/* igual que la imagen ajusta la altura de la portada*/
   overflow: hidden;
   display: flex;
   align-items: flex-end; /* baja el contenido */
   justify-content: center;
   text-align: center;
-  padding-bottom: 80px; /* espacio inferior */
-}
-
+  padding-bottom: 60px; /* espacio inferior ajusta el ancho de la portada */
+}}
 .hero-bg {
+  width: 100%;
+  height: 80vh; /* 20% menos */
+  object-fit: cover;
+  filter: brightness(0.4);
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.4); /* más oscuro para mejor contraste */
   z-index: 0;
+}
 }
 
 .hero {
