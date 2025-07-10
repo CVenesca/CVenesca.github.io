@@ -100,7 +100,56 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
+.section-light {
+  background-color: var(--color-fondo-claro);
+  padding: 60px 20px;
+  text-align: center;
+}
 
+.section-title {
+  color: var(--color-primario);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 30px;
+  max-width: 320px;
+  flex: 1 1 300px;
+  text-align: left;
+}
+
+.info-card img {
+  width: 48px;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  color: var(--color-secundario);
+  margin-bottom: 10px;
+}
+
+.info-card p,
+.info-card ul {
+  color: var(--color-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info-card ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
 .hero {
   position: relative;
   height: 100vh;/* igual que la imagen ajusta la altura de la portada*/
