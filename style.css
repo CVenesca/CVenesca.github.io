@@ -132,13 +132,14 @@ img {
 
 .info-card:hover {
   transform: translateY(-6px);
-}
 
+}
 .info-card img {
-  width: 56px;
-  margin-bottom: 20px;
+  max-width: 200px;
+  width: 200%;
+  height: auto;
+  margin-bottom: 40px;
 }
-
 .info-card h3 {
   color: var(--color-primario);
   font-size: 1.4rem;
