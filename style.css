@@ -4,14 +4,23 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+:root {
+  --color-primario: #d88c00;       /* Ocre-naranja */
+  --color-secundario: #00334e;     /* Azul petróleo */
+  --color-fondo-claro: #fdfaf6;    /* Marfil suave */
+  --color-texto: #2e2e2e;          /* Gris carbón */
+  --color-acento: #f4b860;         /* Naranja pastel */
+  --color-banner: #ffe8b0;         /* Amarillo arena */
+}
 /* Fondo general blanco */
 body,
 .section,
 .hero,
 footer,
 header {
-  background-color: #ffffff !important;
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto);
+}
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
   color: #222;
@@ -30,10 +39,9 @@ header {
 
 /* Tipografía */
 h1, h2, h3 {
-  color: #004080;
+  color: var(--color-primario);
   margin-bottom: 10px;
 }
-
 /* Secciones generales */
 .section {
   padding: 80px 20px;
@@ -70,18 +78,22 @@ img {
   object-fit: cover;
   border-radius: 6px;
 }
-
+.content-block img { /* imagen de quien somos*/
+  flex: 1 1 65%; /* antes 30% o 40%, ahora más ancho */
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+}
 .content-block div {
   flex: 1 1 60%;
 }
 /* Imágenes de productos */
 .service-card img {
-  width: 160%;
-  max-height: 200px;
+  width: 150%; /* antes 100% 130% */
+  max-height: 240px; /* opcional: aumentar altura también */
   object-fit: contain;
   margin-bottom: 15px;
 }
-
 /* Grid de productos */
 .service-grid {
   display: grid;
@@ -154,10 +166,14 @@ img {
 }
 
 .hero-content {
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  color: #d88c00; /* tono ocre-naranja */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.hero-content h1,
+.hero-content p {
+  color: #d88c00;
+}
 .hero-content h1 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
@@ -170,22 +186,29 @@ img {
 }
 
 .cta-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #004080;
+  background-color: var(--color-primario);
   color: white;
-  text-decoration: none;
+  padding: 12px 24px;
+  border: none;
   border-radius: 4px;
-  margin: 0 10px;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button.secondary {
-  background-color: #c49b0b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #002f5f;
+  background-color: var(--color-acento);
+  color: var(--color-secundario);
+}
+
+.cta-button.secondary {
+  background-color: var(--color-secundario);
+  color: white;
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--color-primario);
+  color: white;
 }
 /* Lista de fichas técnicas */
 .fichas-list {
