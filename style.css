@@ -58,7 +58,7 @@ img {
 .hero {
   position: relative;
   text-align: center;
-  color: white;
+  color: orange;
 }
 
 .hero-bg {
@@ -82,7 +82,7 @@ img {
   position: relative;
   top: 30%;
   transform: translateY(-30%);
-  padding: 50
+  padding: 70
 }
 
 .hero-content h1 {
