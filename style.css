@@ -99,7 +99,8 @@ img {
   justify-content: center;
   text-align: center;
   padding-bottom: 60px; /* espacio inferior ajusta el ancho de la portada */
-}}
+}
+
 .hero-bg {
   width: 100%;
   height: 80vh; /* 20% menos */
@@ -109,7 +110,6 @@ img {
   top: 0;
   left: 0;
   z-index: 0;
-}
 }
 
 .hero {
