@@ -122,11 +122,14 @@ img {
   padding-bottom: 80px;
 }
 .hero-logo {
-  width: 460px;         /* Puedes aumentar o reducir este valor */
-  max-width: 80%;       /* Asegura que no se desborde en pantallas pequeñas */
-  height: auto;         /* Mantiene la proporción original */
-  margin-bottom: 5px;  /* Espacio debajo del logo */
+  width: 460px;     /* Puedes aumentar o reducir este valor */
+  max-width: 80%;  /* Asegura que no se desborde en pantallas pequeñas */
+  height: auto;   /* Mantiene la proporción original */
   display: block;
+  margin: 0 auto 30px;  /* Espacio debajo del logo */
+  display: block;
+  position: relative;
+  top: 40px; /* baja el logo un 20px aprox. */
 }
 .hero-bg {
   position: absolute;
@@ -135,10 +138,10 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.4);
+  filter: brightness(0.75); /* antes estaba en 0.4 o 0.5 */
   z-index: 0;
-}
 
+}
 .hero-overlay {
   position: relative;
   z-index: 1;
