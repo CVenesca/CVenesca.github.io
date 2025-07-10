@@ -64,7 +64,6 @@ img {
   gap: 40px;
   margin-bottom: 60px;
 }
-
 .content-block img {
   flex: 1 1 30%;
   max-height: 280px; /* altura reducida */
@@ -92,7 +91,7 @@ img {
 
 .hero {
   position: relative;
-  height: 80vh;/* igual que la imagen ajusta la altura de la portada*/
+  height: 95vh;/* igual que la imagen ajusta la altura de la portada*/
   overflow: hidden;
   display: flex;
   align-items: flex-end; /* baja el contenido */
@@ -123,10 +122,10 @@ img {
   padding-bottom: 80px;
 }
 .hero-logo {
-  width: 560px;         /* Puedes aumentar o reducir este valor */
+  width: 460px;         /* Puedes aumentar o reducir este valor */
   max-width: 80%;       /* Asegura que no se desborde en pantallas pequeñas */
   height: auto;         /* Mantiene la proporción original */
-  margin-bottom: 10px;  /* Espacio debajo del logo */
+  margin-bottom: 5px;  /* Espacio debajo del logo */
   display: block;
 }
 .hero-bg {
