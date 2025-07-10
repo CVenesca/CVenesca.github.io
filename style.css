@@ -121,22 +121,28 @@ img {
 
 .info-card {
   background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 30px 25px;
   max-width: 320px;
   flex: 1 1 300px;
-  text-align: left;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
 }
 
 .info-card img {
-  width: 48px;
-  margin-bottom: 15px;
+  width: 56px;
+  margin-bottom: 20px;
 }
 
 .info-card h3 {
-  color: var(--color-secundario);
-  margin-bottom: 10px;
+  color: var(--color-primario);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
 }
 
 .info-card p,
@@ -147,9 +153,16 @@ img {
 }
 
 .info-card ul {
-  padding-left: 20px;
-  list-style-type: disc;
+  list-style: none;
+  padding: 0;
 }
+
+.info-card ul li::before {
+  content: "• ";
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
 .hero {
   position: relative;
   height: 100vh;/* igual que la imagen ajusta la altura de la portada*/
