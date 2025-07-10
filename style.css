@@ -57,7 +57,24 @@ img {
   display: block;
   margin: 0 auto;
 }
+.content-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
 
+.content-block img {
+  flex: 1 1 30%;
+  max-height: 280px; /* altura reducida */
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.content-block div {
+  flex: 1 1 60%;
+}
 /* Imágenes de productos */
 .service-card img {
   width: 100%;
@@ -78,9 +95,10 @@ img {
   height: 100vh;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* baja el contenido */
   justify-content: center;
   text-align: center;
+  padding-bottom: 80px; /* espacio inferior */
 }
 
 .hero-bg {
@@ -90,14 +108,15 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
+  filter: brightness(0.4); /* más oscuro para mejor contraste */
   z-index: 0;
 }
 
 .hero-overlay {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 1000px;
+  width: 90%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -105,28 +124,29 @@ img {
 }
 
 .hero-logo {
-  width: 160px;
+  width: 140px;
   margin-bottom: 20px;
 }
 
 .hero-content {
-  color: white;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   max-width: 700px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 2rem;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #004080;
   color: white;
   text-decoration: none;
