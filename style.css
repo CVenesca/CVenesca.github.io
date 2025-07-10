@@ -56,6 +56,11 @@ img {
   object-fit: contain;
   margin-bottom: 15px;
 }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
 /* Hero principal */
 .hero {
   position: relative;
