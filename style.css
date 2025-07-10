@@ -4,11 +4,13 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Lato', sans-serif;
-  line-height: 1.6;
-  color: #222;
-  background-color: #fff;
+body,
+.section,
+.hero,
+footer,
+header {
+  background-color: #ffffff !important;
+
 }
 
 /* Banner de aviso */
