@@ -123,9 +123,10 @@ img {
   padding-bottom: 80px;
 }
 .hero-logo {
-  width: 160px;
-  max-width: 90%;
-  margin-bottom: 20px;
+  width: 360px;         /* Puedes aumentar o reducir este valor */
+  max-width: 80%;       /* Asegura que no se desborde en pantallas pequeñas */
+  height: auto;         /* Mantiene la proporción original */
+  margin-bottom: 20px;  /* Espacio debajo del logo */
   display: block;
 }
 .hero-bg {
