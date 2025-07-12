@@ -225,7 +225,7 @@ img {
 }
 
 .info-card img {
-  max-width: 250px; /* Reducido al 50% del tamaño anterior (de 200px a 100px) */
+  max-width: 100px; /* Reducido al 50% del tamaño anterior (de 200px a 100px) */
   height: auto;
   margin-bottom: 20px;
 }
