@@ -165,7 +165,7 @@ img {
 
 .content-block img {
   flex: 1 1 65%;
-  max-height: 500px; /* <--- Nueva altura ajustada para que la imagen sea más grande y se vea completa */
+  max-height: 450px; /* <--- Nueva altura ajustada para que la imagen sea más grande y se vea completa */
   object-fit: contain; /* Asegura que la imagen se escale para caber sin recortarse */
   border-radius: 6px;
 }
