@@ -259,7 +259,6 @@
     </div>
   </div>
 </footer>
-
  
 <script>
   (function () {
@@ -271,7 +270,6 @@
     if (!langPref && isEnglishBrowser && window.location.pathname === '/' || window.location.pathname === '/index.html') {
       window.location.href = '/index-en.html';
     }
-
     // Guardar la preferencia de idioma cuando se hace clic en una bandera
     document.querySelector('.language-switcher a[href="/"]').addEventListener('click', function() {
       localStorage.setItem('langPref', 'es'); // Guarda 'es' si se hace clic en Español
