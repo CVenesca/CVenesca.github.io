@@ -173,10 +173,6 @@ img {
   margin: 0 auto;
 }
 
-/* La regla para language-switcher img se ha movido y ajustado arriba */
-/* NOTA: La regla anterior de .language-switcher img ha sido eliminada de aquí. */
-
-
 .content-block {
   /* Cambiamos a un flujo de bloque estándar para que los elementos se apilen */
   display: block; /* Esto anula el display: flex anterior */
@@ -202,6 +198,7 @@ img {
   margin: 0 auto; /* Centra el bloque de texto */
   text-align: left; /* Alinea el texto a la izquierda dentro de su propio bloque */
 }
+
 /* 🧃 Tarjetas: Misión, Visión y Valores */
 /* Define los estilos para las tarjetas de información, como las utilizadas para presentar la misión, visión y valores de la empresa. */
 .card-grid {
@@ -209,21 +206,93 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  /* --- Nueva propiedad para alineación armoniosa --- */
   align-items: stretch; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
-  /* --- Fin de nueva propiedad --- */
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 30px 25px;
+  max-width: 320px;
+  flex: 1 1 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+}
+
+.info-card img {
+  max-width: 100px; /* Reducido al 50% del tamaño anterior (de 200px a 100px) */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.info-card p,
+.info-card ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card ul li::before {
+  content: "• ";
+  color: var(--color-acento);
+  font-weight: bold;
 }
 
 /* 🛒 Servicios y fichas */
 /* Organiza y estiliza las tarjetas de servicios y las listas de enlaces para descargar fichas técnicas de productos. */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Aumentado a 380px para fichas más grandes */
   gap: 30px;
-  /* --- Nuevas propiedades para centrado y alineación armoniosa --- */
   justify-content: center; /* Centra las columnas del grid si no ocupan todo el ancho */
   align-items: stretch; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
-  /* --- Fin de nuevas propiedades --- */
+}
+
+.service-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Ajuste para asegurar el tamaño consistente de todas las imágenes dentro de las tarjetas de servicio */
+.service-card img {
+  width: 360px !important; /* ¡Asegúrate de que el !important esté aquí! */
+  height: auto;
+  margin-bottom: 20px;
+}
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--color-primario);
+}
+
+.service-card p,
+.service-card ul {
+  font-size: 1rem;
+  color: var(--color-texto);
+  line-height: 1.6;
 }
 
 /* 🪟 Hero con fondo e imagen */
