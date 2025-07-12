@@ -209,50 +209,9 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-}
-
-.info-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  padding: 30px 25px;
-  max-width: 320px;
-  flex: 1 1 300px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-6px);
-}
-
-.info-card img {
-  max-width: 200px; /* <--- Tamaño incrementado para Misión, Visión, Valores (antes 150px) */
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.info-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-
-.info-card p,
-.info-card ul {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-texto);
-}
-
-.info-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.info-card ul li::before {
-  content: "• ";
-  color: var(--color-acento);
-  font-weight: bold;
+  /* --- Nueva propiedad para alineación armoniosa --- */
+  align-items: stretch; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
+  /* --- Fin de nueva propiedad --- */
 }
 
 /* 🛒 Servicios y fichas */
@@ -261,38 +220,10 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-}
-
-.service-card {
-  background-color: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-}
-
-/* Ajuste para asegurar el tamaño consistente de todas las imágenes dentro de las tarjetas de servicio */
-.service-card img {
-  width: 360px !important; /* ¡Asegúrate de que el !important esté aquí! */
-  height: auto;
-  margin-bottom: 20px;
-}
-.service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  color: var(--color-primario);
-}
-
-.service-card p,
-.service-card ul {
-  font-size: 1rem;
-  color: var(--color-texto);
-  line-height: 1.6;
+  /* --- Nuevas propiedades para centrado y alineación armoniosa --- */
+  justify-content: center; /* Centra las columnas del grid si no ocupan todo el ancho */
+  align-items: stretch; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
+  /* --- Fin de nuevas propiedades --- */
 }
 
 /* 🪟 Hero con fondo e imagen */
