@@ -1,0 +1,356 @@
+/* 🔄 Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌐 Typography and Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-background-color);
+}
+
+/* 🎨 Variables */
+:root {
+  --primary-color: #d88c00;        /* Ocre-orange */
+  --secondary-color: #00334e;      /* Petroleum blue */
+  --light-background-color: #fdfaf6;     /* Soft ivory */
+  --text-color: #2e2e2e;           /* Charcoal gray */
+  --accent-color: #f4b860;          /* Pastel orange */
+  --banner-color: #ffe8b0;          /* Sand yellow */
+}
+
+/* 🔷 Navigation Menu and Submenu */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: var(--secondary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: var(--light-background-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--secondary-color);
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  min-width: 180px;
+  display: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.submenu li {
+  padding: 8px 20px;
+}
+
+.submenu li a {
+  color: var(--light-background-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.nav-links li:hover .submenu {
+  display: block;
+}
+
+/* 📢 Alert Banner */
+.banner-aviso {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 1rem;
+  border-bottom: 2px solid #ffeeba;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 🧩 General Sections */
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-light {
+  background-color: var(--light-background-color);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* 🖼️ Images and Visual Content */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+.language-switcher img {
+  width: 28px;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.content-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.content-block img {
+  flex: 1 1 65%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.content-block div {
+  flex: 1 1 60%;
+}
+
+/* 🧃 Cards: Mission, Vision, and Values */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 30px 25px;
+  max-width: 320px;
+  flex: 1 1 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+}
+
+.info-card img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.info-card p,
+.info-card ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card ul li::before {
+  content: "• ";
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* 🛒 Services and Data Sheets */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+}
+
+.service-card p,
+.service-card ul {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.fichas-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 12px;
+}
+
+.fichas-list li {
+  margin-bottom: 8px;
+}
+
+.fichas-list a {
+  color: #004080;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.fichas-list a:hover {
+  color: #c49b0b;
+}
+
+/* 🪟 Hero with Background Image */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  z-index: 0;
+}
+
+.hero-logo {
+  width: 460px;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 30px;
+  position: relative;
+  top: 40px;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content {
+  color: var(--primary-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* 🎯 Buttons */
+.cta-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
