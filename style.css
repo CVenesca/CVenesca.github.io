@@ -115,6 +115,30 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
+/* --- INICIO: Estilos para el Selector de Idioma Integrado --- */
+.language-switcher {
+  position: absolute; /* Permite posicionarlo con `top` y `right` */
+  top: 110px; /* Separación desde la parte superior, ajusta si es necesario */
+  right: 20px; /* Separación desde el borde derecho */
+  z-index: 1001; /* Asegura que esté por encima de otros elementos */
+  display: flex; /* Para que las banderas estén en línea */
+  gap: 10px; /* Separación entre las banderas */
+  align-items: center; /* Centra verticalmente las banderas si tienen diferente altura */
+}
+
+.language-switcher img {
+  width: 32px; /* Un poco más grandes para mejor visibilidad */
+  height: auto;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sutil sombra para destacarlas */
+}
+
+.language-switcher img:hover {
+  transform: scale(1.1); /* Efecto al pasar el ratón */
+}
+/* --- FIN: Estilos para el Selector de Idioma Integrado --- */
+
 /* 🧩 Secciones generales */
 /* Define los estilos básicos para las secciones principales de contenido de la página, incluyendo su espaciado y alineación. */
 .section {
@@ -149,11 +173,9 @@ img {
   margin: 0 auto;
 }
 
-.language-switcher img {
-  width: 28px;
-  border-radius: 4px;
-  transition: transform 0.2s ease;
-}
+/* La regla para language-switcher img se ha movido y ajustado arriba */
+/* NOTA: La regla anterior de .language-switcher img ha sido eliminada de aquí. */
+
 
 .content-block {
   /* Cambiamos a un flujo de bloque estándar para que los elementos se apilen */
