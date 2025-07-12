@@ -19,12 +19,12 @@ body {
 
 /* 🎨 Variables */
 :root {
-  --color-primario: #d88c00;       /* Ocre-naranja */
-  --color-secundario: #00334e;     /* Azul petróleo */
-  --color-fondo-claro: #fdfaf6;    /* Marfil suave */
-  --color-texto: #2e2e2e;          /* Gris carbón */
-  --color-acento: #f4b860;         /* Naranja pastel */
-  --color-banner: #ffe8b0;         /* Amarillo arena */
+  --color-primario: #d88c00;        /* Ocre-naranja */
+  --color-secundario: #00334e;      /* Azul petróleo */
+  --color-fondo-claro: #fdfaf6;     /* Marfil suave */
+  --color-texto: #2e2e2e;           /* Gris carbón */
+  --color-acento: #f4b860;          /* Naranja pastel */
+  --color-banner: #ffe8b0;          /* Amarillo arena */
 }
 
 /* 🔷 Menú de navegación y submenú */
@@ -352,4 +352,5 @@ img {
 
 .cta-button:hover {
   background-color: var(--color-acento);
-  color: var(--color-secund
+  color: var(--color-secundario); /* Corregido para cerrar la regla CSS */
+}
