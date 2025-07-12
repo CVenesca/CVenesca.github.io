@@ -256,11 +256,10 @@ img {
 
 /* Ajuste para asegurar el tamaño consistente de todas las imágenes dentro de las tarjetas de servicio */
 .service-card img {
-  width: 360px !important; /* <-- ¡CAMBIO IMPORTANTE AQUÍ! */
-  height: auto; /* Mantiene la proporción */
+  width: 360px !important; /* ¡Asegúrate de que el !important esté aquí! */
+  height: auto;
   margin-bottom: 20px;
 }
-
 .service-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
