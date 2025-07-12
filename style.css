@@ -1,4 +1,5 @@
 /* 🔄 Reset básico */
+/* Resetea los estilos predeterminados del navegador para asegurar una base consistente en todos los elementos. */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@
 }
 
 /* 🌐 Tipografía y scroll */
+/* Define el comportamiento del desplazamiento suave y los estilos de fuente generales para el cuerpo del documento. */
 html {
   scroll-behavior: smooth;
 }
@@ -18,6 +20,7 @@ body {
 }
 
 /* 🎨 Variables */
+/* Almacena colores reutilizables para facilitar la gestión del tema visual de la página. */
 :root {
   --color-primario: #d88c00;        /* Ocre-naranja */
   --color-secundario: #00334e;      /* Azul petróleo */
@@ -28,6 +31,7 @@ body {
 }
 
 /* 🔷 Menú de navegación y submenú */
+/* Controla el diseño y la interactividad del menú de navegación principal, incluyendo su comportamiento fijo en la parte superior y la visualización de submenús. */
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -100,6 +104,7 @@ body {
 }
 
 /* 📢 Banner de aviso */
+/* Estiliza la barra de notificación superior, comúnmente utilizada para mensajes importantes o alertas. */
 .banner-aviso {
   background-color: #fff3cd;
   color: #856404;
@@ -111,6 +116,7 @@ body {
 }
 
 /* 🧩 Secciones generales */
+/* Define los estilos básicos para las secciones principales de contenido de la página, incluyendo su espaciado y alineación. */
 .section {
   padding: 80px 20px;
   max-width: 1200px;
@@ -135,6 +141,7 @@ h1, h2, h3 {
 }
 
 /* 🖼️ Imágenes y contenido visual */
+/* Gestiona la apariencia de las imágenes en general y el diseño de bloques de contenido que combinan texto e imagen, como la sección "Quiénes Somos". */
 img {
   max-width: 100%;
   height: auto;
@@ -159,7 +166,7 @@ img {
 
 .content-block img {
   flex: 1 1 65%;
-  max-height: 280px;
+  max-height: 364px; /* <--- Altura ajustada aquí */
   object-fit: cover;
   border-radius: 6px;
 }
@@ -169,6 +176,7 @@ img {
 }
 
 /* 🧃 Tarjetas: Misión, Visión y Valores */
+/* Define los estilos para las tarjetas de información, como las utilizadas para presentar la misión, visión y valores de la empresa. */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -192,11 +200,10 @@ img {
 }
 
 .info-card img {
-  max-width: 100px;
+  max-width: 150px; /* Aumentado un 50% de 100px */
   height: auto;
   margin-bottom: 20px;
 }
-
 .info-card h3 {
   font-size: 1.4rem;
   margin-bottom: 12px;
@@ -221,6 +228,7 @@ img {
 }
 
 /* 🛒 Servicios y fichas */
+/* Organiza y estiliza las tarjetas de servicios y las listas de enlaces para descargar fichas técnicas de productos. */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -241,10 +249,10 @@ img {
 }
 
 .service-card img {
-  width: 80px;
+  width: 120px; /* Aumentado un 50% de 80px */
+  height: auto;
   margin-bottom: 20px;
 }
-
 .service-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
@@ -280,6 +288,7 @@ img {
 }
 
 /* 🪟 Hero con fondo e imagen */
+/* Define el estilo de la sección principal de bienvenida con una imagen de fondo, el logo y el contenido destacado. */
 .hero {
   position: relative;
   height: 100vh;
@@ -339,6 +348,7 @@ img {
 }
 
 /* 🎯 Botones */
+/* Estiliza los botones de llamada a la acción (CTA) para hacerlos visibles y atractivos. */
 .cta-button {
   background-color: var(--color-primario);
   color: white;
@@ -352,5 +362,5 @@ img {
 
 .cta-button:hover {
   background-color: var(--color-acento);
-  color: var(--color-secundario); /* Corregido para cerrar la regla CSS */
+  color: var(--color-secundario);
 }
