@@ -157,22 +157,29 @@ img {
 }
 
 .content-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
+  /* Changed to a standard block flow so elements stack */
+  display: block; /* Overrides previous display: flex */
+  gap: 40px; /* Kept for consistency, though not active with display: block */
   margin-bottom: 60px;
+  text-align: center; /* Centers content within the block */
 }
 
 .content-block img {
-  flex: 1 1 65%;
-  max-height: 364px; /* <--- Adjusted height for "About Us" image */
-  object-fit: cover;
+  /* The image will occupy 80% of the content block width and be centered */
+  max-width: 80%; /* <--- Image occupies 80% of the container width */
+  max-height: 400px; /* <--- Maximum image height adjusted to 400px */
+  object-fit: contain; /* Ensures the image scales to fit without cropping */
   border-radius: 6px;
+  margin: 0 auto 30px; /* Centers the image horizontally and adds space below */
+  display: block; /* Ensures the image is a block to apply margin: auto */
 }
 
 .content-block div {
-  flex: 1 1 60%;
+  /* The text will align below the image and take up 100% of the available width */
+  width: 100%; /* Text div will occupy 100% of available width */
+  max-width: 800px; /* Optional: limit maximum text width for readability */
+  margin: 0 auto; /* Centers the text block */
+  text-align: left; /* Aligns text to the left within its own block */
 }
 
 /* 🧃 Cards: Mission, Vision, and Values */
@@ -200,10 +207,11 @@ img {
 }
 
 .info-card img {
-  max-width: 150px; /* Aumentado un 50% de 100px */
+  max-width: 200px; /* <--- Increased size for Mission, Vision, Values (previously 150px) */
   height: auto;
   margin-bottom: 20px;
 }
+
 .info-card h3 {
   font-size: 1.4rem;
   margin-bottom: 12px;
@@ -248,11 +256,13 @@ img {
   transform: translateY(-6px);
 }
 
+/* Adjustment to ensure consistent size for all images within service cards */
 .service-card img {
-  width: 120px; /* <--- Increased by 50% from 80px */
-  height: auto;
+  width: 360px !important; /* <-- IMPORTANT CHANGE HERE! */
+  height: auto; /* Maintains aspect ratio */
   margin-bottom: 20px;
 }
+
 .service-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
@@ -264,27 +274,6 @@ img {
   font-size: 1rem;
   color: var(--text-color);
   line-height: 1.6;
-}
-
-.fichas-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 12px;
-}
-
-.fichas-list li {
-  margin-bottom: 8px;
-}
-
-.fichas-list a {
-  color: #004080;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.fichas-list a:hover {
-  color: #c49b0b;
 }
 
 /* 🪟 Hero with Background Image */
