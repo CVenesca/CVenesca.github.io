@@ -260,16 +260,28 @@
   </div>
 </footer>
 
-  <script>
-    (function () {
-      const userLang = navigator.language || navigator.userLanguage;
-      const isEnglish = userLang.toLowerCase().startsWith('en');
-      if (isEnglish && window.location.pathname === '/' || window.location.pathname === '/index.html') {
-        window.location.href = '/index-en.html';
-      }
-    })();
-  </script>
+ 
+<script>
+  (function () {
+    const userLang = navigator.language || navigator.userLanguage;
+    const isEnglishBrowser = userLang.toLowerCase().startsWith('en');
+    const langPref = localStorage.getItem('langPref'); // Intentamos leer la preferencia del usuario
 
+    // Si no hay preferencia guardada y el navegador está en inglés, redirigir a la versión en inglés
+    if (!langPref && isEnglishBrowser && window.location.pathname === '/' || window.location.pathname === '/index.html') {
+      window.location.href = '/index-en.html';
+    }
+
+    // Guardar la preferencia de idioma cuando se hace clic en una bandera
+    document.querySelector('.language-switcher a[href="/"]').addEventListener('click', function() {
+      localStorage.setItem('langPref', 'es'); // Guarda 'es' si se hace clic en Español
+    });
+
+    document.querySelector('.language-switcher a[href="/index-en.html"]').addEventListener('click', function() {
+      localStorage.setItem('langPref', 'en'); // Guarda 'en' si se hace clic en Inglés
+    });
+  })();
+</script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init({
