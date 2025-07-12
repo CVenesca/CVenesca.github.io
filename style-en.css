@@ -1,13 +1,13 @@
-/* 🔄 Basic Reset */
-/* Resets default browser styles to ensure a consistent base for all elements. */
+/* 🔄 Reset básico */
+/* Resetea los estilos predeterminados del navegador para asegurar una base consistente en todos los elementos. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 🌐 Typography and Scroll Behavior */
-/* Defines smooth scrolling behavior and general font styles for the document body. */
+/* 🌐 Tipografía y scroll */
+/* Define el comportamiento del desplazamiento suave y los estilos de fuente generales para el cuerpo del documento. */
 html {
   scroll-behavior: smooth;
 }
@@ -15,29 +15,29 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--light-background-color);
+  color: var(--color-texto);
+  background-color: var(--color-fondo-claro);
 }
 
 /* 🎨 Variables */
-/* Stores reusable colors to facilitate the visual theme management of the page. */
+/* Almacena colores reutilizables para facilitar la gestión del tema visual de la página. */
 :root {
-  --primary-color: #d88c00;        /* Ocre-orange */
-  --secondary-color: #00334e;      /* Petroleum blue */
-  --light-background-color: #fdfaf6;     /* Soft ivory */
-  --text-color: #2e2e2e;           /* Charcoal gray */
-  --accent-color: #f4b860;          /* Pastel orange */
-  --banner-color: #ffe8b0;          /* Sand yellow */
+  --color-primario: #d88c00;        /* Ocre-naranja */
+  --color-secundario: #00334e;      /* Azul petróleo */
+  --color-fondo-claro: #fdfaf6;     /* Marfil suave */
+  --color-texto: #2e2e2e;           /* Gris carbón */
+  --color-acento: #f4b860;          /* Naranja pastel */
+  --color-banner: #ffe8b0;          /* Amarillo arena */
 }
 
-/* 🔷 Navigation Menu and Submenu */
-/* Controls the layout and interactivity of the main navigation menu, including its sticky behavior at the top and the display of submenus. */
+/* 🔷 Menú de navegación y submenú */
+/* Controla el diseño y la interactividad del menú de navegación principal, incluyendo su comportamiento fijo en la parte superior y la visualización de submenús. */
 .main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
-  background-color: var(--secondary-color);
+  background-color: var(--color-secundario);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -58,7 +58,7 @@ body {
 }
 
 .nav-links li a {
-  color: var(--light-background-color);
+  color: var(--color-fondo-claro);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -66,14 +66,14 @@ body {
 }
 
 .nav-links li a:hover {
-  color: var(--primary-color);
+  color: var(--color-primario);
 }
 
 .submenu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--color-secundario);
   list-style: none;
   padding: 12px 0;
   margin: 0;
@@ -88,14 +88,14 @@ body {
 }
 
 .submenu li a {
-  color: var(--light-background-color);
+  color: var(--color-fondo-claro);
   text-decoration: none;
   font-size: 0.95rem;
   transition: background-color 0.3s ease;
 }
 
 .submenu li a:hover {
-  background-color: var(--primary-color);
+  background-color: var(--color-primario);
   color: white;
 }
 
@@ -103,8 +103,8 @@ body {
   display: block;
 }
 
-/* 📢 Alert Banner */
-/* Styles the top notification bar, commonly used for important messages or alerts. */
+/* 📢 Banner de aviso */
+/* Estiliza la barra de notificación superior, comúnmente utilizada para mensajes importantes o alertas. */
 .banner-aviso {
   background-color: #fff3cd;
   color: #856404;
@@ -115,8 +115,32 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* 🧩 General Sections */
-/* Defines basic styles for the main content sections of the page, including their spacing and alignment. */
+/* --- INICIO: Estilos para el Selector de Idioma Integrado --- */
+.language-switcher {
+  position: absolute; /* Permite posicionarlo con `top` y `right` */
+  top: 110px; /* Separación desde la parte superior, ajusta si es necesario */
+  right: 20px; /* Separación desde el borde derecho */
+  z-index: 1001; /* Asegura que esté por encima de otros elementos */
+  display: flex; /* Para que las banderas estén en línea */
+  gap: 10px; /* Separación entre las banderas */
+  align-items: center; /* Centra verticalmente las banderas si tienen diferente altura */
+}
+
+.language-switcher img {
+  width: 32px; /* Un poco más grandes para mejor visibilidad */
+  height: auto;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sutil sombra para destacarlas */
+}
+
+.language-switcher img:hover {
+  transform: scale(1.1); /* Efecto al pasar el ratón */
+}
+/* --- FIN: Estilos para el Selector de Idioma Integrado --- */
+
+/* 🧩 Secciones generales */
+/* Define los estilos básicos para las secciones principales de contenido de la página, incluyendo su espaciado y alineación. */
 .section {
   padding: 80px 20px;
   max-width: 1200px;
@@ -124,24 +148,23 @@ body {
 }
 
 .section-light {
-  background-color: var(--light-background-color);
+  background-color: var(--color-fondo-claro);
   text-align: center;
   padding: 60px 20px;
 }
 
 .section-title {
-  color: var(--primary-color);
+  color: var(--color-primario);
   font-size: 2.2rem;
   margin-bottom: 40px;
 }
 
 h1, h2, h3 {
-  color: var(--primary-color);
+  color: var(--color-primario);
   margin-bottom: 10px;
 }
-
-/* 🖼️ Images and Visual Content */
-/* Manages the appearance of images in general and the layout of content blocks that combine text and images, such as the "About Us" section. */
+/* 🖼️ Imágenes y contenido visual */
+/* Gestiona la apariencia de las imágenes en general y el diseño de bloques de contenido que combinan texto e imagen, como la sección "Quiénes Somos". */
 img {
   max-width: 100%;
   height: auto;
@@ -150,40 +173,37 @@ img {
   margin: 0 auto;
 }
 
-.language-switcher img {
-  width: 28px;
-  border-radius: 4px;
-  transition: transform 0.2s ease;
-}
+/* La regla para language-switcher img se ha movido y ajustado arriba */
+/* NOTA: La regla anterior de .language-switcher img ha sido eliminada de aquí. */
+
 
 .content-block {
-  /* Changed to a standard block flow so elements stack */
-  display: block; /* Overrides previous display: flex */
-  gap: 40px; /* Kept for consistency, though not active with display: block */
+  /* Cambiamos a un flujo de bloque estándar para que los elementos se apilen */
+  display: block; /* Esto anula el display: flex anterior */
+  gap: 40px; /* Aunque ya no es flex, lo mantenemos por si se usa en otro contexto */
   margin-bottom: 60px;
-  text-align: center; /* Centers content within the block */
+  text-align: center; /* Centramos el contenido dentro del bloque */
 }
 
 .content-block img {
-  /* The image will occupy 80% of the content block width and be centered */
-  max-width: 80%; /* <--- Image occupies 80% of the container width */
-  max-height: 400px; /* <--- Maximum image height adjusted to 400px */
-  object-fit: contain; /* Ensures the image scales to fit without cropping */
+  /* La imagen ocupará el 80% del ancho del bloque de contenido y estará centrada */
+  max-width: 80%; /* <--- La imagen ocupa el 80% del ancho del contenedor */
+  max-height: 400px; /* <--- Altura máxima de la imagen ajustada a 400px */
+  object-fit: contain; /* Asegura que la imagen se escale para caber sin recortarse */
   border-radius: 6px;
-  margin: 0 auto 30px; /* Centers the image horizontally and adds space below */
-  display: block; /* Ensures the image is a block to apply margin: auto */
+  margin: 0 auto 30px; /* Centra la imagen horizontalmente y añade espacio debajo */
+  display: block; /* Asegura que la imagen sea un bloque para aplicar margin: auto */
 }
 
 .content-block div {
-  /* The text will align below the image and take up 100% of the available width */
-  width: 100%; /* Text div will occupy 100% of available width */
-  max-width: 800px; /* Optional: limit maximum text width for readability */
-  margin: 0 auto; /* Centers the text block */
-  text-align: left; /* Aligns text to the left within its own block */
+  /* El texto se alineará debajo de la imagen y ocupará el 100% del ancho disponible */
+  width: 100%; /* El div de texto ocupará el 100% del ancho disponible */
+  max-width: 800px; /* Opcional: limitar el ancho máximo del texto para legibilidad */
+  margin: 0 auto; /* Centra el bloque de texto */
+  text-align: left; /* Alinea el texto a la izquierda dentro de su propio bloque */
 }
-
-/* 🧃 Cards: Mission, Vision, and Values */
-/* Defines the styles for information cards, such as those used to present the company's mission, vision, and values. */
+/* 🧃 Tarjetas: Misión, Visión y Valores */
+/* Define los estilos para las tarjetas de información, como las utilizadas para presentar la misión, visión y valores de la empresa. */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -207,7 +227,7 @@ img {
 }
 
 .info-card img {
-  max-width: 200px; /* <--- Increased size for Mission, Vision, Values (previously 150px) */
+  max-width: 200px; /* <--- Tamaño incrementado para Misión, Visión, Valores (antes 150px) */
   height: auto;
   margin-bottom: 20px;
 }
@@ -221,7 +241,7 @@ img {
 .info-card ul {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text-color);
+  color: var(--color-texto);
 }
 
 .info-card ul {
@@ -231,12 +251,12 @@ img {
 
 .info-card ul li::before {
   content: "• ";
-  color: var(--accent-color);
+  color: var(--color-acento);
   font-weight: bold;
 }
 
-/* 🛒 Services and Data Sheets */
-/* Organizes and styles service cards and lists of links for downloading product data sheets. */
+/* 🛒 Servicios y fichas */
+/* Organiza y estiliza las tarjetas de servicios y las listas de enlaces para descargar fichas técnicas de productos. */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -256,28 +276,27 @@ img {
   transform: translateY(-6px);
 }
 
-/* Adjustment to ensure consistent size for all images within service cards */
+/* Ajuste para asegurar el tamaño consistente de todas las imágenes dentro de las tarjetas de servicio */
 .service-card img {
-  width: 360px !important; /* <-- IMPORTANT CHANGE HERE! */
-  height: auto; /* Maintains aspect ratio */
+  width: 360px !important; /* ¡Asegúrate de que el !important esté aquí! */
+  height: auto;
   margin-bottom: 20px;
 }
-
 .service-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
-  color: var(--primary-color);
+  color: var(--color-primario);
 }
 
 .service-card p,
 .service-card ul {
   font-size: 1rem;
-  color: var(--text-color);
+  color: var(--color-texto);
   line-height: 1.6;
 }
 
-/* 🪟 Hero with Background Image */
-/* Defines the style of the main welcome section with a background image, logo, and featured content. */
+/* 🪟 Hero con fondo e imagen */
+/* Define el estilo de la sección principal de bienvenida con una imagen de fondo, el logo y el contenido destacado. */
 .hero {
   position: relative;
   height: 100vh;
@@ -321,7 +340,7 @@ img {
 }
 
 .hero-content {
-  color: var(--primary-color);
+  color: var(--color-primario);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -336,10 +355,10 @@ img {
   margin: 0 auto 2rem;
 }
 
-/* 🎯 Buttons */
-/* Styles the call-to-action (CTA) buttons to make them visible and attractive. */
+/* 🎯 Botones */
+/* Estiliza los botones de llamada a la acción (CTA) para hacerlos visibles y atractivos. */
 .cta-button {
-  background-color: var(--primary-color);
+  background-color: var(--color-primario);
   color: white;
   padding: 12px 24px;
   border: none;
@@ -350,6 +369,6 @@ img {
 }
 
 .cta-button:hover {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
+  background-color: var(--color-acento);
+  color: var(--color-secundario);
 }
