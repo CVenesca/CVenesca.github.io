@@ -12,6 +12,62 @@
   --color-acento: #f4b860;         /* Naranja pastel */
   --color-banner: #ffe8b0;         /* Amarillo arena */
 }
+/* 🔷 BLOQUE DE MENÚ DE NAVEGACIÓN Y SUBMENÚ */
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: #00334e; /* Azul petróleo */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: #fdfaf6; /* Marfil claro */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #d88c00; /* Ocre-naranja */
+}
+
+/* 📂 SUBMENÚ */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #00334e;
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  min-width: 180px;
+  display: none;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
 /* Fondo general blanco */
 body,
 .section,
