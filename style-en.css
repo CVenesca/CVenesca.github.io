@@ -1,4 +1,5 @@
 /* 🔄 Basic Reset */
+/* Resets default browser styles to ensure a consistent base for all elements. */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@
 }
 
 /* 🌐 Typography and Scroll Behavior */
+/* Defines smooth scrolling behavior and general font styles for the document body. */
 html {
   scroll-behavior: smooth;
 }
@@ -18,6 +20,7 @@ body {
 }
 
 /* 🎨 Variables */
+/* Stores reusable colors to facilitate the visual theme management of the page. */
 :root {
   --primary-color: #d88c00;        /* Ocre-orange */
   --secondary-color: #00334e;      /* Petroleum blue */
@@ -28,6 +31,7 @@ body {
 }
 
 /* 🔷 Navigation Menu and Submenu */
+/* Controls the layout and interactivity of the main navigation menu, including its sticky behavior at the top and the display of submenus. */
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -100,6 +104,7 @@ body {
 }
 
 /* 📢 Alert Banner */
+/* Styles the top notification bar, commonly used for important messages or alerts. */
 .banner-aviso {
   background-color: #fff3cd;
   color: #856404;
@@ -111,6 +116,7 @@ body {
 }
 
 /* 🧩 General Sections */
+/* Defines basic styles for the main content sections of the page, including their spacing and alignment. */
 .section {
   padding: 80px 20px;
   max-width: 1200px;
@@ -135,6 +141,7 @@ h1, h2, h3 {
 }
 
 /* 🖼️ Images and Visual Content */
+/* Manages the appearance of images in general and the layout of content blocks that combine text and images, such as the "About Us" section. */
 img {
   max-width: 100%;
   height: auto;
@@ -159,7 +166,7 @@ img {
 
 .content-block img {
   flex: 1 1 65%;
-  max-height: 280px;
+  max-height: 364px; /* <--- Adjusted height for "About Us" image */
   object-fit: cover;
   border-radius: 6px;
 }
@@ -169,6 +176,7 @@ img {
 }
 
 /* 🧃 Cards: Mission, Vision, and Values */
+/* Defines the styles for information cards, such as those used to present the company's mission, vision, and values. */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -192,11 +200,10 @@ img {
 }
 
 .info-card img {
-  max-width: 100px;
+  max-width: 150px; /* Aumentado un 50% de 100px */
   height: auto;
   margin-bottom: 20px;
 }
-
 .info-card h3 {
   font-size: 1.4rem;
   margin-bottom: 12px;
@@ -221,6 +228,7 @@ img {
 }
 
 /* 🛒 Services and Data Sheets */
+/* Organizes and styles service cards and lists of links for downloading product data sheets. */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -241,10 +249,10 @@ img {
 }
 
 .service-card img {
-  width: 80px;
+  width: 120px; /* <--- Increased by 50% from 80px */
+  height: auto;
   margin-bottom: 20px;
 }
-
 .service-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
@@ -280,6 +288,7 @@ img {
 }
 
 /* 🪟 Hero with Background Image */
+/* Defines the style of the main welcome section with a background image, logo, and featured content. */
 .hero {
   position: relative;
   height: 100vh;
@@ -339,6 +348,7 @@ img {
 }
 
 /* 🎯 Buttons */
+/* Styles the call-to-action (CTA) buttons to make them visible and attractive. */
 .cta-button {
   background-color: var(--primary-color);
   color: white;
