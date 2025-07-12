@@ -156,22 +156,29 @@ img {
 }
 
 .content-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
+  /* Cambiamos a un flujo de bloque estándar para que los elementos se apilen */
+  display: block; /* Esto anula el display: flex anterior */
+  gap: 40px; /* Aunque ya no es flex, lo mantenemos por si se usa en otro contexto */
   margin-bottom: 60px;
+  text-align: center; /* Centramos el contenido dentro del bloque */
 }
 
 .content-block img {
-  flex: 1 1 80%; /* <--- Ancho del contenedor de la imagen ajustado al 80% */
+  /* La imagen ocupará el 80% del ancho del bloque de contenido y estará centrada */
+  max-width: 80%; /* <--- La imagen ocupa el 80% del ancho del contenedor */
   max-height: 400px; /* <--- Altura máxima de la imagen ajustada a 400px */
   object-fit: contain; /* Asegura que la imagen se escale para caber sin recortarse */
   border-radius: 6px;
+  margin: 0 auto 30px; /* Centra la imagen horizontalmente y añade espacio debajo */
+  display: block; /* Asegura que la imagen sea un bloque para aplicar margin: auto */
 }
 
 .content-block div {
-  flex: 1 1 15%; /* Ajusta el ancho del texto para que el bloque de imagen ocupe el 80% */
+  /* El texto se alineará debajo de la imagen y ocupará el 100% del ancho disponible */
+  width: 100%; /* El div de texto ocupará el 100% del ancho disponible */
+  max-width: 800px; /* Opcional: limitar el ancho máximo del texto para legibilidad */
+  margin: 0 auto; /* Centra el bloque de texto */
+  text-align: left; /* Alinea el texto a la izquierda dentro de su propio bloque */
 }
 /* 🧃 Tarjetas: Misión, Visión y Valores */
 /* Define los estilos para las tarjetas de información, como las utilizadas para presentar la misión, visión y valores de la empresa. */
