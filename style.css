@@ -254,10 +254,14 @@ img {
   transform: translateY(-6px);
 }
 
+/* Ajuste para asegurar el tamaño consistente de todas las imágenes dentro de las tarjetas de servicio */
 .service-card img {
-  width: 360px; /* <--- Tamaño incrementado para las imágenes de servicios y productos (antes 320px) */
-  height: auto;
+  width: 360px; /* <--- Tamaño deseado para todas las imágenes de servicio */
+  height: auto; /* Mantiene la proporción */
   margin-bottom: 20px;
+  /* Si la imagen de "Comercialización de Azúcar" aún no se ajusta, 
+     puedes intentar añadir !important (usar con precaución): */
+  /* width: 360px !important; */
 }
 
 .service-card h3 {
