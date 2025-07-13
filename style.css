@@ -372,3 +372,12 @@ img {
   background-color: var(--color-acento);
   color: var(--color-secundario);
 }
+/* Estilos para la imagen en la sección "Quiénes Somos" */
+.about-us-img {
+  width: 80%; /* La imagen ocupará el 80% del ancho de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Para que se comporte como un bloque y acepte 'margin: auto' */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  /* Puedes añadir un poco de margen superior/inferior si lo deseas */
+  margin-top: 20px;
+  margin-bottom: 20px;
