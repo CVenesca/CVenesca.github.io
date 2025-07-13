@@ -374,8 +374,8 @@ img {
 }
 /* Estilos para la imagen en la sección "Quiénes Somos" */
 .about-us-img {
-  width: 100%;       /* Ocupa todo el ancho disponible del contenedor */
-  max-width: 80%;    /* Pero no más del 80% del ancho de la página */
+  width: 150%;       /* Ocupa todo el ancho disponible del contenedor */
+  max-width: 100%;    /* Pero no más del 80% del ancho de la página */
   height: auto;      /* Mantiene la forma de la imagen para que no se vea estirada */
   display: block;    /* Permite centrarla con 'margin: auto' */
   margin: 0 auto;    /* Centra la imagen horizontalmente */
