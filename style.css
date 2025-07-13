@@ -183,7 +183,7 @@ img {
 
 .content-block img {
   /* The image will take 80% of the content block width and be centered */
-  max-width: 80%; /* <--- Image takes 80% of container width */
+  max-width: 100%; /* <--- Image takes 80% of container width */
   max-height: 400px; /* <--- Maximum image height adjusted to 400px */
   object-fit: contain; /* Ensures the image scales to fit without cropping */
   border-radius: 6px;
@@ -194,7 +194,7 @@ img {
 .content-block div {
   /* Text will align below the image and take 100% of available width */
   width: 100%; /* Text div will take 100% of available width */
-  max-width: 800px; /* Optional: limit max text width for readability */
+  max-width: 1000px; /* Optional: limit max text width for readability */
   margin: 0 auto; /* Centers the text block */
   text-align: left; /* Aligns text to the left within its own block */
 }
@@ -225,7 +225,7 @@ img {
 }
 
 .info-card img {
-  max-width: 250px; /* Reduced to 50% of previous size (from 200px to 100px) */
+  max-width: 280px; /* Reduced to 50% of previous size (from 200px to 100px) */
   height: auto;
   margin-bottom: 20px;
 }
