@@ -374,10 +374,21 @@ img {
 }
 /* Estilos para la imagen en la sección "Quiénes Somos" */
 .about-us-img {
-  width: 120%; /* La imagen ocupará el 80% del ancho de su contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  display: block; /* Para que se comporte como un bloque y acepte 'margin: auto' */
-  margin: 0 auto; /* Centra la imagen horizontalmente */
-  /* Puedes añadir un poco de margen superior/inferior si lo deseas */
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: 100%;       /* Ocupa todo el ancho disponible del contenedor */
+  max-width: 80%;    /* Pero no más del 80% del ancho de la página */
+  height: auto;      /* Mantiene la forma de la imagen para que no se vea estirada */
+  display: block;    /* Permite centrarla con 'margin: auto' */
+  margin: 0 auto;    /* Centra la imagen horizontalmente */
+  margin-top: 20px;  /* Espacio arriba de la imagen */
+  margin-bottom: 20px; /* Espacio abajo de la imagen */
+  border-radius: 8px; /* Esquinas ligeramente redondeadas */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Una pequeña sombra para que destaque */
+}
+
+/* Esto es OPCIONAL, pero mejora cómo se ve el texto debajo de la imagen */
+#quienes-somos div {
+    max-width: 800px; /* El texto no será demasiado ancho, lo que facilita la lectura */
+    margin: 0 auto; /* Centra el bloque de texto */
+    text-align: left; /* Alinea el texto a la izquierda dentro de su bloque */
+    padding: 0 20px; /* Un pequeño espacio a los lados para que el texto no toque los bordes */
+}
