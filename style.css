@@ -24,10 +24,10 @@ body {
 :root {
   --color-primario: #d88c00;          /* Ochre-orange */
   --color-secundario: #00334e;        /* Petrol blue */
-  --color-fondo-claro: #fdfaf6;       /* Soft ivory */
-  --color-texto: #2e2e2e;             /* Charcoal gray */
-  --color-acento: #f4b860;            /* Pastel orange */
-  --color-banner: #ffe8b0;            /* Sand yellow */
+  --color-fondo-claro: #fdfaf6;        /* Soft ivory */
+  --color-texto: #2e2e2e;              /* Charcoal gray */
+  --color-acento: #f4b860;             /* Pastel orange */
+  --color-banner: #ffe8b0;             /* Sand yellow */
 }
 
 /* 🔷 Navigation Menu and Submenu */
@@ -143,8 +143,9 @@ body {
 /* Defines basic styles for the main content sections of the page, including spacing and alignment. */
 .section {
   padding: 80px 20px;
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1200px; /* Ancho máximo para el contenido de las secciones */
+  margin: auto; /* Centra la sección */
+  text-align: center; /* Por defecto, centra el texto en la sección */
 }
 
 .section-light {
@@ -163,6 +164,7 @@ h1, h2, h3 {
   color: var(--color-primario);
   margin-bottom: 10px;
 }
+
 /* 🖼️ Images and Visual Content */
 /* Manages the general appearance of images and the layout of content blocks that combine text and images, such as the "About Us" section. */
 img {
@@ -173,31 +175,36 @@ img {
   margin: 0 auto;
 }
 
+/* --- Estilos para la Sección "Quiénes Somos" (content-block) --- */
 .content-block {
-  /* Changed to standard block flow so elements stack */
-  display: block; /* This overrides the previous display: flex */
-  gap: 40px; /* Even if no longer flex, kept in case it's used elsewhere */
+  /* No uses 'display: flex' aquí si quieres que la imagen y el texto estén uno encima del otro */
+  display: block; /* Asegura que la imagen y el div de texto se apilen */
+  gap: 40px; /* Se mantiene para referencia, pero no aplica si display es block */
   margin-bottom: 60px;
-  text-align: center; /* Centers content within the block */
+  text-align: center; /* Centra el contenido general dentro del bloque */
 }
 
-.content-block img {
-  /* The image will take 80% of the content block width and be centered */
-  max-width: 150%; /* <--- Image takes 80% of container width */
-  max-height: 400px; /* <--- Maximum image height adjusted to 400px */
-  object-fit: contain; /* Ensures the image scales to fit without cropping */
-  border-radius: 6px;
-  margin: 0 auto 30px; /* Centers image horizontally and adds space below */
-  display: block; /* Ensures the image is a block to apply margin: auto */
+/* --- Estilos para la Imagen Específica en la Sección "Quiénes Somos" --- */
+.about-us-img {
+  width: 100%;       /* Ocupa todo el ancho disponible del contenedor */
+  max-width: 80%;    /* Limita el ancho máximo al 80% del ancho del 'container' padre (o del viewport) */
+  height: auto;      /* Mantiene la proporción de la imagen */
+  display: block;    /* Permite centrarla con 'margin: auto' */
+  margin: 0 auto;    /* Centra la imagen horizontalmente */
+  margin-top: 20px;  /* Espacio arriba de la imagen */
+  margin-bottom: 20px; /* Espacio abajo de la imagen */
+  border-radius: 8px; /* Esquinas ligeramente redondeadas */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Una pequeña sombra para que destaque */
 }
 
-.content-block div {
-  /* Text will align below the image and take 100% of available width */
-  width: 100%; /* Text div will take 100% of available width */
-  max-width: 1000px; /* Optional: limit max text width for readability */
-  margin: 0 auto; /* Centers the text block */
-  text-align: left; /* Aligns text to the left within its own block */
+/* Estilos para el texto dentro de la sección "Quiénes Somos" */
+#quienes-somos div, #about-us div { /* Aplica a ambas versiones de la sección */
+    max-width: 800px; /* El texto no será demasiado ancho, lo que facilita la lectura */
+    margin: 0 auto; /* Centra el bloque de texto */
+    text-align: left; /* Alinea el texto a la izquierda dentro de su propio bloque */
+    padding: 0 20px; /* Un pequeño espacio a los lados para que el texto no toque los bordes */
 }
+
 
 /* 🧃 Cards: Mission, Vision, and Values */
 /* Defines styles for information cards, such as those used to present the company's mission, vision, and values. */
@@ -225,7 +232,7 @@ img {
 }
 
 .info-card img {
-  max-width: 280px; /* Reduced to 50% of previous size (from 200px to 100px) */
+  max-width: 250px; /* Reduced to 50% of previous size (from 200px to 100px) */
   height: auto;
   margin-bottom: 20px;
 }
@@ -372,23 +379,198 @@ img {
   background-color: var(--color-acento);
   color: var(--color-secundario);
 }
-/* Estilos para la imagen en la sección "Quiénes Somos" */
-.about-us-img {
-  width: 100%;       /* Ocupa todo el ancho disponible del contenedor */
-  max-width: 100%;    /* Pero no más del 80% del ancho de la página */
-  height: auto;      /* Mantiene la forma de la imagen para que no se vea estirada */
-  display: block;    /* Permite centrarla con 'margin: auto' */
-  margin: 0 auto;    /* Centra la imagen horizontalmente */
-  margin-top: 20px;  /* Espacio arriba de la imagen */
-  margin-bottom: 20px; /* Espacio abajo de la imagen */
-  border-radius: 8px; /* Esquinas ligeramente redondeadas */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Una pequeña sombra para que destaque */
+
+/* --- Nuevos y/o Modificados Estilos para la Sección de Aves (Poultry) y su Banner --- */
+
+/* Estilos para la nueva sección de Aves/Poultry */
+#pagina-aves, #pagina-poultry { /* Aplica a ambas versiones de la sección */
+    background-color: var(--color-fondo-claro); /* Un color de fondo suave para diferenciarla */
+    padding-top: 40px;
+    padding-bottom: 80px;
 }
 
-/* Esto es OPCIONAL, pero mejora cómo se ve el texto debajo de la imagen */
-#quienes-somos div {
-    max-width: 800px; /* El texto no será demasiado ancho, lo que facilita la lectura */
-    margin: 0 auto; /* Centra el bloque de texto */
-    text-align: left; /* Alinea el texto a la izquierda dentro de su bloque */
-    padding: 0 20px; /* Un pequeño espacio a los lados para que el texto no toque los bordes */
+#pagina-aves h2, #pagina-poultry h2 { /* Título principal de la sección (el que está ANTES del banner) */
+    font-size: 2.5em;
+    color: var(--color-primario); /* Usando la variable de color primario */
+    margin-bottom: 30px;
+}
+
+/* Contenedor del banner para posicionar el título */
+.banner-container {
+  position: relative; /* Clave para posicionar el título de forma absoluta */
+  width: 90%; /* Ancho que ocupará el contenedor del banner */
+  max-width: 1000px; /* Ancho máximo para el banner */
+  margin: 20px auto 40px auto; /* Centra el banner y añade márgenes */
+  /* Si usas AOS en el banner, podrías considerar poner data-aos en este div */
+}
+
+/* Estilos del TÍTULO SUPERPUESTO al banner */
+.banner-titulo {
+  position: absolute; /* Permite superponer el título */
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste fino para centrar el texto completo */
+  font-family: 'Times New Roman', serif; /* Fuente New Roman */
+  font-weight: bold; /* Negrilla */
+  font-size: 30px; /* Tamaño de la letra */
+  color: white; /* Color blanco, ajusta si tu banner lo requiere */
+  text-align: center; /* Centra el texto en caso de múltiples líneas */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para mejor legibilidad */
+  z-index: 1; /* Asegura que esté encima de la imagen */
+  white-space: nowrap; /* Evita que el texto se rompa innecesariamente en una línea */
+}
+
+/* Estilos para la imagen del banner (ahora dentro de .banner-container) */
+.banner-container .banner-imagen {
+  width: 100%; /* La imagen ocupa todo el ancho de su contenedor (.banner-container) */
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Esquinas redondeadas */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Sombra */
+}
+
+/* Estilos para la introducción de la sección de aves */
+.introduccion-aves {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: left;
+    line-height: 1.7;
+    color: var(--color-texto);
+}
+
+.introduccion-aves p {
+    margin-bottom: 15px;
+}
+
+/* Estilos para la galería de cortes de pollo */
+.galeria-aves h3 {
+    font-size: 2em;
+    color: var(--color-primario);
+    margin-bottom: 30px;
+}
+
+.grid-aves {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre los elementos */
+    margin-bottom: 50px;
+}
+
+.item-ave {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.item-ave:hover {
+    transform: translateY(-5px);
+}
+
+.item-ave img {
+    max-width: 100%;
+    height: 180px; /* Altura fija para la consistencia de las imágenes */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.item-ave h4 {
+    font-size: 1.3em;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.item-ave p {
+    font-size: 0.95em;
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+/* Estilos para la información adicional de aves */
+.info-aves {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    color: var(--color-texto);
+    line-height: 1.7;
+}
+
+.info-aves h3 {
+    font-size: 1.8em;
+    color: var(--color-primario);
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 15px; /* Menos padding en móviles */
+    }
+    .main-nav {
+        padding: 16px 20px; /* Ajuste de padding para nav */
+    }
+    .nav-links {
+        gap: 20px; /* Menos espacio entre links */
+    }
+    .language-switcher {
+        top: 80px; /* Ajuste para el switcher */
+    }
+    .hero-logo {
+        width: 300px; /* Logo más pequeño en móviles */
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Quienes Somos */
+    .about-us-img {
+        width: 95%; /* Un poco más de ancho en móviles para la imagen de Quiénes Somos */
+        max-width: 95%; /* Asegura que no se estire demasiado */
+    }
+    #quienes-somos div, #about-us div {
+        padding: 0 10px; /* Más padding lateral para el texto */
+    }
+
+    /* Sección de Aves/Poultry */
+    #pagina-aves h2, #pagina-poultry h2 {
+        font-size: 2em;
+    }
+    .banner-container {
+        width: 95%; /* Ajuste del ancho del banner en móviles */
+    }
+    .banner-titulo {
+        font-size: 24px; /* Reduce el tamaño del texto del banner en pantallas más pequeñas */
+        white-space: normal; /* Permite que el texto se rompa en varias líneas */
+        padding: 0 10px; /* Pequeño relleno para evitar que el texto toque los bordes */
+    }
+    .grid-aves {
+        grid-template-columns: 1fr; /* Una columna para la galería en móviles */
+    }
+    .item-ave img {
+        height: 150px; /* Ajusta la altura de las imágenes de los cortes */
+    }
+    .info-aves h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-titulo {
+        font-size: 20px; /* Aún más pequeño en móviles muy pequeños */
+    }
+    .service-grid {
+        grid-template-columns: 1fr; /* Una columna para los servicios en móviles muy pequeños */
+    }
+    .service-card img {
+      width: 100% !important; /* Ajusta el tamaño de las imágenes de las tarjetas de servicio en móviles pequeños */
+    }
 }
