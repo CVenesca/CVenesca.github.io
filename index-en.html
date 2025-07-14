@@ -1,503 +1,1398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.cvenesca.com/index-en.html" />
-  <title>CVenesca Group LLC | Global Sugar Trading & Strategic Logistics</title>
-  <meta name="description" content="CVenesca Group LLC connects global markets through ICUMSA sugar trading, DDP import services in the USA, GACC certifications for China, and strategic logistics solutions.">
-  <meta name="keywords" content="ICUMSA sugar, international trade, DDP, GACC, export, import, logistics, CVenesca">
-  <meta name="author" content="CVenesca Group LLC">
-  <link rel="stylesheet" href="style-en.css" /> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <link rel="alternate" hreflang="es" href="https://www.cvenesca.com/" />
-  <link rel="alternate" hreflang="en" href="https://www.cvenesca.com/index-en.html" />
-  <link rel="alternate" hreflang="x-default" href="https://www.cvenesca.com/index-en.html" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.cvenesca.com/index-en.html" />
+    <title>CVenesca Group LLC | Global Sugar Trading & Strategic Logistics</title>
+    <meta name="description" content="CVenesca Group LLC connects global markets through ICUMSA sugar trading, DDP import services in the USA, GACC certifications for China, and strategic logistics solutions.">
+    <meta name="keywords" content="ICUMSA sugar, international trade, DDP, GACC, export, import, logistics, CVenesca">
+    <meta name="author" content="CVenesca Group LLC">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="alternate" hreflang="es" href="https://www.cvenesca.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.cvenesca.com/index-en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cvenesca.com/index-en.html" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+        /* 🔄 Reinicio Básico */
+        /* Restablece los estilos predeterminados del navegador para asegurar una base consistente en todos los elementos. */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 🌐 Tipografía y Desplazamiento */
+        /* Define el comportamiento de desplazamiento suave y los estilos de fuente generales para el cuerpo del documento. */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--color-texto);
+            background-color: var(--color-fondo-claro);
+        }
+
+        /* 🎨 Variables */
+        /* Almacena colores reutilizables para facilitar la gestión del tema visual de la página. */
+        :root {
+            --color-primario: #d88c00;          /* Naranja ocre */
+            --color-secundario: #00334e;        /* Azul petróleo */
+            --color-fondo-claro: #fdfaf6;        /* Marfil suave */
+            --color-texto: #2e2e2e;              /* Gris carbón */
+            --color-acento: #f4b860;             /* Naranja pastel */
+            --color-banner: #ffe8b0;             /* Amarillo arena */
+        }
+
+        /* 🔷 Menú de Navegación y Submenú */
+        /* Controla el diseño y la interactividad del menú de navegación principal, incluyendo su comportamiento fijo en la parte superior y la visualización del submenú. */
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            background-color: var(--color-secundario);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links li a {
+            color: var(--color-fondo-claro);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--color-primario);
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--color-secundario);
+            list-style: none;
+            padding: 12px 0;
+            margin: 0;
+            min-width: 180px;
+            display: none;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .submenu li {
+            padding: 8px 20px;
+        }
+
+        .submenu li a {
+            color: var(--color-fondo-claro);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .submenu li a:hover {
+            background-color: var(--color-primario);
+            color: white;
+        }
+
+        .nav-links li:hover .submenu {
+            display: block;
+        }
+
+        /* 📢 Banner de Alerta */
+        /* Estiliza la barra de notificación superior, comúnmente utilizada para mensajes o alertas importantes. */
+        .banner-aviso {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 1rem;
+            border-bottom: 2px solid #ffeeba;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* --- INICIO: Estilos del Selector de Idioma Integrado --- */
+        .language-switcher {
+            position: absolute; /* Permite el posicionamiento con `top` y `right` */
+            top: 110px; /* Separación superior, ajustar si es necesario */
+            right: 20px; /* Separación del borde derecho */
+            z-index: 1001; /* Asegura que esté por encima de otros elementos */
+            display: flex; /* Para que las banderas estén en línea */
+            gap: 10px; /* Separación entre banderas */
+            align-items: center; /* Centra verticalmente las banderas si tienen diferentes alturas */
+        }
+
+        .language-switcher img {
+            width: 32px; /* Ligeramente más grande para una mejor visibilidad */
+            height: auto;
+            border-radius: 4px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil para resaltarlas */
+        }
+
+        .language-switcher img:hover {
+            transform: scale(1.1); /* Efecto de hover */
+        }
+        /* --- FIN: Estilos del Selector de Idioma Integrado --- */
+
+        /* 🧩 Secciones Generales */
+        /* Define estilos básicos para las principales secciones de contenido de la página, incluyendo espaciado y alineación. */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px; /* Ancho máximo para el contenido de las secciones */
+            margin: auto; /* Centra la sección */
+            text-align: center; /* Por defecto, centra el texto en la sección */
+        }
+
+        .section-light {
+            background-color: var(--color-fondo-claro);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            color: var(--color-primario);
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        h1, h2, h3 {
+            color: var(--color-primario);
+            margin-bottom: 10px;
+        }
+
+        /* 🖼️ Imágenes y Contenido Visual */
+        /* Gestiona la apariencia general de las imágenes y el diseño de los bloques de contenido que combinan texto e imágenes, como la sección "Quiénes Somos". */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* --- Estilos para la Sección "Quiénes Somos" (content-block) --- */
+        .content-block {
+            /* No uses 'display: flex' aquí si quieres que la imagen y el texto estén uno encima del otro */
+            display: block; /* Asegura que la imagen y el div de texto se apilen */
+            gap: 40px; /* Se mantiene para referencia, pero no aplica si display es block */
+            margin-bottom: 60px;
+            text-align: center; /* Centra el contenido general dentro del bloque */
+        }
+
+        /* --- Estilos para la Imagen Específica en la Sección "Quiénes Somos" --- */
+        .about-us-img {
+            width: 100%;        /* Ocupa todo el ancho disponible del contenedor */
+            max-width: 80%;    /* Limita el ancho máximo al 80% del ancho del 'container' padre (o del viewport) */
+            height: auto;      /* Mantiene la proporción de la imagen */
+            display: block;    /* Permite centrarla con 'margin: auto' */
+            margin: 0 auto;    /* Centra la imagen horizontalmente */
+            margin-top: 20px;  /* Espacio arriba de la imagen */
+            margin-bottom: 20px; /* Espacio abajo de la imagen */
+            border-radius: 8px; /* Esquinas ligeramente redondeadas */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Una pequeña sombra para que destaque */
+        }
+
+        /* Estilos para el texto dentro de la sección "Quiénes Somos" */
+        #quienes-somos div, #about-us div { /* Aplica a ambas versiones de la sección */
+            max-width: 800px; /* El texto no será demasiado ancho, lo que facilita la lectura */
+            margin: 0 auto; /* Centra el bloque de texto */
+            text-align: left; /* Alinea el texto a la izquierda dentro de su propio bloque */
+            padding: 0 20px; /* Un pequeño espacio a los lados para que el texto no toque los bordes */
+        }
+
+
+        /* 🧃 Tarjetas: Misión, Visión y Valores */
+        /* Define estilos para las tarjetas de información, como las utilizadas para presentar la misión, visión y valores de la empresa. */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            align-items: stretch; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
+        }
+
+        .info-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            padding: 30px 25px;
+            max-width: 320px;
+            flex: 1 1 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .info-card img {
+            max-width: 250px; /* Reducido al 50% del tamaño anterior (de 200px a 100px) */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .info-card p,
+        .info-card ul {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-texto);
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li::before {
+            content: "• ";
+            color: var(--color-acento);
+            font-weight: bold;
+        }
+
+        /* 🛒 Servicios y Fichas Técnicas */
+        /* Organiza y estiliza las tarjetas de servicio y las listas de enlaces para descargar fichas técnicas de productos. */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Aumentado a 380px para fichas técnicas más grandes */
+            gap: 30px;
+            justify-content: center; /* Centra las columnas de la cuadrícula si no llenan todo el ancho */
+            align-items: stretch; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* Ajuste para asegurar un tamaño consistente de todas las imágenes dentro de las tarjetas de servicio */
+        .service-card img {
+            width: 360px !important; /* ¡Asegúrate de que !important esté aquí! */
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--color-primario);
+        }
+
+        .service-card p,
+        .service-card ul {
+            font-size: 1rem;
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        /* 🪟 Hero con Fondo e Imagen */
+        /* Define el estilo para la sección principal de bienvenida con una imagen de fondo, logotipo y contenido destacado. */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            padding-bottom: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75);
+            z-index: 0;
+        }
+
+        .hero-logo {
+            width: 460px;
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 30px;
+            position: relative;
+            top: 40px;
+        }
+
+        .hero-overlay {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            width: 90%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: var(--color-primario);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* 🎯 Botones */
+        /* Estiliza los botones de llamada a la acción (CTA) para hacerlos visibles y atractivos. */
+        .cta-button {
+            background-color: var(--color-primario);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-acento);
+            color: var(--color-secundario);
+        }
+
+        /* --- Nuevos y/o Modificados Estilos para la Sección de Aves (Poultry) y su Banner --- */
+
+        /* Estilos para la nueva sección de Aves/Poultry */
+        #pagina-aves, #pagina-poultry { /* Aplica a ambas versiones de la sección */
+            background-color: var(--color-fondo-claro); /* Un color de fondo suave para diferenciarla */
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+
+        #pagina-aves h2, #pagina-poultry h2 { /* Título principal de la sección (el que está ANTES del banner) */
+            font-size: 2.5em;
+            color: var(--color-primario); /* Usando la variable de color primario */
+            margin-bottom: 30px;
+        }
+
+        /* Contenedor del banner para posicionar el título */
+        .banner-container {
+            position: relative; /* Clave para posicionar el título de forma absoluta */
+            width: 90%; /* Ancho que ocupará el contenedor del banner */
+            max-width: 1000px; /* Ancho máximo para el banner */
+            margin: 20px auto 40px auto; /* Centra el banner y añade márgenes */
+            /* Si usas AOS en el banner, podrías considerar poner data-aos en este div */
+        }
+
+        /* Estilos del TÍTULO SUPERPUESTO al banner */
+        .banner-titulo {
+            position: absolute; /* Permite superponer el título */
+            top: 50%; /* Centra verticalmente */
+            left: 50%; /* Centra horizontalmente */
+            transform: translate(-50%, -50%); /* Ajuste fino para centrar el texto completo */
+            font-family: 'Times New Roman', serif; /* Fuente New Roman */
+            font-weight: bold; /* Negrilla */
+            font-size: 30px; /* Tamaño de la letra */
+            color: white; /* Color blanco, ajusta si tu banner lo requiere */
+            text-align: center; /* Centra el texto en caso de múltiples líneas */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para mejor legibilidad */
+            z-index: 1; /* Asegura que esté encima de la imagen */
+            white-space: nowrap; /* Evita que el texto se rompa innecesariamente en una línea */
+        }
+
+        /* Estilos para la imagen del banner (ahora dentro de .banner-container) */
+        .banner-container .banner-imagen {
+            width: 100%; /* La imagen ocupa todo el ancho de su contenedor (.banner-container) */
+            height: auto;
+            display: block;
+            border-radius: 8px; /* Esquinas redondeadas */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Sombra */
+        }
+
+        /* Estilos para la introducción de la sección de aves */
+        .introduccion-aves {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            text-align: left;
+            line-height: 1.7;
+            color: var(--color-texto);
+        }
+
+        .introduccion-aves p {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para la galería de cortes de pollo */
+        .galeria-aves h3 {
+            font-size: 2em;
+            color: var(--color-primario);
+            margin-bottom: 30px;
+        }
+
+        .grid-aves {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+            gap: 30px; /* Espacio entre los elementos */
+            margin-bottom: 50px;
+        }
+
+        .item-ave {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .item-ave:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-ave img {
+            max-width: 100%;
+            height: 180px; /* Altura fija para la consistencia de las imágenes */
+            object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .item-ave h4 {
+            font-size: 1.3em;
+            color: var(--color-primario);
+            margin-bottom: 10px;
+        }
+
+        .item-ave p {
+            font-size: 0.95em;
+            color: var(--color-texto);
+            line-height: 1.5;
+        }
+
+        /* Estilos para la información adicional de aves */
+        .info-aves {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            color: var(--color-texto);
+            line-height: 1.7;
+        }
+
+        .info-aves h3 {
+            font-size: 1.8em;
+            color: var(--color-primario);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        /* --- Estilos para la Sección de Información General del Azúcar (VERSIÓN MEJORADA) --- */
+        #informacion {
+            background-color: var(--color-fondo-claro);
+            padding: 100px 0; /* Más padding para que respire más la sección */
+            text-align: center;
+        }
+
+        #informacion .section-title {
+            font-size: 3em; /* Título principal más impactante */
+            color: var(--color-primario);
+            margin-bottom: 60px; /* Más espacio debajo del título principal */
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        #informacion .section-title::after { /* Elemento decorativo debajo del título */
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-acento);
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        #informacion .introduccion-info {
+            max-width: 900px;
+            margin: 0 auto 80px auto; /* Aumenta el espacio */
+            font-size: 1.2em; /* Texto introductorio más grande y legible */
+            line-height: 1.9;
+            color: var(--color-texto);
+            text-align: center;
+        }
+
+        /* Contenedor principal de cada bloque informativo (Tipos de Azúcar, País, Consideraciones) */
+        .info-block {
+            background-color: #fff;
+            border-radius: 15px; /* Bordes más redondeados para un look más suave */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más profunda y definida */
+            padding: 50px; /* Más padding interno */
+            margin-bottom: 80px; /* Más espacio entre bloques principales */
+            text-align: left;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .info-block:hover {
+            transform: translateY(-8px); /* Elevación sutil al pasar el ratón */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
+        }
+
+        .info-block h3 {
+            font-size: 2.4em; /* Subtítulos de bloque más grandes y prominentes */
+            color: var(--color-secundario);
+            margin-bottom: 35px; /* Más espacio debajo del subtítulo de bloque */
+            position: relative;
+            padding-bottom: 12px;
+            text-align: center;
+            font-weight: 600; /* Asegura que sea negrita */
+            letter-spacing: 0.5px; /* Ligero espaciado entre letras para claridad */
+        }
+
+        .info-block h3::after { /* Línea de acento debajo del subtítulo de bloque */
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background-color: var(--color-primario);
+            margin: 10px auto 0 auto;
+            border-radius: 1.5px;
+        }
+
+        /* Contenedor para el texto e imagen dentro de cada info-block */
+        .info-content-wrapper {
+            display: flex;
+            align-items: center; /* Centra verticalmente imagen y texto */
+            gap: 50px; /* Más espacio entre imagen y contenido */
+        }
+
+        /* Contenedor de la imagen dentro de un info-block */
+        .info-image-container {
+            flex: 0 0 400px; /* Adjusted flex-basis for better balance */
+            max-width: 40%; /* Adjusted max-width for better balance */
+            border-radius: 10px;
+            overflow: hidden; /* Crucial for object-fit: cover */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra de imagen más suave */
+            background-color: #f8f8f8; /* Fondo para si la imagen no carga */
+            padding: 15px; /* More padding around the image */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease; /* Transición para efecto hover */
+        }
+
+        .info-image-container:hover {
+            transform: scale(1.02); /* Pequeño zoom al pasar el ratón */
+        }
+
+        .info-image-container .info-image {
+            width: 100%;
+            height: 300px; /* Altura fija para un tamaño de imagen consistente */
+            object-fit: cover; /* Asegura que la imagen cubra el área, recortando si es necesario */
+            display: block;
+            border-radius: 8px; /* Bordes ligeramente más redondeados */
+            margin: 0;
+        }
+
+        .image-caption {
+            font-size: 0.95em; /* Tamaño de la leyenda ligeramente más grande */
+            color: #777;
+            margin-top: 15px; /* Más espacio encima de la leyenda */
+            line-height: 1.5;
+            font-style: italic; /* Texto de la leyenda en cursiva */
+        }
+
+        /* Contenedor para el texto cuando hay una imagen al lado */
+        .info-text-content {
+            flex: 1;
+        }
+
+        .info-text-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-text-content ul li {
+            position: relative;
+            padding-left: 30px; /* Más espacio para el bullet */
+            margin-bottom: 15px; /* Más espacio entre elementos de lista */
+            line-height: 1.7;
+            color: var(--color-texto);
+            font-size: 1.05em; /* Texto de lista un poco más grande */
+        }
+
+        .info-text-content ul li strong {
+            color: var(--color-secundario); /* Destaca los strong */
+        }
+
+        .info-text-content ul li::before {
+            content: "•";
+            color: var(--color-primario);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em; /* Bullet más grande */
+        }
+
+        /* Estilos específicos para el texto cuando ocupa todo el ancho (en Consideraciones) */
+        .full-width-text {
+            flex: 1 1 100%;
+            max-width: 900px; /* Aumenta el ancho máximo para el texto general */
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .full-width-text p {
+            margin-bottom: 25px;
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: var(--color-texto);
+        }
+
+        /* Contenedor para la rejilla de tarjetas de información (proyecciones, logística, instituciones) */
+        .info-grid-content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ancho mínimo ajustado */
+            gap: 40px; /* Más espacio entre las tarjetas de la cuadrícula */
+            align-items: stretch;
+        }
+
+        /* Estilos para cada "ficha" individual de información (Proyecciones, Logística, Instituciones) */
+        .info-card {
+            background-color: var(--color-fondo-claro);
+            border-radius: 12px; /* Bordes redondeados */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para cada tarjeta */
+            padding: 30px; /* Más padding interno */
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Alinea el contenido de la tarjeta arriba */
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px); /* Elevación al pasar el ratón */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más intensa al pasar el ratón */
+        }
+
+        .info-card h4 {
+            font-size: 1.5em; /* Título de tarjeta más prominente */
+            color: var(--color-primario);
+            margin-bottom: 20px; /* Más espacio */
+            border-bottom: 2px solid var(--color-acento); /* Línea de acento más notoria */
+            padding-bottom: 10px;
+            font-weight: 600; /* Ligeramente más negrita */
+        }
+
+        .info-card p {
+            font-size: 1em; /* Texto de párrafo en la tarjeta */
+            line-height: 1.7;
+            color: var(--color-texto);
+            flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible, empujando el contenido hacia abajo si es necesario */
+        }
+
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 992px) {
+            .section {
+                padding: 60px 20px;
+            }
+            .info-block {
+                padding: 40px; /* Ajusta el padding en tablets */
+                margin-bottom: 60px;
+            }
+
+            .info-block h3 {
+                font-size: 2.2em;
+                margin-bottom: 30px;
+            }
+
+            .info-content-wrapper {
+                flex-direction: column; /* Apila el contenido (imagen y texto) en tablets */
+                align-items: center; /* Centra los elementos apilados */
+                gap: 30px; /* Menos espacio apilado */
+            }
+
+            .info-image-container {
+                flex: none;
+                max-width: 80%; /* Más ancho en tablets */
+                margin-bottom: 20px; /* Espacio entre imagen y texto */
+                padding: 10px; /* Menos padding */
+            }
+
+            /* Invierte el orden solo en móviles y tablets para los bloques con 'reverse-on-mobile' */
+            .info-content-wrapper.reverse-on-mobile {
+                flex-direction: column-reverse; /* Pone la imagen debajo en móviles */
+            }
+
+            .info-grid-content {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste del ancho mínimo */
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 40px 15px; /* Menos padding en móviles */
+            }
+            .main-nav {
+                padding: 16px 20px; /* Ajuste del padding para la navegación */
+            }
+            .nav-links {
+                gap: 20px; /* Menos espacio entre enlaces */
+            }
+            .language-switcher {
+                top: 80px; /* Ajuste para el selector de idioma */
+            }
+            .hero-logo {
+                width: 300px; /* Logotipo más pequeño en móviles */
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            /* Quiénes Somos */
+            .about-us-img {
+                width: 95%; /* Un poco más de ancho en móviles para la imagen de Quiénes Somos */
+                max-width: 95%; /* Asegura que no se estire demasiado */
+            }
+            #quienes-somos div, #about-us div {
+                padding: 0 10px; /* Más padding lateral para el texto */
+            }
+
+            /* Sección de Aves/Poultry */
+            #pagina-aves h2, #pagina-poultry h2 {
+                font-size: 2em;
+            }
+            .banner-container {
+                width: 95%; /* Ajuste del ancho del banner en móviles */
+            }
+            .banner-titulo {
+                font-size: 24px; /* Reduce el tamaño del texto del banner en pantallas más pequeñas */
+                white-space: normal; /* Permite que el texto se rompa en varias líneas */
+                padding: 0 10px; /* Pequeño relleno para evitar que el texto toque los bordes */
+            }
+            .grid-aves {
+                grid-template-columns: 1fr; /* Una columna para la galería en móviles */
+            }
+            .item-ave img {
+                height: 150px; /* Ajusta la altura de las imágenes de los cortes */
+            }
+            .info-aves h3 {
+                font-size: 1.5em;
+            }
+
+            /* Sección de Información (Móvil) */
+            #informacion {
+                padding: 60px 15px; /* Más compacto en móviles */
+            }
+            #informacion .section-title {
+                font-size: 2.5em;
+                margin-bottom: 40px;
+            }
+            #informacion .introduccion-info {
+                margin-bottom: 40px;
+                font-size: 1em;
+            }
+            .info-block {
+                padding: 25px;
+                margin-bottom: 40px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más sutil en móviles */
+            }
+            .info-block:hover {
+                transform: none; /* Deshabilita el hover en móviles */
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            .info-block h3 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+            .info-image-container {
+                max-width: 95%; /* Más ancho en móviles pequeños */
+                margin-bottom: 20px;
+                padding: 8px;
+            }
+            .info-image-container .info-image {
+                height: 200px; /* Ajusta la altura de la imagen para móviles */
+            }
+            .image-caption {
+                font-size: 0.85em;
+            }
+            .info-text-content ul li {
+                font-size: 1em;
+                padding-left: 25px;
+                margin-bottom: 10px;
+            }
+            .info-text-content ul li::before {
+                font-size: 1em;
+            }
+            .full-width-text p {
+                font-size: 1em;
+            }
+            .info-grid-content {
+                grid-template-columns: 1fr; /* Una columna para las tarjetas en móviles */
+                gap: 20px;
+            }
+            .info-card {
+                padding: 20px;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Sombra más sutil para tarjetas en móviles */
+            }
+            .info-card:hover {
+                transform: none; /* Deshabilita el hover en móviles */
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            }
+            .info-card h4 {
+                font-size: 1.3em;
+                margin-bottom: 10px;
+            }
+            .info-card p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner-titulo {
+                font-size: 20px; /* Aún más pequeño en móviles muy pequeños */
+            }
+            .service-grid {
+                grid-template-columns: 1fr; /* Una columna para los servicios en móviles muy pequeños */
+            }
+            .service-card img {
+                width: 100% !important; /* Ajusta el tamaño de las imágenes de las tarjetas de servicio en móviles pequeños */
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <nav class="main-nav">
-    <div class="nav-logo">
-      <img src="images/logo-cvenesca.png" alt="CVenesca Logo" />
-    </div>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <img src="images/logo-cvenesca.png" alt="CVenesca Logo" />
+            </div>
 
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about-us">About Us</a></li>
-      <li><a href="#mission-vision-values">Mission & Vision</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#poultry">Poultry</a></li>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#mission-vision-values">Mission & Vision</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#poultry">Poultry</a></li>
 
-      <li class="submenu-container">
-        <a href="#services">Services</a>
-        <ul class="submenu">
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#sales-procedures">Sales Procedures</a></li>
-          <li><a href="#information">Information</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-  <div class="banner-aviso" data-aos="fade-down">
-    🌐 We are finalizing our domain configuration. Very soon you'll be able to enjoy the full experience at <strong>www.cvenesca.com</strong>.
-  </div>
-
-  <div class="language-switcher">
-    <a href="/" aria-label="Spanish"><img src="images/flag-es.svg" alt="Español" /></a>
-    <a href="/index-en.html" aria-label="English"><img src="images/flag-en.svg" alt="English" /></a>
-  </div>
-
-  <section class="hero">
-  <img src="images/portada-cvenesca.png" alt="Cover" class="hero-bg" />
-
-  <div class="hero-overlay">
-    <img src="images/logo-cvenesca.png" alt="CVenesca Group LLC Logo" class="hero-logo" />
-
-    <div class="hero-content" data-aos="fade-up">
-      <h1>Connecting the World Through Trade</h1>
-      <p>
-        We drive international trade of essential foods and goods, connecting producers with high-value markets.
-      </p>
-      <a href="#products" class="cta-button">Our Products</a>
-      <a href="#contact" class="cta-button secondary">Contact Us</a>
-    </div>
-  </div>
-</section>
-
-  <main>
-       <section id="about-us" class="section content-block">
-  <img class="about-us-img" src="images/about-us.jpg" alt="International trade, logistics, and global sugar and food distribution team" />
-  <div>
-    <h2>About Us: Experts in Global Food and Essential Goods Trade</h2>
-    <p>At <strong>CVenesca Group LLC</strong>, we specialize in connecting global markets. We are dedicated to the <strong>international trade of food products</strong>, with a strong focus on <strong>ICUMSA sugar</strong> of various specifications (45, 150, 600-1200), and <strong>essential goods</strong> such as rice, corn, and vegetable oil. We offer comprehensive solutions ranging from <strong>sugar trading</strong> directly from the factory, to <strong>DDP import services in the USA</strong> and <strong>GACC certifications for China</strong>, ensuring secure, efficient, and profitable operations for our clients. Our expertise in <strong>strategic logistics</strong> and deep knowledge of <strong>global food markets</strong> enable us to guarantee success in every import and export process.</p>
-  </div>
-</section>
-    <section id="mission-vision-values" class="section-light">
-  <div class="container">
-    <h2 class="section-title">Mission, Vision, and Values</h2>
-    <div class="card-grid">
-      <div class="info-card">
-        <img src="images/icon-mision.png" alt="Mission Icon" />
-        <h3>Mission</h3>
-        <p>To drive international trade with efficient, secure, and sustainable logistical solutions that connect markets and generate value for our clients.</p>
-      </div>
-      <div class="info-card">
-        <img src="images/icon-vision.png" alt="Vision Icon" />
-        <h3>Vision</h3>
-        <p>To be a leading company in global trade, recognized for its commitment to excellence, innovation, and sustainable economic development.</p>
-      </div>
-      <div class="info-card">
-        <img src="images/icon-valores.png" alt="Values Icon" />
-        <h3>Values</h3>
-        <ul>
-          <li>Integrity</li>
-          <li>Responsibility</li>
-          <li>Transparency</li>
-          <li>Commitment</li>
-          <li>Innovation</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-         <section id="services" class="section">
-  <h2>Our Services: Connecting Global Markets with Strategic Logistics Solutions</h2>
-  <div class="service-grid">
-    <div class="service-card">
-      <img src="images/icumsa-trade.jpg" alt="Global trading and distribution of ICUMSA Sugar" />
-      <h3>Global ICUMSA Sugar Trading</h3>
-      <p>Access the best prices and qualities of <strong>ICUMSA sugar (45, 150, 600–1200)</strong>. We supply the food, pharmaceutical, and bioenergy industries worldwide, ensuring quality and efficiency in every transaction.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/ddp-usa.jpg" alt="DDP import and delivery services in the United States" />
-      <h3>DDP Import Services in USA</h3>
-      <p>Simplify your <strong>imports to the USA</strong> with our service <strong>Delivery Duty Paid (DDP)</strong>. We handle all management, from logistics to customs compliance and final delivery, so you have no worries.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/gacc-china.jpg" alt="GACC certification for food export to China" />
-      <h3>GACC Certification for China Export</h3>
-      <p>Facilitate your entry into the Chinese market. We offer <strong>GACC registration</strong>, Chinese labeling advisory, CIQ inspection management, and local agent support for your <strong>food exports to China</strong>.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/consultoria.jpg" alt="Strategic consulting for international trade and global expansion" />
-      <h3>Strategic International Trade Consulting</h3>
-      <p>Drive your growth with our <strong>expert advisory</strong>. We conduct detailed market studies, plan your global expansion, and provide support in complying with international regulations to optimize your operations.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/bienes-esenciales.jpg" alt="Trade of essential goods like rice, corn, vegetable oil and other raw materials" />
-      <h3>Trade of Essential Goods & Raw Materials</h3>
-      <p>Beyond sugar, we are your partner for the <strong>trading of essential goods</strong> such as <strong>rice, corn, vegetable oil</strong>, and other key <strong>raw materials</strong>. We connect global supply and demand for staple products.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/pollo-congelado-servicio.jpg" alt="International trading of frozen chicken and its parts" />
-      <h3>Poultry Trading (Frozen Chicken)</h3>
-      <p>We supply <strong>high-quality frozen chicken</strong> and its parts (whole, thighs, breasts, wings) for the global market. We guarantee products that comply with strict sanitary and export standards, ideal for distributors and wholesalers.</p>
-    </div>
-  </div>
-</section>
-
-    <section id="products" class="section">
-  <h2>ICUMSA Sugar Types</h2>
-  <table class="icumsa-table">
-    <thead>
-      <tr>
-        <th>Type</th><th>Color</th><th>Applications</th><th>Specifications</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>ICUMSA 45</td>
-        <td>Bright White</td>
-        <td>Confectionery, beverages, pharmaceuticals</td>
-        <td>Polarization ≥ 99.8%, Moisture ≤ 0.04%</td>
-      </tr>
-      <tr>
-        <td>ICUMSA 150</td>
-        <td>Opaque White</td>
-        <td>Bakeries, local beverages</td>
-        <td>Polarization ≥ 99.5%, Color ≤ 150 RBU</td>
-      </tr>
-      <tr>
-        <td>ICUMSA 600–1200</td>
-        <td>Brown</td>
-        <td>Bioethanol, industrial fermentation</td>
-        <td>Raw sugar, high molasses content</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-    <section class="section">
-  <h2 data-aos="fade-up">ICUMSA Sugar Gallery</h2>
-  <div class="service-grid">
-    <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-      <img src="images/productos/icumsa-45.jpg" alt="ICUMSA 45 Sugar" />
-      <h3>ICUMSA 45</h3>
-      <p>High-purity refined white sugar, ideal for direct human consumption and export.</p>
-    </div>
-    <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-      <img src="images/productos/icumsa-100.jpg" alt="ICUMSA 100 Sugar" />
-      <h3>ICUMSA 100</h3>
-      <p>Standard white sugar for baking, beverages, and processed foods.</p>
-    </div>
-    <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-      <img src="images/productos/icumsa-150.jpg" alt="ICUMSA 150 Sugar" />
-      <h3>ICUMSA 150</h3>
-      <p>Golden raw sugar for fermentation, distillation, and industrial processes.</p>
-    </div>
-    <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-      <img src="images/productos/icumsa-vhp.jpg" alt="ICUMSA VHP Sugar" />
-      <h3>ICUMSA 600–1200 VHP</h3>
-      <p>High polarization sugar for industrial refining and bulk export.</p>
-    </div>
-  </div>
-</section>
-    <section class="section" aria-labelledby="icumsa-technical-table">
-      <h2 id="icumsa-technical-table" data-aos="fade-up">ICUMSA Sugar Technical Comparison</h2>
-      <table class="icumsa-table" data-aos="fade-up" data-aos-delay="100">
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>ICUMSA 45</th>
-            <th>ICUMSA 100</th>
-            <th>ICUMSA 150</th>
-            <th>VHP</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Color</td><td>≤ 45</td><td>≤ 100</td><td>≤ 150</td><td>600–1200</td></tr>
-          <tr><td>Polarization</td><td>≥ 99.80%</td><td>≥ 99.70%</td><td>≥ 99.50%</td><td>≥ 99.40%</td></tr>
-          <tr><td>Moisture</td><td>≤ 0.04%</td><td>≤ 0.06%</td><td>≤ 0.08%</td><td>≤ 0.10%</td></tr>
-          <tr><td>Ash Content</td><td>≤ 0.04%</td><td>≤ 0.07%</td><td>≤ 0.10%</td><td>≤ 0.15%</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-  <section class="section" aria-labelledby="technical-datasheets">
-  <h2 id="technical-datasheets" data-aos="fade-up">Download Technical Datasheets</h2>
-  <ul class="fichas-list" data-aos="fade-up" data-aos-delay="100">
-    <li><a href="docs/icumsa-45.pdf" target="_blank" rel="noopener">📄 ICUMSA 45 – Technical Datasheet</a></li>
-    <li><a href="docs/icumsa-100.pdf" target="_blank" rel="noopener">📄 ICUMSA 100 – Technical Datasheet</a></li>
-    <li><a href="docs/icumsa-150.pdf" target="_blank" rel="noopener">📄 ICUMSA 150 – Technical Datasheet</a></li>
-    <li><a href="docs/icumsa-vhp.pdf" target="_blank" rel="noopener">📄 ICUMSA 600–1200 VHP – Technical Datasheet</a></li>
-  </ul>
-</section>
-<section id="poultry" class="section content-block reverse">
-  <img src="images/pollo-congelado.jpg" alt="Frozen chicken whole and chicken parts" />
-  <div>
-     
-    <h2>Poultry: High-Quality Frozen Chicken for Export</h2>
-    <p>At <strong>CVenesca Group LLC</strong>, we expand our portfolio to include <strong>premium quality frozen chicken</strong> and its various parts, ensuring supply to global markets. We offer a variety of cuts, including <strong>whole chickens, thighs, breasts, and chicken wings</strong>, all processed and frozen under the strictest international standards of hygiene and food safety.</p>
-    <p>Our poultry products are ideal for distributors, wholesalers, and food chains looking for <strong>reliable frozen chicken meat suppliers</strong> with consistent volumes and competitive prices. We ensure that each shipment complies with the import and export regulations of each country, facilitating a smooth and efficient supply chain.</p>
-    <h3>Available Cuts:</h3>
-    <ul>
-      <li><strong>Whole Frozen Chicken:</strong> Standard and premium sizes.</li>
-      <li><strong>Frozen Chicken Thighs:</strong> Bone-in or boneless, with or without skin.</li>
-      <li><strong>Frozen Chicken Breasts:</strong> Boneless, skinless (single breast or fillet).</li>
-      <li><strong>Frozen Chicken Wings:</strong> Whole or in sections (drumettes, flats).</li>
-      <li><strong>Other cuts upon request:</strong> Leg quarters, paws, giblets, etc.</li>
-    </ul>
-    <a href="#contact" class="cta-button">Request Frozen Chicken Quote</a>
-  </div>
-</section>
- 
-    <section id="pagina-poultry" class="section">
- <div class="banner-container">
-  <h2 class="banner-titulo">
-    POULTRY<br>
-    FROZEN CHICKEN
-  </h2>
-  <img src="images/banner-aves.jpg" alt="Variety of frozen chicken cuts for distribution" class="banner-imagen" data-aos="fade-up" data-aos-delay="100">
-</div>
-    
-    <div class="introduccion-aves" data-aos="fade-up" data-aos-delay="200">
-      <p>At <strong>CVenesca Group LLC</strong>, we are pleased to offer a wide range of <strong>high-quality frozen chicken</strong> cuts, sourced from strategic partners in <strong>Brazil, Russia, and Iran</strong>. Our poultry products are processed and frozen under strict international regulations, ensuring freshness, flavor, and safety to meet the demands of distributors, wholesalers, and the food industry globally.</p>
-      <p>Our offering includes a variety of popular cuts, ready for import and distribution in different markets.</p>
-    </div>
-
-    <div class="galeria-aves" data-aos="fade-up" data-aos-delay="300">
-      <h3>Our Frozen Chicken Cuts:</h3>
-      <div class="grid-aves">
-        <div class="item-ave">
-          <img src="images/pollo-entero.jpg" alt="Whole Frozen Chicken">
-          <h4>Whole Frozen Chicken</h4>
-          <p>Whole chickens of different sizes, ideal for roasting or for being cut according to customer needs.</p>
-        </div>
-        <div class="item-ave">
-          <img src="images/muslo-pollo.jpg" alt="Frozen Chicken Thighs">
-          <h4>Frozen Chicken Thighs</h4>
-          <p>Juicy and flavorful thighs, with or without skin, perfect for a variety of preparations.</p>
-        </div>
-        <div class="item-ave">
-          <img src="images/pechuga-pollo.jpg" alt="Frozen Chicken Breasts">
-          <h4>Frozen Chicken Breasts</h4>
-          <p>Boneless and skinless breasts, a lean and versatile cut in high demand.</p>
-        </div>
-        <div class="item-ave">
-          <img src="images/alas-pollo.jpg" alt="Frozen Chicken Wings">
-          <h4>Frozen Chicken Wings</h4>
-          <p>Whole wings or in sections (drumettes and flats), ideal for appetizers and main dishes.</p>
-        </div>
-        <div class="item-ave">
-          <img src="images/cuello-pollo.jpg" alt="Frozen Chicken Necks">
-          <h4>Frozen Chicken Necks</h4>
-          <p>Chicken necks, used for broths, soups, and other culinary preparations.</p>
-        </div>
-        <div class="item-ave">
-          <img src="images/higado-pollo.jpg" alt="Frozen Chicken Livers">
-          <h4>Frozen Chicken Livers</h4>
-          <p>Fresh and frozen chicken livers, rich in nutrients.</p>
-        </div>
-        <div class="item-ave">
-          <img src="images/corazon-pollo.jpg" alt="Frozen Chicken Hearts">
-          <h4>Frozen Chicken Hearts</h4>
-          <p>Chicken hearts, a flavorful and versatile ingredient for various recipes.</p>
-        </div>
-        </div>
-    </div>
-
-    <div class="info-aves" data-aos="fade-up" data-aos-delay="400">
-      <h3>Packaging and Transportation</h3>
-      <p>Our frozen chicken is carefully packed in high-strength corrugated cardboard boxes with polyethylene bags inside to protect the quality during storage and transportation. We offer customized packaging options according to customer needs. Transportation is carried out in refrigerated containers, maintaining the appropriate temperature to preserve the freshness and quality of the product throughout the journey.</p>
-
-      <h3>Countries of Origin</h3>
-      <p>We work with reliable suppliers in <strong>Brazil, Russia, and Iran</strong>, countries recognized for their high standards in poultry production.</p>
-
-      <h3>Sales Procedure and Incoterms</h3>
-      <p>Our sales procedures are adapted to the needs of each client. We generally work with <strong>CIF (Cost, Insurance and Freight)</strong> and <strong>FOB (Free On Board)</strong> Incoterms. Contact us to discuss the specific terms of your order.</p>
-
-      <h3>GACC Certifications</h3>
-      <p>The poultry products we trade, especially those destined for the Chinese market, have the necessary <strong>GACC (General Administration of Customs of the People's Republic of China)</strong> certifications to guarantee their entry and distribution in that country. We ensure compliance with all required health and regulatory standards.</p>
-
-      <h3>Technical Specifications</h3>
-      <p>Detailed technical specifications for each of our frozen chicken cuts, including certifications and quality analysis, will be available for download soon.</p>
-
-      <h3>Interested?</h3>
-      <p>If you are interested in learning more about our frozen chicken and its parts offer, or wish to request a quote, please do not hesitate to <a href="#contacto">contact us</a>. Our team will be happy to assist you.</p>
-    </div>
-
-    </div>
-</section>
-
-  <section id="informacion" class="section">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Sugar Market Projections (2025/2026)</h2>
-        <p class="introduccion-info" data-aos="fade-up" data-aos-delay="100">
-            A comprehensive analysis of production capacities, market projections, port logistics, and key players for ICUMSA 45, 100, 150, and 600-1200 VHP sugar grades, based on government and industry reports. The global sugar market for the 2025/2026 period is shaping up as a scenario of readjustments, with divergent projections for the main exporting countries.
-        </p>
-
-        <div class="info-block" data-aos="fade-up" data-aos-delay="200">
-            <h3>Types of Sugar and their Markets</h3>
-            <div class="info-content-wrapper">
-                <div class="info-text-content">
-                    <ul>
-                        <li><strong>ICUMSA 45:</strong> High-quality refined white sugar with exceptional purity. It is the international market standard and is widely used in the food and beverage industry.</li>
-                        <li><strong>ICUMSA 100 and 150:</strong> High-quality white sugar, but with a slightly higher color than ICUMSA 45. It is a popular choice for consumers and for industrial use where color is not a critical factor.</li>
-                        <li><strong>ICUMSA 600-1200 VHP (Very High Polarization):</strong> High polarization raw sugar, it is the main raw material for sugar refineries worldwide. It constitutes the bulk of international bulk sugar trade.</li>
+                <li class="submenu-container">
+                    <a href="#services">Services</a>
+                    <ul class="submenu">
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#sales-procedures">Sales Procedures</a></li>
+                        <li><a href="#information">Information</a></li>
                     </ul>
-                </div>
-                <div class="info-image-container">
-                    <img src="images/azucar-vhp-vs-refinado.jpg" alt="Comparison of VHP and ICUMSA 45 sugar" class="info-image">
-                    <p class="image-caption">Visual comparison of VHP and refined ICUMSA 45 sugar.</p>
-                </div>
-            </div>
-        </div>
+                </li>
 
-        <div class="info-block country-block" data-aos="fade-up" data-aos-delay="300">
-            <h3>Brazil: The Giant Continues to Lead</h3>
-            <div class="info-content-wrapper reverse-on-mobile">
-                <div class="info-image-container">
-                    <img src="images/cosecha-cana-brasil.jpg" alt="Sugarcane Harvest in Brazil" class="info-image">
-                    <p class="image-caption">The immensity of mechanized sugarcane harvesting in Brazil.</p>
-                </div>
-                <div class="info-grid-content">
-                    <div class="info-card">
-                        <h4>Projections and Production Capacity</h4>
-                        <p>Organizations such as Brazil's National Supply Company (CONAB) project a slight decrease in sugarcane harvest for the 2025/2026 crop year. However, sugar mills are expected to maximize sugar production at the expense of ethanol, which could lead to record sugar production. Brazil's production capacity allows it to offer all ICUMSA grades, with a strong focus on VHP sugar and ICUMSA 45.</p>
-                    </div>
-                    <div class="info-card">
-                        <h4>Supply Capacity and Ports</h4>
-                        <p>Brazil has a robust port infrastructure for sugar export. The Port of Santos is the world's main sugar export port, with mechanized terminals exceeding 2,000 tons per hour. The combined monthly supply capacity of Brazilian ports can exceed 3 million metric tons. The Port of Paranaguá is the second most important.</p>
-                    </div>
-                    <div class="info-card">
-                        <h4>Key Institutions and Certifications</h4>
-                        <p>Production assessment is led by the National Supply Company (Conab). Associations such as UNICA also collect key data. Exports are certified by organizations like SGS and Bureau Veritas. Key documents include Quality and Weight Certificate, Certificate of Origin (FIESP), Phytosanitary Certificate (MAPA), and Bill of Lading.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="banner-aviso" data-aos="fade-down">
+        🌐 We are finalizing our domain configuration. Very soon you'll be able to enjoy the full experience at <strong>www.cvenesca.com</strong>.
+    </div>
 
-        <div class="info-block country-block" data-aos="fade-up" data-aos-delay="400">
-            <h3>Thailand: Towards Recovery</h3>
-            <div class="info-content-wrapper">
-                <div class="info-grid-content">
-                    <div class="info-card">
-                        <h4>Projections and Production Capacity</h4>
-                        <p>A significant recovery in sugarcane production is expected for the 2025/2026 crop year, thanks to favorable monsoon rain forecasts. The Office of the Cane and Sugar Board (OCSB) is the government agency that oversees production and export. Thailand is an important producer of VHP sugar and also offers refined white sugar.</p>
-                    </div>
-                    <div class="info-card">
-                        <h4>Supply Capacity and Ports</h4>
-                        <p>Export logistics are concentrated at Laem Chabang Port (the largest with modern facilities) and Bangkok Port. Monthly supply capacity can reach peaks of over 1 million tons.</p>
-                    </div>
-                    <div class="info-card">
-                        <h4>Key Institutions and Certifications</h4>
-                        <p>The OCSB is the main government agency responsible for overseeing and publishing official statistics. The Thai Sugar Millers Corporation (TSMC) also provides detailed data. Essential documents include Quality and Weight Certificate, Certificate of Origin (Chamber of Commerce), Phytosanitary Certificate, and OCSB Sugar Export License.</p>
-                    </div>
-                </div>
-                <div class="info-image-container">
-                    <img src="images/logistica-puerto.jpg" alt="Port Export Logistics" class="info-image">
-                    <p class="image-caption">Sugar loading logistics at an export port.</p>
-                </div>
-            </div>
-        </div>
+    <div class="language-switcher">
+        <a href="/" aria-label="Spanish"><img src="images/flag-es.svg" alt="Español" /></a>
+        <a href="/index-en.html" aria-label="English"><img src="images/flag-en.svg" alt="English" /></a>
+    </div>
 
-        <div class="info-block country-block" data-aos="fade-up" data-aos-delay="500">
-            <h3>European Union: Contracting Production and Focus on Domestic Market</h3>
-            <div class="info-content-wrapper reverse-on-mobile">
-                <div class="info-image-container">
-                    <img src="images/cosecha-remolacha-europa.jpg" alt="Sugar Beet Harvest in Europe" class="info-image">
-                    <p class="image-caption">Sugar beet harvest, a key raw material in Europe.</p>
-                </div>
-                <div class="info-grid-content">
-                    <div class="info-card">
-                        <h4>Projections and Production Capacity</h4>
-                        <p>The European Commission projects a decrease of about 8% in sugar production for the 2025/2026 campaign, due to reduced cultivated area and pest challenges. Production focuses on white beet sugar (ICUMSA 45 and 150) for domestic consumption and limited exports.</p>
-                    </div>
-                    <div class="info-card">
-                        <h4>Main Producing Countries and Ports</h4>
-                        <p>France and Germany are the largest producers. Exports are made through ports such as Antwerp (Belgium), Le Havre (France), and Hamburg (Germany). Logistics include transport by truck, train, and barge.</p>
-                    </div>
-                    <div class="info-card">
-                        <h4>Key Institutions and Certifications</h4>
-                        <p>The DG AGRI of the European Commission compiles and publishes forecasts. The European Association of Sugar Manufacturers (CEFS) also publishes detailed statistics. Documents include Quality Certificate, EUR.1 Certificate of Origin, and Single Administrative Document (SAD).</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="hero">
+        <img src="images/portada-cvenesca.png" alt="Cover" class="hero-bg" />
 
-        <div class="info-block" data-aos="fade-up" data-aos-delay="600">
-            <h3>General Considerations to Take into Account</h3>
-            <div class="info-text-content full-width-text">
-                <ul>
-                    <li><strong>Climate Volatility:</strong> Extreme weather events are the main risk factor that can alter production projections.</li>
-                    <li><strong>Government Policies:</strong> Decisions on ethanol blending (Brazil), subsidies, and trade policies (EU) impact sugar availability for export.</li>
-                    <li><strong>Freight and Logistics Costs:</strong> Port congestion, container availability, and fuel costs are critical variables affecting the final price.</li>
-                    <li><strong>Global Demand:</strong> Consumption growth in emerging markets (Asia and Africa) will continue to be a key driver of global sugar demand.</li>
-                </ul>
-                <p>In summary, the 2025/2026 period presents a complex and dynamic landscape. Buyers should closely monitor harvests in Brazil and Thailand for sugarcane sugar supply, while the EU beet sugar market will focus more on its domestic demand. Supply reliability will depend not only on agricultural production but also on the efficiency and capacity of logistics and port supply chains.</p>
+        <div class="hero-overlay">
+            <img src="images/logo-cvenesca.png" alt="CVenesca Group LLC Logo" class="hero-logo" />
+
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Connecting the World Through Trade</h1>
+                <p>
+                    We drive international trade of essential foods and goods, connecting producers with high-value markets.
+                </p>
+                <a href="#products" class="cta-button">Our Products</a>
+                <a href="#contact" class="cta-button secondary">Contact Us</a>
             </div>
         </div>
     </section>
-</main>
-       </section>
-  </main>
 
-<footer>
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="images/logo-footer.png" alt="CVenesca Group LLC" />
-    </div>
+    <main>
+        <section id="about-us" class="section content-block">
+            <img class="about-us-img" src="images/about-us.jpg" alt="International trade, logistics, and global sugar and food distribution team" />
+            <div>
+                <h2>About Us: Experts in Global Food and Essential Goods Trade</h2>
+                <p>At <strong>CVenesca Group LLC</strong>, we specialize in connecting global markets. We are dedicated to the <strong>international trade of food products</strong>, with a strong focus on <strong>ICUMSA sugar</strong> of various specifications (45, 150, 600-1200), and <strong>essential goods</strong> such as rice, corn, and vegetable oil. We offer comprehensive solutions ranging from <strong>sugar trading</strong> directly from the factory, to <strong>DDP import services in the USA</strong> and <strong>GACC certifications for China</strong>, ensuring secure, efficient, and profitable operations for our clients. Our expertise in <strong>strategic logistics</strong> and deep knowledge of <strong>global food markets</strong> enable us to guarantee success in every import and export process.</p>
+            </div>
+        </section>
+        <section id="mission-vision-values" class="section-light">
+            <div class="container">
+                <h2 class="section-title">Mission, Vision, and Values</h2>
+                <div class="card-grid">
+                    <div class="info-card">
+                        <img src="images/icon-mision.png" alt="Mission Icon" />
+                        <h3>Mission</h3>
+                        <p>To drive international trade with efficient, secure, and sustainable logistical solutions that connect markets and generate value for our clients.</p>
+                    </div>
+                    <div class="info-card">
+                        <img src="images/icon-vision.png" alt="Vision Icon" />
+                        <h3>Vision</h3>
+                        <p>To be a leading company in global trade, recognized for its commitment to excellence, innovation, and sustainable economic development.</p>
+                    </div>
+                    <div class="info-card">
+                        <img src="images/icon-valores.png" alt="Values Icon" />
+                        <h3>Values</h3>
+                        <ul>
+                            <li>Integrity</li>
+                            <li>Responsibility</li>
+                            <li>Transparency</li>
+                            <li>Commitment</li>
+                            <li>Innovation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="section">
+            <h2>Our Services: Connecting Global Markets with Strategic Logistics Solutions</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="images/icumsa-trade.jpg" alt="Global trading and distribution of ICUMSA Sugar" />
+                    <h3>Global ICUMSA Sugar Trading</h3>
+                    <p>Access the best prices and qualities of <strong>ICUMSA sugar (45, 150, 600–1200)</strong>. We supply the food, pharmaceutical, and bioenergy industries worldwide, ensuring quality and efficiency in every transaction.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/ddp-usa.jpg" alt="DDP import and delivery services in the United States" />
+                    <h3>DDP Import Services in USA</h3>
+                    <p>Simplify your <strong>imports to the USA</strong> with our service <strong>Delivery Duty Paid (DDP)</strong>. We handle all management, from logistics to customs compliance and final delivery, so you have no worries.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/gacc-china.jpg" alt="GACC certification for food export to China" />
+                    <h3>GACC Certification for China Export</h3>
+                    <p>Facilitate your entry into the Chinese market. We offer <strong>GACC registration</strong>, Chinese labeling advisory, CIQ inspection management, and local agent support for your <strong>food exports to China</strong>.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/consultoria.jpg" alt="Strategic consulting for international trade and global expansion" />
+                    <h3>Strategic International Trade Consulting</h3>
+                    <p>Drive your growth with our <strong>expert advisory</strong>. We conduct detailed market studies, plan your global expansion, and provide support in complying with international regulations to optimize your operations.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/bienes-esenciales.jpg" alt="Trade of essential goods like rice, corn, vegetable oil and other raw materials" />
+                    <h3>Trade of Essential Goods & Raw Materials</h3>
+                    <p>Beyond sugar, we are your partner for the <strong>trading of essential goods</strong> suchs as <strong>rice, corn, vegetable oil</strong>, and other key <strong>raw materials</strong>. We connect global supply and demand for staple products.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/pollo-congelado-servicio.jpg" alt="International trading of frozen chicken and its parts" />
+                    <h3>Poultry Trading (Frozen Chicken)</h3>
+                    <p>We supply <strong>high-quality frozen chicken</strong> and its parts (whole, thighs, breasts, wings) for the global market. We guarantee products that comply with strict sanitary and export standards, ideal for distributors and wholesalers.</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="footer-links">
-      <a href="#about-us">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-      <a href="/" onclick="document.cookie='langPref=es; path=/; max-age=31536000'">Español</a> </div>
+        <section id="products" class="section">
+            <h2>ICUMSA Sugar Types</h2>
+            <table class="icumsa-table">
+                <thead>
+                    <tr>
+                        <th>Type</th><th>Color</th><th>Applications</th><th>Specifications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ICUMSA 45</td>
+                        <td>Bright White</td>
+                        <td>Confectionery, beverages, pharmaceuticals</td>
+                        <td>Polarization ≥ 99.8%, Moisture ≤ 0.04%</td>
+                    </tr>
+                    <tr>
+                        <td>ICUMSA 150</td>
+                        <td>Opaque White</td>
+                        <td>Bakeries, local beverages</td>
+                        <td>Polarization ≥ 99.5%, Color ≤ 150 RBU</td>
+                    </tr>
+                    <tr>
+                        <td>ICUMSA 600–1200</td>
+                        <td>Brown</td>
+                        <td>Bioethanol, industrial fermentation</td>
+                        <td>Raw sugar, high molasses content</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="section">
+            <h2 data-aos="fade-up">ICUMSA Sugar Gallery</h2>
+            <div class="service-grid">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/productos/icumsa-45.jpg" alt="ICUMSA 45 Sugar" />
+                    <h3>ICUMSA 45</h3>
+                    <p>High-purity refined white sugar, ideal for direct human consumption and export.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/productos/icumsa-100.jpg" alt="ICUMSA 100 Sugar" />
+                    <h3>ICUMSA 100</h3>
+                    <p>Standard white sugar for baking, beverages, and processed foods.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/productos/icumsa-150.jpg" alt="ICUMSA 150 Sugar" />
+                    <h3>ICUMSA 150</h3>
+                    <p>Golden raw sugar for fermentation, distillation, and industrial processes.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="images/productos/icumsa-vhp.jpg" alt="ICUMSA VHP Sugar" />
+                    <h3>ICUMSA 600–1200 VHP</h3>
+                    <p>High polarization sugar for industrial refining and bulk export.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section" aria-labelledby="icumsa-technical-table">
+            <h2 id="icumsa-technical-table" data-aos="fade-up">ICUMSA Sugar Technical Comparison</h2>
+            <table class="icumsa-table" data-aos="fade-up" data-aos-delay="100">
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>ICUMSA 45</th>
+                        <th>ICUMSA 100</th>
+                        <th>ICUMSA 150</th>
+                        <th>VHP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Color</td><td>≤ 45</td><td>≤ 100</td><td>≤ 150</td><td>600–1200</td></tr>
+                    <tr><td>Polarization</td><td>≥ 99.80%</td><td>≥ 99.70%</td><td>≥ 99.50%</td><td>≥ 99.40%</td></tr>
+                    <tr><td>Moisture</td><td>≤ 0.04%</td><td>≤ 0.06%</td><td>≤ 0.08%</td><td>≤ 0.10%</td></tr>
+                    <tr><td>Ash Content</td><td>≤ 0.04%</td><td>≤ 0.07%</td><td>≤ 0.10%</td><td>≤ 0.15%</td></tr>
+                </tbody>
+            </table>
+        </section>
 
-    <div class="footer-legal">
-      <a href="#">Terms and Conditions</a>
-      <a href="#">Privacy Policy</a>
-    </div>
+        <section class="section" aria-labelledby="technical-datasheets">
+            <h2 id="technical-datasheets" data-aos="fade-up">Download Technical Datasheets</h2>
+            <ul class="fichas-list" data-aos="fade-up" data-aos-delay="100">
+                <li><a href="docs/icumsa-45.pdf" target="_blank" rel="noopener">📄 ICUMSA 45 – Technical Datasheet</a></li>
+                <li><a href="docs/icumsa-100.pdf" target="_blank" rel="noopener">📄 ICUMSA 100 – Technical Datasheet</a></li>
+                <li><a href="docs/icumsa-150.pdf" target="_blank" rel="noopener">📄 ICUMSA 150 – Technical Datasheet</a></li>
+                <li><a href="docs/icumsa-vhp.pdf" target="_blank" rel="noopener">📄 ICUMSA 600–1200 VHP – Technical Datasheet</a></li>
+            </ul>
+        </section>
+        <section id="poultry" class="section content-block reverse">
+            <img src="images/pollo-congelado.jpg" alt="Frozen chicken whole and chicken parts" />
+            <div>
+                <h2>Poultry: High-Quality Frozen Chicken for Export</h2>
+                <p>At <strong>CVenesca Group LLC</strong>, we expand our portfolio to include <strong>premium quality frozen chicken</strong> and its various parts, ensuring supply to global markets. We offer a variety of cuts, including <strong>whole chickens, thighs, breasts, and chicken wings</strong>, all processed and frozen under the strictest international standards of hygiene and food safety.</p>
+                <p>Our poultry products are ideal for distributors, wholesalers, and food chains looking for <strong>reliable frozen chicken meat suppliers</strong> with consistent volumes and competitive prices. We ensure that each shipment complies with the import and export regulations of each country, facilitating a smooth and efficient supply chain.</p>
+                <h3>Available Cuts:</h3>
+                <ul>
+                    <li><strong>Whole Frozen Chicken:</strong> Standard and premium sizes.</li>
+                    <li><strong>Frozen Chicken Thighs:</strong> Bone-in or boneless, with or without skin.</li>
+                    <li><strong>Frozen Chicken Breasts:</strong> Boneless, skinless (single breast or fillet).</li>
+                    <li><strong>Frozen Chicken Wings:</strong> Whole or in sections (drumettes, flats).</li>
+                    <li><strong>Other cuts upon request:</strong> Leg quarters, paws, giblets, etc.</li>
+                </ul>
+                <a href="#contact" class="cta-button">Request Frozen Chicken Quote</a>
+            </div>
+        </section>
 
-    <div class="footer-social">
-      <span>Coming soon on social media</span>
-      <a href="#" target="_blank" aria-label="WhatsApp">
-        <svg width="24" height="24" fill="#ffffff" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16.003 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.353.617 4.65 1.786 6.667L2.667 29.333l6.933-1.786a13.26 13.26 0 0 0 6.403 1.62h.001c7.364 0 13.333-5.97 13.333-13.333s-5.97-13.334-13.334-13.334zm0 24a11.26 11.26 0 0 1-5.733-1.56l-.41-.24-4.12 1.06 1.1-4.013-.267-.413a11.26 11.26 0 0 1-1.733-6.04c0-6.213 5.053-11.267 11.267-11.267 6.213 0 11.267 5.053 11.267 11.267 0 6.213-5.053 11.266-11.267 11.266zm6.16-8.36c-.34-.17-2.013-.993-2.327-1.107-.313-.113-.54-.17-.767.17-.227.34-.88 1.107-1.08 1.333-.2.227-.4.253-.74.085-.34-.17-1.433-.527-2.727-1.68-1.007-.897-1.687-2.007-1.88-2.347-.2-.34-.02-.523.15-.693.153-.152.34-.396.51-.593.17-.2.227-.34.34-.567.113-.227.057-.425-.028-.595-.085-.17-.767-1.853-1.053-2.54-.28-.673-.567-.58-.767-.59l-.653-.012c-.227 0-.595.085-.907.425-.313.34-1.193 1.167-1.193 2.847s1.22 3.3 1.387 3.527c.17.227 2.4 3.653 5.813 5.12.813.35 1.447.557 1.94.713.817.26 1.56.223 2.147.135.655-.097 2.013-.823 2.3-1.62.283-.797.283-1.48.198-1.62-.085-.14-.31-.227-.65-.396z"/>
-        </svg>
-      </a>
-    </div>
+        <section id="pagina-poultry" class="section">
+            <div class="banner-container">
+                <h2 class="banner-titulo">
+                    POULTRY<br>
+                    FROZEN CHICKEN
+                </h2>
+                <img src="images/banner-aves.jpg" alt="Variety of frozen chicken cuts for distribution" class="banner-imagen" data-aos="fade-up" data-aos-delay="100">
+            </div>
 
-    <div class="footer-info">
-      <p>&copy; 2025 CVenesca Group LLC. All rights reserved.</p>
-      <p><a href="mailto:contact@cvenesca.com">contact@cvenesca.com</a></p>
-    </div>
-  </div>
-</footer>
+            <div class="introduccion-aves" data-aos="fade-up" data-aos-delay="200">
+                <p>At <strong>CVenesca Group LLC</strong>, we are pleased to offer a wide range of <strong>high-quality frozen chicken</strong> cuts, sourced from strategic partners in <strong>Brazil, Russia, and Iran</strong>. Our poultry products are processed and frozen under strict international regulations, ensuring freshness, flavor, and safety to meet the demands of distributors, wholesalers, and the food industry globally.</p>
+                <p>Our offering includes a variety of popular cuts, ready for import and distribution in different markets.</p>
+            </div>
 
-  <script>
-  (function () {
-    const userLang = navigator.language || navigator.userLanguage;
-    const isSpanishBrowser = userLang.toLowerCase().startsWith('es');
-    const langPref = localStorage.getItem('langPref'); // Intentamos leer la preferencia del usuario
+            <div class="galeria-aves" data-aos="fade-up" data-aos-delay="300">
+                <h3>Our Frozen Chicken Cuts:</h3>
+                <div class="grid-aves">
+                    <div class="item-ave">
+                        <img src="images/pollo-entero.jpg" alt="Whole Frozen Chicken">
+                        <h4>Whole Frozen Chicken</h4>
+                        <p>Whole chickens of different sizes, ideal for roasting or for being cut according to customer needs.</p>
+                    </div>
+                    <div class="item-ave">
+                        <img src="images/muslo-pollo.jpg" alt="Frozen Chicken Thighs">
+                        <h4>Frozen Chicken Thighs</h4>
+                        <p>Juicy and flavorful thighs, with or without skin, perfect for a variety of preparations.</p>
+                    </div>
+                    <div class="item-ave">
+                        <img src="images/pechuga-pollo.jpg" alt="Frozen Chicken Breasts">
+                        <h4>Frozen Chicken Breasts</h4>
+                        <p>Boneless and skinless breasts, a lean and versatile cut in high demand.</p>
+                    </div>
+                    <div class="item-ave">
+                        <img src="images/alas-pollo.jpg" alt="Frozen Chicken Wings">
+                        <h4>Frozen Chicken Wings</h4>
+                        <p>Whole wings or in sections (drumettes and flats), ideal for appetizers and main dishes.</p>
+                    </div>
+                    <div class="item-ave">
+                        <img src="images/cuello-pollo.jpg" alt="Frozen Chicken Necks">
+                        <h4>Frozen Chicken Necks</h4>
+                        <p>Chicken necks, used for broths, soups, and other culinary preparations.</p>
+                    </div>
+                    <div class="item-ave">
+                        <img src="images/higado-pollo.jpg" alt="Frozen Chicken Livers">
+                        <h4>Frozen Chicken Livers</h4>
+                        <p>Fresh and frozen chicken livers, rich in nutrients.</p>
+                    </div>
+                    <div class="item-ave">
+                        <img src="images/corazon-pollo.jpg" alt="Frozen Chicken Hearts">
+                        <h4>Frozen Chicken Hearts</h4>
+                        <p>Chicken hearts, a flavorful and versatile ingredient for various recipes.</p>
+                    </div>
+                </div>
+            </div>
 
-    // Si no hay preferencia guardada y el navegador está en español, redirigir a la versión en español
-    if (!langPref && isSpanishBrowser && (window.location.pathname === '/index-en.html' || window.location.pathname === '/')) {
-      window.location.href = '/index.html';
-    }
+            <div class="info-aves" data-aos="fade-up" data-aos-delay="400">
+                <h3>Packaging and Transportation</h3>
+                <p>Our frozen chicken is carefully packed in high-strength corrugated cardboard boxes with polyethylene bags inside to protect the quality during storage and transportation. We offer customized packaging options according to customer needs. Transportation is carried out in refrigerated containers, maintaining the appropriate temperature to preserve the freshness and quality of the product throughout the journey.</p>
 
-    // Guardar la preferencia de idioma cuando se hace clic en una bandera
-    document.querySelector('.language-switcher a[href="/"]').addEventListener('click', function() {
-      localStorage.setItem('langPref', 'es'); // Guarda 'es' if se hace clic en Español
-    });
+                <h3>Countries of Origin</h3>
+                <p>We work with reliable suppliers in <strong>Brazil, Russia, and Iran</strong>, countries recognized for their high standards in poultry production.</p>
 
-    document.querySelector('.language-switcher a[href="/index-en.html"]').addEventListener('click', function() {
-      localStorage.setItem('langPref', 'en'); // Guarda 'en' if se hace clic en Inglés
-    });
-  })();
-</script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-    AOS.init({
-    duration: 800,
-    once: true
-  });
-</script>
+                <h3>Sales Procedure and Incoterms</h3>
+                <p>Our sales procedures are adapted to the needs of each client. We generally work with <strong>CIF (Cost, Insurance and Freight)</strong> and <strong>FOB (Free On Board)</strong> Incoterms. Contact us to discuss the specific terms of your order.</p>
+
+                <h3>GACC Certifications</h3>
+                <p>The poultry products we trade, especially those destined for the Chinese market, have the necessary <strong>GACC (General Administration of Customs of the People's Republic of China)</strong> certifications to guarantee their entry and distribution in that country. We ensure compliance with all required health and regulatory standards.</p>
+
+                <h3>Technical Specifications</h3>
+                <p>Detailed technical specifications for each of our frozen chicken cuts, including certifications and quality analysis, will be available for download soon.</p>
+
+                <h3>Interested?</h3>
+                <p>If you are interested in learning more about our frozen chicken and its parts offer, or wish to request a quote, please do not hesitate to <a href="#contacto">contact us</a>. Our team will be happy to assist you.</p>
+            </div>
+        </section>
+
+        <section id="informacion" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Sugar Market Projections (2025/2026)</h2>
+                <p class="introduccion-info" data-aos="fade-up" data-aos-delay="100">
+                    A comprehensive analysis of production capacities, market projections, port logistics, and key players for ICUMSA 45, 100, 150, and 600-1200 VHP sugar grades, based on government and industry reports. The global sugar market for the 2025/2026 period is shaping up as a scenario of readjustments, with divergent projections for the main exporting countries.
+                </p>
+
+                <!-- Bloque 1: Tipos de Azúcar -->
+                <div class="info-block" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Types of Sugar and their Markets</h3>
+                    <div class="info-content-wrapper">
+                        <div class="info-text-content">
+                            <ul>
+                                <li><strong>ICUMSA 45:</strong> High-quality refined white sugar with exceptional purity. It is the international market standard and is widely used in the food and beverage industry.</li>
+                                <li><strong>ICUMSA 100 and 150:</strong> High-quality white sugar, but with a slightly higher color than ICUMSA 45. It is a popular choice for consumers and for industrial use where color is not a critical factor.</li>
+                                <li><strong>ICUMSA 600-1200 VHP (Very High Polarization):</strong> High polarization raw sugar, it is the main raw material for sugar refineries worldwide. It constitutes the bulk of international bulk sugar trade.</li>
+                            </ul>
+                        </div>
+                        <div class="info-image-container">
+                            <img src="images/azucar-vhp-vs-refinado.jpg" alt="Comparison of VHP and ICUMSA 45 sugar" class="info-image">
+                            <p class="image-caption">Visual comparison of VHP and refined ICUMSA 45 sugar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: País de Origen -->
+                <div class="info-block country-block" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Brazil: The Giant Continues to Lead</h3>
+                    <div class="info-content-wrapper reverse-on-mobile">
+                        <div class="info-image-container">
+                            <img src="images/cosecha-cana-brasil.jpg" alt="Sugarcane Harvest in Brazil" class="info-image">
+                            <p class="image-caption">The immensity of mechanized sugarcane harvesting in Brazil.</p>
+                        </div>
+                        <div class="info-grid-content">
+                            <div class="info-card">
+                                <h4>Projections and Production Capacity</h4>
+                                <p>Organizations such as Brazil's National Supply Company (CONAB) project a slight decrease in sugarcane harvest for the 2025/2026 crop year. However, sugar mills are expected to maximize sugar production at the expense of ethanol, which could lead to record sugar production. Brazil's production capacity allows it to offer all ICUMSA grades, with a strong focus on VHP sugar and ICUMSA 45.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Supply Capacity and Ports</h4>
+                                <p>Brazil has a robust port infrastructure for sugar export. The Port of Santos is the world's main sugar export port, with mechanized terminals exceeding 2,000 tons per hour. The combined monthly supply capacity of Brazilian ports can exceed 3 million metric tons. The Port of Paranaguá is the second most important.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Key Institutions and Certifications</h4>
+                                <p>Production assessment is led by the National Supply Company (Conab). Associations such as UNICA also collect key data. Exports are certified by organizations like SGS and Bureau Veritas. Key documents include Quality and Weight Certificate, Certificate of Origin (FIESP), Phytosanitary Certificate (MAPA), and Bill of Lading.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 3: Thailand -->
+                <div class="info-block country-block" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Thailand: Towards Recovery</h3>
+                    <div class="info-content-wrapper">
+                        <div class="info-grid-content">
+                            <div class="info-card">
+                                <h4>Projections and Production Capacity</h4>
+                                <p>A significant recovery in sugarcane production is expected for the 2025/2026 crop year, thanks to favorable monsoon rain forecasts. The Office of the Cane and Sugar Board (OCSB) is the government agency that oversees production and export. Thailand is an important producer of VHP sugar and also offers refined white sugar.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Supply Capacity and Ports</h4>
+                                <p>Export logistics are concentrated at Laem Chabang Port (the largest with modern facilities) and Bangkok Port. Monthly supply capacity can reach peaks of over 1 million tons.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Key Institutions and Certifications</h4>
+                                <p>The OCSB is the main government agency responsible for overseeing and publishing official statistics. The Thai Sugar Millers Corporation (TSMC) also provides detailed data. Essential documents include Quality and Weight Certificate, Certificate of Origin (Chamber of Commerce), Phytosanitary Certificate, and OCSB Sugar Export License.</p>
+                            </div>
+                        </div>
+                        <div class="info-image-container">
+                            <img src="images/logistica-puerto.jpg" alt="Port Export Logistics" class="info-image">
+                            <p class="image-caption">Sugar loading logistics at an export port.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 4: European Union -->
+                <div class="info-block country-block" data-aos="fade-up" data-aos-delay="500">
+                    <h3>European Union: Contracting Production and Focus on Domestic Market</h3>
+                    <div class="info-content-wrapper reverse-on-mobile">
+                        <div class="info-image-container">
+                            <img src="images/cosecha-remolacha-europa.jpg" alt="Sugar Beet Harvest in Europe" class="info-image">
+                            <p class="image-caption">Sugar beet harvest, a key raw material in Europe.</p>
+                        </div>
+                        <div class="info-grid-content">
+                            <div class="info-card">
+                                <h4>Projections and Production Capacity</h4>
+                                <p>The European Commission projects a decrease of about 8% in sugar production for the 2025/2026 campaign, due to reduced cultivated area and pest challenges. Production focuses on white beet sugar (ICUMSA 45 and 150) for domestic consumption and limited exports.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Main Producing Countries and Ports</h4>
+                                <p>France and Germany are the largest producers. Exports are made through ports such as Antwerp (Belgium), Le Havre (France), and Hamburg (Germany). Logistics include transport by truck, train, and barge.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Key Institutions and Certifications</h4>
+                                <p>The DG AGRI of the European Commission compiles and publishes forecasts. The European Association of Sugar Manufacturers (CEFS) also publishes detailed statistics. Documents include Quality Certificate, EUR.1 Certificate of Origin, and Single Administrative Document (SAD).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 5: Consideraciones Generales -->
+                <div class="info-block" data-aos="fade-up" data-aos-delay="600">
+                    <h3>General Considerations to Take into Account</h3>
+                    <div class="info-text-content full-width-text">
+                        <ul>
+                            <li><strong>Climate Volatility:</strong> Extreme weather events are the main risk factor that can alter production projections.</li>
+                            <li><strong>Government Policies:</strong> Decisions on ethanol blending (Brazil), subsidies, and trade policies (EU) impact sugar availability for export.</li>
+                            <li><strong>Freight and Logistics Costs:</strong> Port congestion, container availability, and fuel costs are critical variables affecting the final price.</li>
+                            <li><strong>Global Demand:</strong> Consumption growth in emerging markets (Asia and Africa) will continue to be a key driver of global sugar demand.</li>
+                        </ul>
+                        <p>In summary, the 2025/2026 period presents a complex and dynamic landscape. Buyers should closely monitor harvests in Brazil and Thailand for sugarcane sugar supply, while the EU beet sugar market will focus more on its domestic demand. Supply reliability will depend not only on agricultural production but also on the efficiency and capacity of logistics and port supply chains.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo-footer.png" alt="CVenesca Group LLC" />
+            </div>
+
+            <div class="footer-links">
+                <a href="#about-us">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+                <a href="/" onclick="document.cookie='langPref=es; path=/; max-age=31536000'">Español</a>
+            </div>
+
+            <div class="footer-legal">
+                <a href="#">Terms and Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <div class="footer-social">
+                <span>Coming soon on social media</span>
+                <a href="#" target="_blank" aria-label="WhatsApp">
+                    <svg width="24" height="24" fill="#ffffff" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.003 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.353.617 4.65 1.786 6.667L2.667 29.333l6.933-1.786a13.26 13.26 0 0 0 6.403 1.62h.001c7.364 0 13.333-5.97 13.333-13.333s-5.97-13.334-13.334-13.334zm0 24a11.26 11.26 0 0 1-5.733-1.56l-.41-.24-4.12 1.06 1.1-4.013-.267-.413a11.26 11.26 0 0 1-1.733-6.04c0-6.213 5.053-11.267 11.267-11.267 6.213 0 11.267 5.053 11.267 11.267 0 6.213-5.053 11.266-11.267 11.266zm6.16-8.36c-.34-.17-2.013-.993-2.327-1.107-.313-.113-.54-.17-.767.17-.227.34-.88 1.107-1.08 1.333-.2.227-.4.253-.74.085-.34-.17-1.433-.527-2.727-1.68-1.007-.897-1.687-2.007-1.88-2.347-.2-.34-.02-.523.15-.693.153-.152.34-.396.51-.593.17-.2.227-.34.34-.567.113-.227.057-.425-.028-.595-.085-.17-.767-1.853-1.053-2.54-.28-.673-.567-.58-.767-.59l-.653-.012c-.227 0-.595.085-.907.425-.313.34-1.193 1.167-1.193 2.847s1.22 3.3 1.387 3.527c.17.227 2.4 3.653 5.813 5.12.813.35 1.447.557 1.94.713.817.26 1.56.223 2.147.135.655-.097 2.013-.823 2.3-1.62.283-.797.283-1.48.198-1.62-.085-.14-.31-.227-.65-.396z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer-info">
+                <p>&copy; 2025 CVenesca Group LLC. All rights reserved.</p>
+                <p><a href="mailto:contact@cvenesca.com">contact@cvenesca.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const userLang = navigator.language || navigator.userLanguage;
+            const isSpanishBrowser = userLang.toLowerCase().startsWith('es');
+            const langPref = localStorage.getItem('langPref'); // Intentamos leer la preferencia del usuario
+
+            // Si no hay preferencia guardada y el navegador está en español, redirigir a la versión en español
+            if (!langPref && isSpanishBrowser && (window.location.pathname === '/index-en.html' || window.location.pathname === '/')) {
+                window.location.href = '/index.html';
+            }
+
+            // Guardar la preferencia de idioma cuando se hace clic en una bandera
+            document.querySelector('.language-switcher a[href="/"]').addEventListener('click', function() {
+                localStorage.setItem('langPref', 'es'); // Guarda 'es' si se hace clic en Español
+            });
+
+            document.querySelector('.language-switcher a[href="/index-en.html"]').addEventListener('click', function() {
+                localStorage.setItem('langPref', 'en'); // Guarda 'en' si se hace clic en Inglés
+            });
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 </html>
 
