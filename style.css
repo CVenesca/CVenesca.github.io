@@ -361,7 +361,6 @@ img {
   max-width: 700px;
   margin: 0 auto 2rem;
 }
-
 /* 🎯 Buttons */
 /* Styles call-to-action (CTA) buttons to make them visible and attractive. */
 .cta-button {
@@ -379,7 +378,6 @@ img {
   background-color: var(--color-acento);
   color: var(--color-secundario);
 }
-
 /* --- Nuevos y/o Modificados Estilos para la Sección de Aves (Poultry) y su Banner --- */
 
 /* Estilos para la nueva sección de Aves/Poultry */
@@ -561,7 +559,6 @@ img {
     .info-aves h3 {
         font-size: 1.5em;
     }
-}
 
 @media (max-width: 480px) {
     .banner-titulo {
@@ -573,7 +570,6 @@ img {
     .service-card img {
       width: 100% !important; /* Ajusta el tamaño de las imágenes de las tarjetas de servicio en móviles pequeños */
     }
-}
 /* --- Estilos para la Sección de Información General del Azúcar --- */
 #informacion {
     background-color: var(--color-fondo-claro);
@@ -667,7 +663,6 @@ img {
     .pais-block .info-details {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Menos columnas en tablets */
     }
-}
 
 @media (max-width: 768px) {
     #informacion {
@@ -694,4 +689,4 @@ img {
         grid-template-columns: 1fr; /* Una columna en móviles */
         gap: 20px;
     }
-}
+
