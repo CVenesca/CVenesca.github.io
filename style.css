@@ -176,31 +176,31 @@ img {
 }
 
 /* --- Estilos para las Secciones de Bloque de Contenido General (content-block) --- */
-/* Usado en #proyecciones, #bienes-esenciales, #contactos */
+/* Usado en #proyecciones, #bienes-esenciales, #contactos (en la landing) */
 .content-block {
-    display: flex; /* Ahora sí usamos flex para estas secciones */
-    flex-direction: column; /* Para apilar imagen y texto por defecto */
+    display: flex;
+    flex-direction: column; /* Apila imagen y texto por defecto */
     gap: 40px;
     margin-bottom: 60px;
     text-align: center;
-    align-items: center; /* Centra los ítems en el eje cruzado (horizontalmente cuando flex-direction is column) */
+    align-items: center;
 }
 
 .content-block.reverse {
-    flex-direction: column-reverse; /* Invierte el orden en el bloque si se usa esta clase */
+    flex-direction: column-reverse; /* Invierte el orden si se usa esta clase */
 }
 
 .content-block img {
     width: 100%;
-    max-width: 600px; /* Ajusta el ancho máximo de la imagen en estos bloques */
+    max-width: 500px; /* **AJUSTE DE TAMAÑO** - Imágenes en bloques de contenido general */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .content-block > div { /* El div que contiene el texto en estos bloques */
-    max-width: 700px; /* Ancho máximo para el texto */
-    text-align: left; /* Alinea el texto a la izquierda */
+    max-width: 700px;
+    text-align: left;
 }
 
 
@@ -252,7 +252,7 @@ img {
 }
 
 .info-card img {
-    max-width: 250px;
+    max-width: 150px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de misión/visión/valores */
     height: auto;
     margin-bottom: 20px;
 }
@@ -303,11 +303,11 @@ img {
     transform: translateY(-6px);
 }
 
-/* Adjustment to ensure consistent sizing of all images within service cards */
 .service-card img {
-    width: 360px !important;
+    width: 250px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de servicios/fichas técnicas */
     height: auto;
     margin-bottom: 20px;
+    /* !important eliminado si es posible, la especificidad debería ser suficiente */
 }
 .service-card h3 {
     font-size: 1.3rem;
@@ -401,53 +401,51 @@ img {
 /* --- Estilos para los Banners de Subpáginas (Proyecciones, Bienes Esenciales, Contactos) --- */
 
 .banner-container {
-    position: relative; /* Clave para posicionar el título de forma absoluta */
-    width: 90%; /* Ancho que ocupará el contenedor del banner */
-    max-width: 1000px; /* Ancho máximo para el banner */
-    margin: 20px auto 40px auto; /* Centra el banner y añade márgenes */
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto 40px auto;
 }
 
-/* Estilos del TÍTULO SUPERPUESTO al banner */
 .banner-titulo {
-    position: absolute; /* Permite superponer el título */
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajuste fino para centrar el texto completo */
-    font-family: 'Times New Roman', serif; /* Fuente New Roman */
-    font-weight: bold; /* Negrilla */
-    font-size: 30px; /* Tamaño de la letra */
-    color: white; /* Color blanco, ajusta si tu banner lo requiere */
-    text-align: center; /* Centra el texto en caso de múltiples líneas */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para mejor legibilidad */
-    z-index: 1; /* Asegura que esté encima de la imagen */
-    white-space: nowrap; /* Evita que el texto se rompa innecesariamente en una línea */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    white-space: nowrap;
 }
 
-/* Estilos para la imagen del banner (ahora dentro de .banner-container) */
 .banner-container .banner-imagen {
-    width: 100%; /* La imagen ocupa todo el ancho de su contenedor (.banner-container) */
+    width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px; /* Esquinas redondeadas */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Sombra */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 /* --- Estilos para la Sección de Proyecciones de Azúcar (#pagina-proyecciones) --- */
 #pagina-proyecciones {
     background-color: var(--color-fondo-claro);
-    padding: 100px 0; /* Más padding para que respire más la sección */
+    padding: 100px 0;
     text-align: center;
 }
 
-#pagina-proyecciones .section-title { /* Título principal de la sección */
-    font-size: 3em; /* Título principal más impactante */
+#pagina-proyecciones .section-title {
+    font-size: 3em;
     color: var(--color-primario);
-    margin-bottom: 60px; /* Más espacio debajo del título principal */
+    margin-bottom: 60px;
     position: relative;
     padding-bottom: 20px;
 }
 
-#pagina-proyecciones .section-title::after { /* Elemento decorativo debajo del título */
+#pagina-proyecciones .section-title::after {
     content: '';
     display: block;
     width: 80px;
@@ -460,10 +458,10 @@ img {
 /* Contenedor principal de cada bloque informativo (Tipos de Azúcar, País, Consideraciones) */
 .info-block {
     background-color: #fff;
-    border-radius: 15px; /* Bordes más redondeados para un look más suave */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más profunda y definida */
-    padding: 50px; /* Más padding interno */
-    margin-bottom: 80px; /* Más espacio entre bloques principales */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 50px;
+    margin-bottom: 80px;
     text-align: left;
     overflow: hidden;
     position: relative;
@@ -471,21 +469,21 @@ img {
 }
 
 .info-block:hover {
-    transform: translateY(-8px); /* Elevación sutil al pasar el ratón */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .info-block h3 {
-    font-size: 2.6em; /* Subtítulos de bloque más grandes y prominentes */
+    font-size: 2.6em;
     color: var(--color-secundario);
-    margin-bottom: 40px; /* Más espacio debajo del subtítulo de bloque */
+    margin-bottom: 40px;
     position: relative;
     padding-bottom: 15px;
     text-align: center;
-    font-weight: 700; /* Asegura que sea negrita */
+    font-weight: 700;
 }
 
-.info-block h3::after { /* Línea de acento debajo del subtítulo de bloque */
+.info-block h3::after {
     content: '';
     display: block;
     width: 60px;
@@ -498,44 +496,44 @@ img {
 /* Contenedor para el texto e imagen dentro de cada info-block */
 .info-content-wrapper {
     display: flex;
-    align-items: center; /* Centra verticalmente imagen y texto */
-    gap: 50px; /* Más espacio entre imagen y contenido */
+    align-items: center;
+    gap: 50px;
 }
 
 /* Contenedor de la imagen dentro de un info-block */
 .info-image-container {
-    flex: 0 0 450px; /* Ancho fijo para la imagen en desktop */
-    max-width: 45%; /* Máximo 45% del ancho del wrapper */
+    flex: 0 0 350px; /* **AJUSTE DE TAMAÑO** - Ancho fijo para la imagen en desktop */
+    max-width: 40%; /* **AJUSTE DE TAMAÑO** - Máximo 40% del ancho del wrapper */
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra de imagen más suave */
-    background-color: #f8f8f8; /* Fondo para si la imagen no carga */
-    padding: 15px; /* Más padding alrededor de la imagen */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    padding: 10px; /* Ligeramente menos padding alrededor de la imagen */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease; /* Transición para efecto hover */
+    transition: transform 0.3s ease;
 }
 
 .info-image-container:hover {
-    transform: scale(1.02); /* Pequeño zoom al pasar el ratón */
+    transform: scale(1.02);
 }
 
 .info-image-container .info-image {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px; /* Bordes ligeramente más redondeados */
+    border-radius: 8px;
     margin: 0;
 }
 
 .image-caption {
-    font-size: 0.95em; /* Tamaño de caption ligeramente más grande */
+    font-size: 0.95em;
     color: #777;
-    margin-top: 15px; /* Más espacio arriba del caption */
+    margin-top: 15px;
     line-height: 1.5;
-    font-style: italic; /* Texto del caption en cursiva */
+    font-style: italic;
 }
 
 /* Contenedor para el texto cuando hay una imagen al lado */
@@ -550,15 +548,15 @@ img {
 
 .info-text-content ul li {
     position: relative;
-    padding-left: 30px; /* Más espacio para el bullet */
-    margin-bottom: 15px; /* Más espacio entre elementos de lista */
+    padding-left: 30px;
+    margin-bottom: 15px;
     line-height: 1.7;
     color: var(--color-texto);
-    font-size: 1.05em; /* Texto de lista un poco más grande */
+    font-size: 1.05em;
 }
 
 .info-text-content ul li strong {
-    color: var(--color-secundario); /* Destaca los strong */
+    color: var(--color-secundario);
 }
 
 .info-text-content ul li::before {
@@ -568,13 +566,13 @@ img {
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 1.2em; /* Bullet más grande */
+    font-size: 1.2em;
 }
 
 /* Estilos específicos para el texto cuando ocupa todo el ancho (en Consideraciones) */
 .full-width-text {
     flex: 1 1 100%;
-    max-width: 900px; /* Aumenta el ancho máximo para el texto general */
+    max-width: 900px;
     margin: 0 auto;
     text-align: left;
 }
@@ -590,14 +588,13 @@ img {
 .info-grid-content {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Min-width ajustado */
-    gap: 40px; /* Más espacio entre las tarjetas de la cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
     align-items: stretch;
 }
 
 /* Estilos para cada "ficha" individual de información (Proyecciones, Logística, Instituciones) */
-/* Esta clase .info-card ya estaba definida arriba, pero se le añaden reglas específicas para este contexto */
-.country-block .info-card { /* Para diferenciar las info-cards en bloques de país */
+.country-block .info-card {
     background-color: var(--color-fondo-claro);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -655,7 +652,7 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     margin-bottom: 50px;
-    justify-content: center; /* Centra las tarjetas si no ocupan todo el ancho */
+    justify-content: center;
 }
 
 .item-bienes-esenciales {
@@ -673,8 +670,8 @@ img {
 
 .item-bienes-esenciales img {
     max-width: 100%;
-    height: 160px; /* Altura fija para la consistencia de las imágenes */
-    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+    height: 120px; /* **AJUSTE DE TAMAÑO** - Altura fija para la consistencia de las imágenes de ítems */
+    object-fit: contain;
     border-radius: 5px;
     margin-bottom: 15px;
 }
@@ -706,7 +703,7 @@ img {
     margin-bottom: 15px;
     border-bottom: 2px solid #eee;
     padding-bottom: 8px;
-    text-align: center; /* Centra el subtítulo "Estándares y Logística" */
+    text-align: center;
 }
 
 /* --- Estilos para la Sección de Contactos (#pagina-contactos) --- */
@@ -778,14 +775,14 @@ img {
 }
 
 .contact-form textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
+    resize: vertical;
     min-height: 120px;
 }
 
 .contact-form .cta-button {
-    display: block; /* Ocupa todo el ancho del contenedor */
-    width: auto; /* El padding lo define */
-    margin: 30px auto 0 auto; /* Centra el botón */
+    display: block;
+    width: auto;
+    margin: 30px auto 0 auto;
     text-align: center;
     font-size: 1.1em;
     padding: 15px 30px;
@@ -823,7 +820,7 @@ img {
         gap: 30px;
     }
     .content-block img {
-        max-width: 80%;
+        max-width: 80%; /* Ajuste para tablets */
     }
     .content-block > div {
         max-width: 90%;
@@ -837,7 +834,7 @@ img {
         flex: 1 1 260px;
     }
     .info-card img {
-        max-width: 200px;
+        max-width: 120px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de misión/visión/valores */
     }
 
     /* Service Grid */
@@ -846,7 +843,7 @@ img {
         gap: 25px;
     }
     .service-card img {
-        width: 300px !important;
+        width: 200px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de servicios/fichas técnicas */
     }
 
     /* Banner de Subpáginas */
@@ -875,22 +872,21 @@ img {
         margin-bottom: 30px;
     }
     .info-content-wrapper {
-        flex-direction: column; /* Apila el contenido (imagen y texto) en tablets */
-        align-items: center; /* Centra los elementos apilados */
-        gap: 30px; /* Menos espacio apilado */
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
     }
     .info-image-container {
         flex: none;
-        max-width: 80%; /* Más ancho en tablets */
-        margin-bottom: 20px; /* Espacio entre imagen y texto */
-        padding: 10px; /* Menos padding */
+        max-width: 80%; /* Ajuste para tablets */
+        margin-bottom: 20px;
+        padding: 10px;
     }
-    /* Invierte el orden solo en móviles y tablets para los bloques con 'reverse-on-mobile' */
     .info-content-wrapper.reverse-on-mobile {
-        flex-direction: column-reverse; /* Pone la imagen debajo en móviles */
+        flex-direction: column-reverse;
     }
     .info-grid-content {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste de min-width */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
     }
     .country-block .info-card {
@@ -916,7 +912,7 @@ img {
         gap: 20px;
     }
     .item-bienes-esenciales img {
-        height: 140px;
+        height: 100px; /* **AJUSTE DE TAMAÑO** - Altura en tablets */
     }
     .item-bienes-esenciales h4 {
         font-size: 1.1em;
@@ -981,7 +977,7 @@ img {
     }
 
     .language-switcher {
-        top: 10px; /* Ajuste para el switcher en móvil */
+        top: 10px;
         right: 15px;
     }
     .hero {
@@ -1005,7 +1001,7 @@ img {
         margin-bottom: 40px;
     }
     .content-block img {
-        max-width: 95%;
+        max-width: 95%; /* Ajuste para móviles */
     }
     .content-block > div {
         padding: 0 10px;
@@ -1021,7 +1017,7 @@ img {
         padding: 20px;
     }
     .info-card img {
-        max-width: 150px;
+        max-width: 100px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de misión/visión/valores */
     }
     .info-card h3 {
         font-size: 1.2rem;
@@ -1036,7 +1032,7 @@ img {
         gap: 20px;
     }
     .service-card img {
-        width: 100% !important;
+        width: 180px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de servicios/fichas técnicas */
     }
     .service-card h3 {
         font-size: 1.1rem;
@@ -1048,8 +1044,8 @@ img {
     /* Banner de Subpáginas */
     .banner-titulo {
         font-size: 20px;
-        white-space: normal; /* Permite que el texto se rompa en varias líneas */
-        padding: 0 10px; /* Pequeño relleno para evitar que el texto toque los bordes */
+        white-space: normal;
+        padding: 0 10px;
     }
 
     /* Página Proyecciones (Azúcar) */
@@ -1066,7 +1062,7 @@ img {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .info-block:hover {
-        transform: none; /* Deshabilita el hover en móviles */
+        transform: none;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .info-block h3 {
@@ -1101,7 +1097,7 @@ img {
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     }
     .country-block .info-card:hover {
-        transform: none; /* Deshabilita el hover en móviles */
+        transform: none;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     }
     .country-block .info-card h4 {
@@ -1123,7 +1119,7 @@ img {
         grid-template-columns: 1fr;
     }
     .item-bienes-esenciales img {
-        height: 120px;
+        height: 100px; /* **AJUSTE DE TAMAÑO** - Altura en móviles */
     }
     .info-bienes-esenciales h3 {
         font-size: 1.3em;
@@ -1147,7 +1143,7 @@ img {
 
 @media (max-width: 480px) {
     .banner-titulo {
-        font-size: 18px; /* Aún más pequeño en móviles muy pequeños */
+        font-size: 18px;
     }
     .hero-content h1 {
         font-size: 1.5rem;
