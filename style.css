@@ -1,583 +1,445 @@
 /* 🔄 Basic Reset */
 /* Resets default browser styles to ensure a consistent base across all elements. */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* 🌐 Typography and Scroll */
 /* Defines smooth scrolling behavior and general font styles for the document body. */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  line-height: 1.6;
-  color: var(--color-texto);
-  background-color: var(--color-fondo-claro);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo-claro);
 }
 
 /* 🎨 Variables */
 /* Stores reusable colors to facilitate the visual theme management of the page. */
 :root {
-  --color-primario: #d88c00;          /* Ochre-orange */
-  --color-secundario: #00334e;        /* Petrol blue */
-  --color-fondo-claro: #fdfaf6;        /* Soft ivory */
-  --color-texto: #2e2e2e;              /* Charcoal gray */
-  --color-acento: #f4b860;             /* Pastel orange */
-  --color-banner: #ffe8b0;             /* Sand yellow */
+    --color-primario: #d88c00;           /* Ochre-orange */
+    --color-secundario: #00334e;         /* Petrol blue */
+    --color-fondo-claro: #fdfaf6;        /* Soft ivory */
+    --color-texto: #2e2e2e;              /* Charcoal gray */
+    --color-acento: #f4b860;             /* Pastel orange */
+    --color-banner: #ffe8b0;             /* Sand yellow */
 }
 
 /* 🔷 Navigation Menu and Submenu */
 /* Controls the design and interactivity of the main navigation menu, including its sticky top behavior and submenu display. */
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  background-color: var(--color-secundario);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    background-color: var(--color-secundario);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-logo img {
-  height: 40px;
+    height: 40px;
 }
 
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links li {
-  position: relative;
+    position: relative;
 }
 
 .nav-links li a {
-  color: var(--color-fondo-claro);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+    color: var(--color-fondo-claro);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: var(--color-primario);
+    color: var(--color-primario);
 }
 
 .submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--color-secundario);
-  list-style: none;
-  padding: 12px 0;
-  margin: 0;
-  min-width: 180px;
-  display: none;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-secundario);
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+    min-width: 180px;
+    display: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
 
 .submenu li {
-  padding: 8px 20px;
+    padding: 8px 20px;
 }
 
 .submenu li a {
-  color: var(--color-fondo-claro);
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: background-color 0.3s ease;
+    color: var(--color-fondo-claro);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
 }
 
 .submenu li a:hover {
-  background-color: var(--color-primario);
-  color: white;
+    background-color: var(--color-primario);
+    color: white;
 }
 
 .nav-links li:hover .submenu {
-  display: block;
+    display: block;
 }
 
 /* 📢 Alert Banner */
 /* Styles the top notification bar, commonly used for important messages or alerts. */
 .banner-aviso {
-  background-color: #fff3cd;
-  color: #856404;
-  padding: 15px 20px;
-  text-align: center;
-  font-size: 1rem;
-  border-bottom: 2px solid #ffeeba;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 2px solid #ffeeba;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 /* --- START: Integrated Language Switcher Styles --- */
 .language-switcher {
-  position: absolute; /* Allows positioning with `top` and `right` */
-  top: 110px; /* Top separation, adjust if necessary */
-  right: 20px; /* Right edge separation */
-  z-index: 1001; /* Ensures it's above other elements */
-  display: flex; /* For flags to be inline */
-  gap: 10px; /* Separation between flags */
-  align-items: center; /* Vertically centers flags if they have different heights */
+    position: absolute; /* Allows positioning with `top` and `right` */
+    top: 110px; /* Top separation, adjust if necessary */
+    right: 20px; /* Right edge separation */
+    z-index: 1001; /* Ensures it's above other elements */
+    display: flex; /* For flags to be inline */
+    gap: 10px; /* Separation between flags */
+    align-items: center; /* Vertically centers flags if they have different heights */
 }
 
 .language-switcher img {
-  width: 32px; /* Slightly larger for better visibility */
-  height: auto;
-  border-radius: 4px;
-  transition: transform 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow to highlight them */
+    width: 32px; /* Slightly larger for better visibility */
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow to highlight them */
 }
 
 .language-switcher img:hover {
-  transform: scale(1.1); /* Hover effect */
+    transform: scale(1.1); /* Hover effect */
 }
 /* --- END: Integrated Language Switcher Styles --- */
 
 /* 🧩 General Sections */
 /* Defines basic styles for the main content sections of the page, including spacing and alignment. */
 .section {
-  padding: 80px 20px;
-  max-width: 1200px; /* Ancho máximo para el contenido de las secciones */
-  margin: auto; /* Centra la sección */
-  text-align: center; /* Por defecto, centra el texto en la sección */
+    padding: 80px 20px;
+    max-width: 1200px; /* Ancho máximo para el contenido de las secciones */
+    margin: auto; /* Centra la sección */
+    text-align: center; /* Por defecto, centra el texto en la sección */
 }
 
 .section-light {
-  background-color: var(--color-fondo-claro);
-  text-align: center;
-  padding: 60px 20px;
+    background-color: var(--color-fondo-claro);
+    text-align: center;
+    padding: 60px 20px;
 }
 
 .section-title {
-  color: var(--color-primario);
-  font-size: 2.2rem;
-  margin-bottom: 40px;
+    color: var(--color-primario);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
 }
 
 h1, h2, h3 {
-  color: var(--color-primario);
-  margin-bottom: 10px;
+    color: var(--color-primario);
+    margin-bottom: 10px;
 }
 
 /* 🖼️ Images and Visual Content */
 /* Manages the general appearance of images and the layout of content blocks that combine text and images, such as the "About Us" section. */
 img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  display: block;
-  margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
 }
 
-/* --- Estilos para la Sección "Quiénes Somos" (content-block) --- */
+/* --- Estilos para las Secciones de Bloque de Contenido General (content-block) --- */
+/* Usado en #proyecciones, #bienes-esenciales, #contactos */
 .content-block {
-  /* No uses 'display: flex' aquí si quieres que la imagen y el texto estén uno encima del otro */
-  display: block; /* Asegura que la imagen y el div de texto se apilen */
-  gap: 40px; /* Se mantiene para referencia, pero no aplica si display es block */
-  margin-bottom: 60px;
-  text-align: center; /* Centra el contenido general dentro del bloque */
+    display: flex; /* Ahora sí usamos flex para estas secciones */
+    flex-direction: column; /* Para apilar imagen y texto por defecto */
+    gap: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+    align-items: center; /* Centra los ítems en el eje cruzado (horizontalmente cuando flex-direction is column) */
 }
 
-/* --- Estilos para la Imagen Específica en la Sección "Quiénes Somos" --- */
-.about-us-img {
-  width: 100%;       /* Ocupa todo el ancho disponible del contenedor */
-  max-width: 80%;    /* Limita el ancho máximo al 80% del ancho del 'container' padre (o del viewport) */
-  height: auto;      /* Mantiene la proporción de la imagen */
-  display: block;    /* Permite centrarla con 'margin: auto' */
-  margin: 0 auto;    /* Centra la imagen horizontalmente */
-  margin-top: 20px;  /* Espacio arriba de la imagen */
-  margin-bottom: 20px; /* Espacio abajo de la imagen */
-  border-radius: 8px; /* Esquinas ligeramente redondeadas */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Una pequeña sombra para que destaque */
+.content-block.reverse {
+    flex-direction: column-reverse; /* Invierte el orden en el bloque si se usa esta clase */
 }
 
-/* Estilos para el texto dentro de la sección "Quiénes Somos" */
-#quienes-somos div, #about-us div { /* Aplica a ambas versiones de la sección */
-    max-width: 800px; /* El texto no será demasiado ancho, lo que facilita la lectura */
-    margin: 0 auto; /* Centra el bloque de texto */
-    text-align: left; /* Alinea el texto a la izquierda dentro de su propio bloque */
-    padding: 0 20px; /* Un pequeño espacio a los lados para que el texto no toque los bordes */
+.content-block img {
+    width: 100%;
+    max-width: 600px; /* Ajusta el ancho máximo de la imagen en estos bloques */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.content-block > div { /* El div que contiene el texto en estos bloques */
+    max-width: 700px; /* Ancho máximo para el texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+
+/* --- Estilos para la Sección "Quiénes Somos" (#quienes-somos o #about-us) --- */
+/* Aunque no están en el HTML proporcionado, se mantienen si se reincorporan */
+.about-us-img { /* Esto parece ser un estilo más específico, si se usa una imagen destacada */
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#quienes-somos div, #about-us div {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 20px;
 }
 
 
 /* 🧃 Cards: Mission, Vision, and Values */
 /* Defines styles for information cards, such as those used to present the company's mission, vision, and values. */
 .card-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  align-items: stretch; /* Ensures all cards in a row have the same height */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: stretch; /* Ensures all cards in a row have the same height */
 }
 
 .info-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  padding: 30px 25px;
-  max-width: 320px;
-  flex: 1 1 300px;
-  text-align: center;
-  transition: transform 0.3s ease;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    padding: 30px 25px;
+    max-width: 320px;
+    flex: 1 1 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .info-card:hover {
-  transform: translateY(-6px);
+    transform: translateY(-6px);
 }
 
 .info-card img {
-  max-width: 250px; /* Reduced to 50% of previous size (from 200px to 100px) */
-  height: auto;
-  margin-bottom: 20px;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .info-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
 }
 
 .info-card p,
 .info-card ul {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-texto);
 }
 
 .info-card ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .info-card ul li::before {
-  content: "• ";
-  color: var(--color-acento);
-  font-weight: bold;
+    content: "• ";
+    color: var(--color-acento);
+    font-weight: bold;
 }
 
 /* 🛒 Services and Datasheets */
 /* Organizes and styles service cards and lists of links to download product datasheets. */
 .service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Increased to 380px for larger datasheets */
-  gap: 30px;
-  justify-content: center; /* Centers grid columns if they don't fill the entire width */
-  align-items: stretch; /* Ensures all cards in a row have the same height */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .service-card {
-  background-color: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  text-align: center;
-  transition: transform 0.3s ease;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
+    transform: translateY(-6px);
 }
 
 /* Adjustment to ensure consistent sizing of all images within service cards */
 .service-card img {
-  width: 360px !important; /* Make sure !important is here! */
-  height: auto;
-  margin-bottom: 20px;
+    width: 360px !important;
+    height: auto;
+    margin-bottom: 20px;
 }
 .service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  color: var(--color-primario);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--color-primario);
 }
 
 .service-card p,
 .service-card ul {
-  font-size: 1rem;
-  color: var(--color-texto);
-  line-height: 1.6;
+    font-size: 1rem;
+    color: var(--color-texto);
+    line-height: 1.6;
 }
 
 /* 🪟 Hero with Background and Image */
 /* Defines the style for the main welcome section with a background image, logo, and featured content. */
 .hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 80px;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 80px;
 }
 
 .hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.75);
-  z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75);
+    z-index: 0;
 }
 
 .hero-logo {
-  width: 460px;
-  max-width: 80%;
-  height: auto;
-  margin: 0 auto 30px;
-  position: relative;
-  top: 40px;
+    width: 460px;
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto 30px;
+    position: relative;
+    top: 40px;
 }
 
 .hero-overlay {
-  position: relative;
-  z-index: 1;
-  max-width: 1000px;
-  width: 90%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    width: 90%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-content {
-  color: var(--color-primario);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    color: var(--color-primario);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
 }
 /* 🎯 Buttons */
 /* Styles call-to-action (CTA) buttons to make them visible and attractive. */
 .cta-button {
-  background-color: var(--color-primario);
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--color-primario);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: var(--color-acento);
-  color: var(--color-secundario);
+    background-color: var(--color-acento);
+    color: var(--color-secundario);
 }
-/* --- Nuevos y/o Modificados Estilos para la Sección de Aves (Poultry) y su Banner --- */
+/* --- Estilos para los Banners de Subpáginas (Proyecciones, Bienes Esenciales, Contactos) --- */
 
-/* Estilos para la nueva sección de Aves/Poultry */
-#pagina-aves, #pagina-poultry { /* Aplica a ambas versiones de la sección */
-    background-color: var(--color-fondo-claro); /* Un color de fondo suave para diferenciarla */
-    padding-top: 40px;
-    padding-bottom: 80px;
-}
-
-#pagina-aves h2, #pagina-poultry h2 { /* Título principal de la sección (el que está ANTES del banner) */
-    font-size: 2.5em;
-    color: var(--color-primario); /* Usando la variable de color primario */
-    margin-bottom: 30px;
-}
-
-/* Contenedor del banner para posicionar el título */
 .banner-container {
-  position: relative; /* Clave para posicionar el título de forma absoluta */
-  width: 90%; /* Ancho que ocupará el contenedor del banner */
-  max-width: 1000px; /* Ancho máximo para el banner */
-  margin: 20px auto 40px auto; /* Centra el banner y añade márgenes */
-  /* Si usas AOS en el banner, podrías considerar poner data-aos en este div */
+    position: relative; /* Clave para posicionar el título de forma absoluta */
+    width: 90%; /* Ancho que ocupará el contenedor del banner */
+    max-width: 1000px; /* Ancho máximo para el banner */
+    margin: 20px auto 40px auto; /* Centra el banner y añade márgenes */
 }
 
 /* Estilos del TÍTULO SUPERPUESTO al banner */
 .banner-titulo {
-  position: absolute; /* Permite superponer el título */
-  top: 50%; /* Centra verticalmente */
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Ajuste fino para centrar el texto completo */
-  font-family: 'Times New Roman', serif; /* Fuente New Roman */
-  font-weight: bold; /* Negrilla */
-  font-size: 30px; /* Tamaño de la letra */
-  color: white; /* Color blanco, ajusta si tu banner lo requiere */
-  text-align: center; /* Centra el texto en caso de múltiples líneas */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para mejor legibilidad */
-  z-index: 1; /* Asegura que esté encima de la imagen */
-  white-space: nowrap; /* Evita que el texto se rompa innecesariamente en una línea */
+    position: absolute; /* Permite superponer el título */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino para centrar el texto completo */
+    font-family: 'Times New Roman', serif; /* Fuente New Roman */
+    font-weight: bold; /* Negrilla */
+    font-size: 30px; /* Tamaño de la letra */
+    color: white; /* Color blanco, ajusta si tu banner lo requiere */
+    text-align: center; /* Centra el texto en caso de múltiples líneas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para mejor legibilidad */
+    z-index: 1; /* Asegura que esté encima de la imagen */
+    white-space: nowrap; /* Evita que el texto se rompa innecesariamente en una línea */
 }
 
 /* Estilos para la imagen del banner (ahora dentro de .banner-container) */
 .banner-container .banner-imagen {
-  width: 100%; /* La imagen ocupa todo el ancho de su contenedor (.banner-container) */
-  height: auto;
-  display: block;
-  border-radius: 8px; /* Esquinas redondeadas */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Sombra */
+    width: 100%; /* La imagen ocupa todo el ancho de su contenedor (.banner-container) */
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Sombra */
 }
 
-/* Estilos para la introducción de la sección de aves */
-.introduccion-aves {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    text-align: left;
-    line-height: 1.7;
-    color: var(--color-texto);
-}
-
-.introduccion-aves p {
-    margin-bottom: 15px;
-}
-
-/* Estilos para la galería de cortes de pollo */
-.galeria-aves h3 {
-    font-size: 2em;
-    color: var(--color-primario);
-    margin-bottom: 30px;
-}
-
-.grid-aves {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
-    gap: 30px; /* Espacio entre los elementos */
-    margin-bottom: 50px;
-}
-
-.item-ave {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.item-ave:hover {
-    transform: translateY(-5px);
-}
-
-.item-ave img {
-    max-width: 100%;
-    height: 180px; /* Altura fija para la consistencia de las imágenes */
-    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-.item-ave h4 {
-    font-size: 1.3em;
-    color: var(--color-primario);
-    margin-bottom: 10px;
-}
-
-.item-ave p {
-    font-size: 0.95em;
-    color: var(--color-texto);
-    line-height: 1.5;
-}
-
-/* Estilos para la información adicional de aves */
-.info-aves {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-    color: var(--color-texto);
-    line-height: 1.7;
-}
-
-.info-aves h3 {
-    font-size: 1.8em;
-    color: var(--color-primario);
-    margin-top: 40px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 8px;
-}
-
-/* Media Queries para Responsividad */
-@media (max-width: 768px) {
-    .section {
-        padding: 40px 15px; /* Menos padding en móviles */
-    }
-    .main-nav {
-        padding: 16px 20px; /* Ajuste de padding para nav */
-    }
-    .nav-links {
-        gap: 20px; /* Menos espacio entre links */
-    }
-    .language-switcher {
-        top: 80px; /* Ajuste para el switcher */
-    }
-    .hero-logo {
-        width: 300px; /* Logo más pequeño en móviles */
-    }
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    /* Quienes Somos */
-    .about-us-img {
-        width: 95%; /* Un poco más de ancho en móviles para la imagen de Quiénes Somos */
-        max-width: 95%; /* Asegura que no se estire demasiado */
-    }
-    #quienes-somos div, #about-us div {
-        padding: 0 10px; /* Más padding lateral para el texto */
-    }
-
-    /* Sección de Aves/Poultry */
-    #pagina-aves h2, #pagina-poultry h2 {
-        font-size: 2em;
-    }
-    .banner-container {
-        width: 95%; /* Ajuste del ancho del banner en móviles */
-    }
-    .banner-titulo {
-        font-size: 24px; /* Reduce el tamaño del texto del banner en pantallas más pequeñas */
-        white-space: normal; /* Permite que el texto se rompa en varias líneas */
-        padding: 0 10px; /* Pequeño relleno para evitar que el texto toque los bordes */
-    }
-    .grid-aves {
-        grid-template-columns: 1fr; /* Una columna para la galería en móviles */
-    }
-    .item-ave img {
-        height: 150px; /* Ajusta la altura de las imágenes de los cortes */
-    }
-    .info-aves h3 {
-        font-size: 1.5em;
-    }
-
-@media (max-width: 480px) {
-    .banner-titulo {
-        font-size: 20px; /* Aún más pequeño en móviles muy pequeños */
-    }
-    .service-grid {
-        grid-template-columns: 1fr; /* Una columna para los servicios en móviles muy pequeños */
-    }
-    .service-card img {
-      width: 100% !important; /* Ajusta el tamaño de las imágenes de las tarjetas de servicio en móviles pequeños */
-    }
-/* --- Estilos para la Sección de Información General del Azúcar (VERSIÓN MEJORADA) --- */
-#informacion {
+/* --- Estilos para la Sección de Proyecciones de Azúcar (#pagina-proyecciones) --- */
+#pagina-proyecciones {
     background-color: var(--color-fondo-claro);
     padding: 100px 0; /* Más padding para que respire más la sección */
     text-align: center;
 }
 
-#informacion .section-title {
+#pagina-proyecciones .section-title { /* Título principal de la sección */
     font-size: 3em; /* Título principal más impactante */
     color: var(--color-primario);
     margin-bottom: 60px; /* Más espacio debajo del título principal */
@@ -585,7 +447,7 @@ img {
     padding-bottom: 20px;
 }
 
-#informacion .section-title::after { /* Elemento decorativo debajo del título */
+#pagina-proyecciones .section-title::after { /* Elemento decorativo debajo del título */
     content: '';
     display: block;
     width: 80px;
@@ -593,15 +455,6 @@ img {
     background-color: var(--color-acento);
     margin: 15px auto 0 auto;
     border-radius: 2px;
-}
-
-#informacion .introduccion-info {
-    max-width: 900px;
-    margin: 0 auto 80px auto; /* Aumenta el espacio */
-    font-size: 1.2em; /* Texto introductorio más grande y legible */
-    line-height: 1.9;
-    color: var(--color-texto);
-    text-align: center;
 }
 
 /* Contenedor principal de cada bloque informativo (Tipos de Azúcar, País, Consideraciones) */
@@ -743,92 +596,474 @@ img {
 }
 
 /* Estilos para cada "ficha" individual de información (Proyecciones, Logística, Instituciones) */
-.info-card {
+/* Esta clase .info-card ya estaba definida arriba, pero se le añaden reglas específicas para este contexto */
+.country-block .info-card { /* Para diferenciar las info-cards en bloques de país */
     background-color: var(--color-fondo-claro);
-    border-radius: 12px; /* Bordes redondeados */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para cada tarjeta */
-    padding: 30px; /* Más padding interno */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alinea el contenido de la tarjeta arriba */
+    justify-content: flex-start;
 }
 
-.info-card:hover {
-    transform: translateY(-6px); /* Elevación al pasar el ratón */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más intensa al pasar el ratón */
+.country-block .info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.info-card h4 {
-    font-size: 1.5em; /* Título de tarjeta más prominente */
+.country-block .info-card h4 {
+    font-size: 1.5em;
     color: var(--color-primario);
-    margin-bottom: 20px; /* Más espacio */
-    border-bottom: 2px solid var(--color-acento); /* Línea de acento más notoria */
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-acento);
     padding-bottom: 10px;
-    font-weight: 600; /* Ligeramente más negrita */
+    font-weight: 600;
 }
 
-.info-card p {
-    font-size: 1em; /* Texto de párrafo en la tarjeta */
+.country-block .info-card p {
+    font-size: 1em;
     line-height: 1.7;
     color: var(--color-texto);
-    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible, empujando el contenido hacia abajo si es necesario */
+    flex-grow: 1;
+}
+
+/* --- Estilos para la Sección de Bienes Esenciales (#pagina-bienes-esenciales) --- */
+#pagina-bienes-esenciales {
+    background-color: var(--color-fondo-claro);
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+#pagina-bienes-esenciales h2 {
+    font-size: 2.5em;
+    color: var(--color-primario);
+    margin-bottom: 30px;
+}
+
+.galeria-bienes-esenciales h3 {
+    font-size: 2em;
+    color: var(--color-primario);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.grid-bienes-esenciales {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+    justify-content: center; /* Centra las tarjetas si no ocupan todo el ancho */
+}
+
+.item-bienes-esenciales {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.item-bienes-esenciales:hover {
+    transform: translateY(-5px);
+}
+
+.item-bienes-esenciales img {
+    max-width: 100%;
+    height: 160px; /* Altura fija para la consistencia de las imágenes */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.item-bienes-esenciales h4 {
+    font-size: 1.3em;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.item-bienes-esenciales p {
+    font-size: 0.95em;
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+.info-bienes-esenciales {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    color: var(--color-texto);
+    line-height: 1.7;
+}
+
+.info-bienes-esenciales h3 {
+    font-size: 1.8em;
+    color: var(--color-primario);
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+    text-align: center; /* Centra el subtítulo "Estándares y Logística" */
+}
+
+/* --- Estilos para la Sección de Contactos (#pagina-contactos) --- */
+#pagina-contactos {
+    background-color: var(--color-fondo-claro);
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+#pagina-contactos h2 {
+    font-size: 2.5em;
+    color: var(--color-primario);
+    margin-bottom: 30px;
+}
+
+.info-contactos {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 50px;
+    text-align: left;
+}
+
+.info-contactos h3 {
+    font-size: 2em;
+    color: var(--color-secundario);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.info-contactos p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: var(--color-texto);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--color-texto);
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primario);
+    outline: none;
+    box-shadow: 0 0 5px rgba(216, 140, 0, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+}
+
+.contact-form .cta-button {
+    display: block; /* Ocupa todo el ancho del contenedor */
+    width: auto; /* El padding lo define */
+    margin: 30px auto 0 auto; /* Centra el botón */
+    text-align: center;
+    font-size: 1.1em;
+    padding: 15px 30px;
+    border-radius: 6px;
 }
 
 
-/* Media Queries para Responsividad de la sección de Información (AJUSTADAS) */
+/* Media Queries para Responsividad */
 @media (max-width: 992px) {
-    .info-block {
-        padding: 40px; /* Ajusta padding en tablets */
-        margin-bottom: 60px;
+    .section {
+        padding: 60px 20px;
+    }
+    .main-nav {
+        padding: 16px 30px;
+    }
+    .nav-links {
+        gap: 25px;
+    }
+    .language-switcher {
+        top: 90px;
+        right: 15px;
+    }
+    .hero-logo {
+        width: 380px;
+    }
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
     }
 
+    /* content-block (Quiénes Somos, Bienes Esenciales, Contactos en Landing) */
+    .content-block {
+        gap: 30px;
+    }
+    .content-block img {
+        max-width: 80%;
+    }
+    .content-block > div {
+        max-width: 90%;
+        padding: 0 15px;
+    }
+
+    /* Cards (Misión, Visión, Valores) */
+    .info-card {
+        padding: 25px 20px;
+        max-width: 280px;
+        flex: 1 1 260px;
+    }
+    .info-card img {
+        max-width: 200px;
+    }
+
+    /* Service Grid */
+    .service-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+    }
+    .service-card img {
+        width: 300px !important;
+    }
+
+    /* Banner de Subpáginas */
+    .banner-container {
+        width: 95%;
+        margin-bottom: 30px;
+    }
+    .banner-titulo {
+        font-size: 28px;
+    }
+
+    /* Página Proyecciones (Azúcar) */
+    #pagina-proyecciones {
+        padding: 80px 0;
+    }
+    #pagina-proyecciones .section-title {
+        font-size: 2.8em;
+        margin-bottom: 50px;
+    }
+    .info-block {
+        padding: 40px;
+        margin-bottom: 60px;
+    }
     .info-block h3 {
         font-size: 2.2em;
         margin-bottom: 30px;
     }
-
     .info-content-wrapper {
         flex-direction: column; /* Apila el contenido (imagen y texto) en tablets */
         align-items: center; /* Centra los elementos apilados */
         gap: 30px; /* Menos espacio apilado */
     }
-
     .info-image-container {
         flex: none;
         max-width: 80%; /* Más ancho en tablets */
         margin-bottom: 20px; /* Espacio entre imagen y texto */
         padding: 10px; /* Menos padding */
     }
-
     /* Invierte el orden solo en móviles y tablets para los bloques con 'reverse-on-mobile' */
     .info-content-wrapper.reverse-on-mobile {
         flex-direction: column-reverse; /* Pone la imagen debajo en móviles */
     }
-
     .info-grid-content {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste de min-width */
         gap: 30px;
     }
+    .country-block .info-card {
+        padding: 25px;
+    }
+    .country-block .info-card h4 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    .country-block .info-card p {
+        font-size: 0.95em;
+    }
+
+    /* Página Bienes Esenciales */
+    #pagina-bienes-esenciales h2 {
+        font-size: 2.2em;
+    }
+    .galeria-bienes-esenciales h3 {
+        font-size: 1.8em;
+    }
+    .grid-bienes-esenciales {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    .item-bienes-esenciales img {
+        height: 140px;
+    }
+    .item-bienes-esenciales h4 {
+        font-size: 1.1em;
+    }
+    .info-bienes-esenciales h3 {
+        font-size: 1.6em;
+    }
+
+    /* Página Contactos */
+    #pagina-contactos h2 {
+        font-size: 2.2em;
+    }
+    .info-contactos {
+        padding: 40px;
+    }
+    .info-contactos h3 {
+        font-size: 1.8em;
+    }
 }
 
 @media (max-width: 768px) {
-    #informacion {
-        padding: 60px 15px; /* Más compacto en móviles */
+    .section {
+        padding: 40px 15px;
     }
-    #informacion .section-title {
+    .main-nav {
+        flex-direction: column;
+        padding: 10px 15px;
+        align-items: flex-start;
+    }
+    .nav-logo {
+        margin-bottom: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links li a {
+        padding: 8px 0;
+        display: block;
+    }
+    .submenu {
+        position: static;
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .submenu li {
+        padding: 8px 0;
+    }
+    .submenu li a {
+        color: var(--color-fondo-claro);
+        background-color: var(--color-secundario);
+    }
+    .nav-links li:hover .submenu {
+        display: none; /* Submenus might need JS toggle for mobile */
+    }
+
+    .language-switcher {
+        top: 10px; /* Ajuste para el switcher en móvil */
+        right: 15px;
+    }
+    .hero {
+        height: 80vh;
+        padding-bottom: 40px;
+    }
+    .hero-logo {
+        width: 250px;
+        margin-top: 20px;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    /* content-block (Quiénes Somos, Bienes Esenciales, Contactos en Landing) */
+    .content-block {
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    .content-block img {
+        max-width: 95%;
+    }
+    .content-block > div {
+        padding: 0 10px;
+    }
+
+    /* Cards (Misión, Visión, Valores) */
+    .card-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .info-card {
+        max-width: 95%;
+        padding: 20px;
+    }
+    .info-card img {
+        max-width: 150px;
+    }
+    .info-card h3 {
+        font-size: 1.2rem;
+    }
+    .info-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Service Grid */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .service-card img {
+        width: 100% !important;
+    }
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Banner de Subpáginas */
+    .banner-titulo {
+        font-size: 20px;
+        white-space: normal; /* Permite que el texto se rompa en varias líneas */
+        padding: 0 10px; /* Pequeño relleno para evitar que el texto toque los bordes */
+    }
+
+    /* Página Proyecciones (Azúcar) */
+    #pagina-proyecciones {
+        padding: 60px 15px;
+    }
+    #pagina-proyecciones .section-title {
         font-size: 2.5em;
         margin-bottom: 40px;
-    }
-    #informacion .introduccion-info {
-        margin-bottom: 40px;
-        font-size: 1em;
     }
     .info-block {
         padding: 25px;
         margin-bottom: 40px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más sutil en móviles */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .info-block:hover {
         transform: none; /* Deshabilita el hover en móviles */
@@ -839,7 +1074,7 @@ img {
         margin-bottom: 20px;
     }
     .info-image-container {
-        max-width: 95%; /* Más ancho en móviles pequeños */
+        max-width: 95%;
         margin-bottom: 20px;
         padding: 8px;
     }
@@ -858,22 +1093,73 @@ img {
         font-size: 1em;
     }
     .info-grid-content {
-        grid-template-columns: 1fr; /* Una columna para las tarjetas en móviles */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
-    .info-card {
+    .country-block .info-card {
         padding: 20px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Sombra más sutil para tarjetas en móviles */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     }
-    .info-card:hover {
+    .country-block .info-card:hover {
         transform: none; /* Deshabilita el hover en móviles */
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     }
-    .info-card h4 {
+    .country-block .info-card h4 {
         font-size: 1.3em;
         margin-bottom: 10px;
     }
-    .info-card p {
+    .country-block .info-card p {
         font-size: 0.9em;
+    }
+
+    /* Página Bienes Esenciales */
+    #pagina-bienes-esenciales h2 {
+        font-size: 2em;
+    }
+    .galeria-bienes-esenciales h3 {
+        font-size: 1.5em;
+    }
+    .grid-bienes-esenciales {
+        grid-template-columns: 1fr;
+    }
+    .item-bienes-esenciales img {
+        height: 120px;
+    }
+    .info-bienes-esenciales h3 {
+        font-size: 1.3em;
+    }
+
+    /* Página Contactos */
+    #pagina-contactos h2 {
+        font-size: 2em;
+    }
+    .info-contactos {
+        padding: 25px;
+    }
+    .info-contactos h3 {
+        font-size: 1.5em;
+    }
+    .contact-form .cta-button {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-titulo {
+        font-size: 18px; /* Aún más pequeño en móviles muy pequeños */
+    }
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    .hero-logo {
+        width: 200px;
+    }
+    .language-switcher {
+        top: 5px;
+        right: 10px;
+    }
+    .language-switcher img {
+        width: 28px;
     }
 }
