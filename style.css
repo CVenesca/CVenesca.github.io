@@ -36,7 +36,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 40px;
+    padding: 12px 40px; /* AJUSTE: Reducido para hacer la barra más compacta */
     background-color: var(--color-secundario);
     position: sticky;
     top: 0;
@@ -113,12 +113,13 @@ body {
     font-size: 1rem;
     border-bottom: 2px solid #ffeeba;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    /* No se añade margen para que no se separe de la barra de menú */
 }
 
 /* --- START: Integrated Language Switcher Styles --- */
 .language-switcher {
     position: absolute; /* Allows positioning with `top` and `right` */
-    top: 110px; /* Top separation, adjust if necessary */
+    top: 90px; /* AJUSTE: Posición más cerca de la navegación */
     right: 20px; /* Right edge separation */
     z-index: 1001; /* Ensures it's above other elements */
     display: flex; /* For flags to be inline */
@@ -192,7 +193,7 @@ img {
 
 .content-block img {
     width: 100%;
-    max-width: 500px; /* **AJUSTE DE TAMAÑO** - Imágenes en bloques de contenido general */
+    max-width: 650px; /* AJUSTE: Incrementado para que la imagen ocupe más ancho del contenedor */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -208,7 +209,7 @@ img {
 /* Aunque no están en el HTML proporcionado, se mantienen si se reincorporan */
 .about-us-img { /* Esto parece ser un estilo más específico, si se usa una imagen destacada */
     width: 100%;
-    max-width: 80%;
+    max-width: 90%; /* Ajuste para que ocupe más ancho en pantallas grandes */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -252,7 +253,7 @@ img {
 }
 
 .info-card img {
-    max-width: 150px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de misión/visión/valores */
+    max-width: 200px; /* AJUSTE: Incrementado para hacer la imagen más grande */
     height: auto;
     margin-bottom: 20px;
 }
@@ -284,7 +285,7 @@ img {
 /* Organizes and styles service cards and lists of links to download product datasheets. */
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* AJUSTE: para favorecer 2 columnas grandes */
     gap: 30px;
     justify-content: center;
     align-items: stretch;
@@ -304,10 +305,10 @@ img {
 }
 
 .service-card img {
-    width: 250px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de servicios/fichas técnicas */
-    height: auto;
+    width: 100%; /* Ajuste: para que la imagen ocupe todo el ancho de la tarjeta */
+    height: 180px; /* AJUSTE: Altura fija para mantener proporción y consistencia */
+    object-fit: contain; /* AJUSTE: La imagen se ajustará dentro del espacio sin recortarse */
     margin-bottom: 20px;
-    /* !important eliminado si es posible, la especificidad debería ser suficiente */
 }
 .service-card h3 {
     font-size: 1.3rem;
@@ -326,13 +327,14 @@ img {
 /* Defines the style for the main welcome section with a background image, logo, and featured content. */
 .hero {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* Se mantiene para ocupar toda la altura de la ventana */
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column; /* Apila el contenido verticalmente */
+    align-items: center; /* Centra horizontalmente el contenido */
+    justify-content: center; /* Centra verticalmente el contenido */
     text-align: center;
-    padding-bottom: 80px;
+    padding-bottom: 80px; /* Margen inferior para el contenido si es necesario */
 }
 
 .hero-bg {
@@ -350,9 +352,9 @@ img {
     width: 460px;
     max-width: 80%;
     height: auto;
-    margin: 0 auto 30px;
+    margin: 0 auto 30px; /* Ajuste: Centrado automáticamente */
     position: relative;
-    top: 40px;
+    /* top: 40px; ELIMINADO para permitir centrado por flexbox */
 }
 
 .hero-overlay {
@@ -364,6 +366,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Asegura el centrado vertical dentro del overlay */
 }
 
 .hero-content {
@@ -500,15 +503,15 @@ img {
     gap: 50px;
 }
 
-/* Contenedor de la imagen dentro de un info-block */
+/* Contenedor de la imagen dentro de un info-block (Sección ICUMSA/Tipos de Azúcar) */
 .info-image-container {
-    flex: 0 0 350px; /* **AJUSTE DE TAMAÑO** - Ancho fijo para la imagen en desktop */
-    max-width: 40%; /* **AJUSTE DE TAMAÑO** - Máximo 40% del ancho del wrapper */
+    flex: 0 0 280px; /* AJUSTE: Ancho fijo más pequeño para la imagen en desktop */
+    max-width: 35%; /* AJUSTE: Máximo 35% del ancho del wrapper */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     background-color: #f8f8f8;
-    padding: 10px; /* Ligeramente menos padding alrededor de la imagen */
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -587,8 +590,7 @@ img {
 /* Contenedor para la rejilla de tarjetas de información (proyecciones, logística, instituciones) */
 .info-grid-content {
     flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* AJUSTE: Reducido para hacer las tarjetas más compactas */
     gap: 40px;
     align-items: stretch;
 }
@@ -598,7 +600,7 @@ img {
     background-color: var(--color-fondo-claro);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 25px; /* AJUSTE: Reducido para hacer la tarjeta más compacta */
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
@@ -670,7 +672,7 @@ img {
 
 .item-bienes-esenciales img {
     max-width: 100%;
-    height: 120px; /* **AJUSTE DE TAMAÑO** - Altura fija para la consistencia de las imágenes de ítems */
+    height: 100px; /* AJUSTE: Altura fija más pequeña para las imágenes de ítems */
     object-fit: contain;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -796,13 +798,13 @@ img {
         padding: 60px 20px;
     }
     .main-nav {
-        padding: 16px 30px;
+        padding: 10px 30px; /* AJUSTE: Más compacto en tablets */
     }
     .nav-links {
         gap: 25px;
     }
     .language-switcher {
-        top: 90px;
+        top: 80px; /* AJUSTE: Posición en tablets */
         right: 15px;
     }
     .hero-logo {
@@ -820,7 +822,7 @@ img {
         gap: 30px;
     }
     .content-block img {
-        max-width: 80%; /* Ajuste para tablets */
+        max-width: 90%; /* Ajuste para tablets */
     }
     .content-block > div {
         max-width: 90%;
@@ -834,16 +836,16 @@ img {
         flex: 1 1 260px;
     }
     .info-card img {
-        max-width: 120px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de misión/visión/valores */
+        max-width: 150px; /* AJUSTE: Imágenes más grandes en tablets */
     }
 
     /* Service Grid */
     .service-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Ajuste para 2 columnas en tablets */
         gap: 25px;
     }
     .service-card img {
-        width: 200px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de servicios/fichas técnicas */
+        height: 160px; /* AJUSTE: Altura en tablets */
     }
 
     /* Banner de Subpáginas */
@@ -886,7 +888,7 @@ img {
         flex-direction: column-reverse;
     }
     .info-grid-content {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* AJUSTE: Más compacto en tablets */
         gap: 30px;
     }
     .country-block .info-card {
@@ -912,7 +914,7 @@ img {
         gap: 20px;
     }
     .item-bienes-esenciales img {
-        height: 100px; /* **AJUSTE DE TAMAÑO** - Altura en tablets */
+        height: 90px; /* AJUSTE: Altura en tablets */
     }
     .item-bienes-esenciales h4 {
         font-size: 1.1em;
@@ -1017,7 +1019,7 @@ img {
         padding: 20px;
     }
     .info-card img {
-        max-width: 100px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de misión/visión/valores */
+        max-width: 120px; /* AJUSTE: Imágenes en móviles */
     }
     .info-card h3 {
         font-size: 1.2rem;
@@ -1032,7 +1034,7 @@ img {
         gap: 20px;
     }
     .service-card img {
-        width: 180px; /* **AJUSTE DE TAMAÑO** - Imágenes en tarjetas de servicios/fichas técnicas */
+        height: 140px; /* AJUSTE: Altura en móviles */
     }
     .service-card h3 {
         font-size: 1.1rem;
@@ -1068,6 +1070,11 @@ img {
     .info-block h3 {
         font-size: 2em;
         margin-bottom: 20px;
+    }
+    .info-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
     }
     .info-image-container {
         max-width: 95%;
@@ -1119,7 +1126,7 @@ img {
         grid-template-columns: 1fr;
     }
     .item-bienes-esenciales img {
-        height: 100px; /* **AJUSTE DE TAMAÑO** - Altura en móviles */
+        height: 80px; /* AJUSTE: Altura en móviles */
     }
     .info-bienes-esenciales h3 {
         font-size: 1.3em;
