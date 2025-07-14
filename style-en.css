@@ -561,7 +561,6 @@ img {
     .info-aves h3 {
         font-size: 1.5em;
     }
-}
 
 @media (max-width: 480px) {
     .banner-titulo {
@@ -573,7 +572,6 @@ img {
     .service-card img {
       width: 100% !important; /* Ajusta el tamaño de las imágenes de las tarjetas de servicio en móviles pequeños */
     }
-}
 /* --- Estilos para la Sección de Información General del Azúcar --- */
 #informacion {
     background-color: var(--color-fondo-claro);
@@ -667,7 +665,6 @@ img {
     .pais-block .info-details {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Menos columnas en tablets */
     }
-}
 
 @media (max-width: 768px) {
     #informacion {
