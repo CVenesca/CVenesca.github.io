@@ -876,4 +876,40 @@ img {
     .info-card p {
         font-size: 0.9em;
     }
+/* Nuevo estilo para invertir el orden de las tarjetas */
+.reverse-grid {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* Ajuste de la altura de las imágenes en la sección "informacion" */
+#informacion .info-image-container .info-image {
+    width: 100%;
+    height: auto; /* Asegura que la proporción se mantenga */
+    max-height: 60%; /* Reduce la altura máxima al 60% del contenedor */
+    display: block;
+    border-radius: 8px;
+    margin: 0;
+}
+
+/* Mejora de los subtítulos h3 en la sección "informacion" */
+#informacion .info-block h3 {
+    font-size: 2.4em; /* Ligeramente más pequeño y controlado */
+    color: var(--color-secundario); /* Asegúrate de que --color-secundario está definido */
+    margin-bottom: 35px; /* Un poco menos de espacio inferior */
+    padding-bottom: 12px; /* Ajuste del padding inferior para la línea */
+    position: relative;
+    text-align: center;
+    font-weight: 600; /* Un peso ligeramente menor para más elegancia */
+    letter-spacing: 0.5px; /* Ligero espaciado entre letras para claridad */
+}
+
+#informacion .info-block h3::after {
+    content: '';
+    display: block;
+    width: 70px; /* Ligeramente más corta */
+    height: 3px;
+    background-color: var(--color-primario); /* Asegúrate de que --color-primario está definido */
+    margin: 10px auto 0 auto;
+    border-radius: 1.5px;
 }
