@@ -574,3 +574,124 @@ img {
       width: 100% !important; /* Ajusta el tamaño de las imágenes de las tarjetas de servicio en móviles pequeños */
     }
 }
+/* --- Estilos para la Sección de Información General del Azúcar --- */
+#informacion {
+    background-color: var(--color-fondo-claro);
+    padding: 80px 0; /* Asegura un buen espaciado */
+    text-align: center;
+}
+
+#informacion .introduccion-info {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--color-texto);
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+#informacion .sub-seccion-info {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    margin-bottom: 50px;
+    text-align: left; /* Alinea el contenido interno a la izquierda */
+}
+
+#informacion .sub-seccion-info h3 {
+    font-size: 2em;
+    color: var(--color-secundario); /* Usando el azul petróleo para sub-títulos */
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--color-acento); /* Línea de acento */
+    padding-bottom: 10px;
+}
+
+#informacion .sub-seccion-info h4 {
+    font-size: 1.4em;
+    color: var(--color-primario); /* Usando el ocre-naranja para los títulos de detalle */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#informacion .sub-seccion-info p,
+#informacion .sub-seccion-info ul {
+    font-size: 1em;
+    line-height: 1.7;
+    color: var(--color-texto);
+    margin-bottom: 20px;
+}
+
+#informacion .sub-seccion-info ul {
+    list-style: none; /* Eliminar el estilo de lista por defecto */
+    padding-left: 0; /* Eliminar padding por defecto */
+}
+
+#informacion .sub-seccion-info ul li {
+    position: relative;
+    padding-left: 25px; /* Espacio para el bullet personalizado */
+    margin-bottom: 10px;
+}
+
+#informacion .sub-seccion-info ul li::before {
+    content: "•"; /* Bullet personalizado */
+    color: var(--color-primario); /* Color del bullet */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Estilos para los bloques de país (Brasil, Tailandia, UE) */
+.pais-block .info-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 columnas responsivas */
+    gap: 30px; /* Espacio entre los bloques de detalle */
+    margin-top: 30px;
+}
+
+.pais-block .info-details > div { /* Cada sub-bloque de info (proyección, logística, etc.) */
+    background-color: var(--color-fondo-claro); /* Fondo ligeramente diferente para los sub-bloques */
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05); /* Sombra interna sutil */
+    height: 100%; /* Asegura que todos tengan la misma altura en la fila */
+}
+
+.consideraciones ul li {
+    font-weight: bold; /* Hacer los títulos de las consideraciones en negrita */
+}
+
+/* Media Queries para Responsividad de la sección de Información */
+@media (max-width: 992px) {
+    .pais-block .info-details {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Menos columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    #informacion {
+        padding: 60px 15px;
+    }
+    #informacion .introduccion-info {
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+    #informacion .sub-seccion-info {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+    #informacion .sub-seccion-info h3 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    #informacion .sub-seccion-info h4 {
+        font-size: 1.2em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .pais-block .info-details {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 20px;
+    }
+}
