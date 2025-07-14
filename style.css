@@ -570,88 +570,124 @@ img {
     .service-card img {
       width: 100% !important; /* Ajusta el tamaño de las imágenes de las tarjetas de servicio en móviles pequeños */
     }
-/* --- Estilos para la Sección de Información General del Azúcar (MEJORADO) --- */
+/* --- Estilos para la Sección de Información General del Azúcar (VERSIÓN MEJORADA) --- */
 #informacion {
     background-color: var(--color-fondo-claro);
-    padding: 80px 0;
-    text-align: center; /* Centra el título principal y la intro */
+    padding: 100px 0; /* Más padding para que respire más la sección */
+    text-align: center;
 }
 
 #informacion .section-title {
-    margin-bottom: 50px; /* Más espacio debajo del título principal */
+    font-size: 3em; /* Título principal más impactante */
+    color: var(--color-primario);
+    margin-bottom: 60px; /* Más espacio debajo del título principal */
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#informacion .section-title::after { /* Elemento decorativo debajo del título */
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-acento);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
 }
 
 #informacion .introduccion-info {
     max-width: 900px;
-    margin: 0 auto 60px auto; /* Más espacio debajo de la introducción */
-    font-size: 1.15em; /* Un poco más grande para mejor legibilidad */
-    line-height: 1.8;
+    margin: 0 auto 80px auto; /* Aumenta el espacio */
+    font-size: 1.2em; /* Texto introductorio más grande y legible */
+    line-height: 1.9;
     color: var(--color-texto);
-    text-align: center; /* Centra el texto de la introducción */
+    text-align: center;
 }
 
 /* Contenedor principal de cada bloque informativo (Tipos de Azúcar, País, Consideraciones) */
 .info-block {
     background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada para el efecto de ficha */
-    padding: 40px;
-    margin-bottom: 60px; /* Espacio entre bloques principales */
-    text-align: left; /* Alinea el contenido interno a la izquierda */
-    overflow: hidden; /* Limpia floats o problemas de margen */
-    position: relative; /* Para posibles elementos posicionados */
+    border-radius: 15px; /* Bordes más redondeados para un look más suave */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más profunda y definida */
+    padding: 50px; /* Más padding interno */
+    margin-bottom: 80px; /* Más espacio entre bloques principales */
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.info-block:hover {
+    transform: translateY(-8px); /* Elevación sutil al pasar el ratón */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
 }
 
 .info-block h3 {
-    font-size: 2.2em;
+    font-size: 2.6em; /* Subtítulos de bloque más grandes y prominentes */
     color: var(--color-secundario);
-    margin-bottom: 30px;
-    border-bottom: 3px solid var(--color-acento); /* Línea de acento más definida */
+    margin-bottom: 40px; /* Más espacio debajo del subtítulo de bloque */
+    position: relative;
     padding-bottom: 15px;
-    text-align: center; /* Centra los títulos de los info-blocks */
+    text-align: center;
+    font-weight: 700; /* Asegura que sea negrita */
+}
+
+.info-block h3::after { /* Línea de acento debajo del subtítulo de bloque */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-primario);
+    margin: 10px auto 0 auto;
+    border-radius: 1.5px;
 }
 
 /* Contenedor para el texto e imagen dentro de cada info-block */
 .info-content-wrapper {
     display: flex;
-    align-items: flex-start; /* Alinea el contenido al inicio */
-    gap: 40px; /* Espacio entre la imagen y el texto/grid */
+    align-items: center; /* Centra verticalmente imagen y texto */
+    gap: 50px; /* Más espacio entre imagen y contenido */
 }
 
 /* Contenedor de la imagen dentro de un info-block */
 .info-image-container {
-    flex: 0 0 400px; /* Ancho fijo para la imagen en desktop */
-    max-width: 40%; /* Máximo 40% del ancho del wrapper */
-    border-radius: 8px;
+    flex: 0 0 450px; /* Ancho fijo para la imagen en desktop */
+    max-width: 45%; /* Máximo 45% del ancho del wrapper */
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #f0f0f0; /* Fondo para si la imagen no carga */
-    padding: 10px; /* Pequeño padding alrededor de la imagen */
-    text-align: center; /* Centra la imagen y el caption */
-    display: flex; /* Para centrar la imagen verticalmente si es necesario */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra de imagen más suave */
+    background-color: #f8f8f8; /* Fondo para si la imagen no carga */
+    padding: 15px; /* Más padding alrededor de la imagen */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease; /* Transición para efecto hover */
+}
+
+.info-image-container:hover {
+    transform: scale(1.02); /* Pequeño zoom al pasar el ratón */
 }
 
 .info-image-container .info-image {
     width: 100%;
     height: auto;
-    display: block; /* Asegura que no haya espacio extra debajo */
-    border-radius: 6px; /* Bordes redondeados para la imagen */
-    margin: 0; /* Reinicia el margen de la imagen general */
+    display: block;
+    border-radius: 8px; /* Bordes ligeramente más redondeados */
+    margin: 0;
 }
 
 .image-caption {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 10px;
-    line-height: 1.4;
+    font-size: 0.95em; /* Tamaño de caption ligeramente más grande */
+    color: #777;
+    margin-top: 15px; /* Más espacio arriba del caption */
+    line-height: 1.5;
+    font-style: italic; /* Texto del caption en cursiva */
 }
 
 /* Contenedor para el texto cuando hay una imagen al lado */
 .info-text-content {
-    flex: 1; /* Ocupa el espacio restante */
+    flex: 1;
 }
 
 .info-text-content ul {
@@ -661,10 +697,15 @@ img {
 
 .info-text-content ul li {
     position: relative;
-    padding-left: 25px;
-    margin-bottom: 12px;
-    line-height: 1.6;
+    padding-left: 30px; /* Más espacio para el bullet */
+    margin-bottom: 15px; /* Más espacio entre elementos de lista */
+    line-height: 1.7;
     color: var(--color-texto);
+    font-size: 1.05em; /* Texto de lista un poco más grande */
+}
+
+.info-text-content ul li strong {
+    color: var(--color-secundario); /* Destaca los strong */
 }
 
 .info-text-content ul li::before {
@@ -674,84 +715,111 @@ img {
     position: absolute;
     left: 0;
     top: 0;
+    font-size: 1.2em; /* Bullet más grande */
 }
 
 /* Estilos específicos para el texto cuando ocupa todo el ancho (en Consideraciones) */
 .full-width-text {
-    flex: 1 1 100%; /* Permite que el texto ocupe todo el ancho */
-    max-width: 800px; /* Limita el ancho del texto para legibilidad */
-    margin: 0 auto; /* Centra el texto */
+    flex: 1 1 100%;
+    max-width: 900px; /* Aumenta el ancho máximo para el texto general */
+    margin: 0 auto;
     text-align: left;
 }
 
 .full-width-text p {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: var(--color-texto);
 }
 
 /* Contenedor para la rejilla de tarjetas de información (proyecciones, logística, instituciones) */
 .info-grid-content {
-    flex: 1; /* Ocupa el espacio restante */
+    flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; /* Espacio entre las tarjetas */
-    align-items: stretch; /* Asegura que las tarjetas en la misma fila tengan la misma altura */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Min-width ajustado */
+    gap: 40px; /* Más espacio entre las tarjetas de la cuadrícula */
+    align-items: stretch;
 }
 
 /* Estilos para cada "ficha" individual de información (Proyecciones, Logística, Instituciones) */
 .info-card {
-    background-color: var(--color-fondo-claro); /* Color de fondo para las tarjetas internas */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Sombra para cada tarjeta */
-    padding: 25px;
+    background-color: var(--color-fondo-claro);
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para cada tarjeta */
+    padding: 30px; /* Más padding interno */
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Para que el contenido interno de la tarjeta se estire */
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido de la tarjeta arriba */
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px); /* Elevación al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más intensa al pasar el ratón */
 }
 
 .info-card h4 {
-    font-size: 1.3em;
+    font-size: 1.5em; /* Título de tarjeta más prominente */
     color: var(--color-primario);
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee; /* Línea suave debajo del título de la tarjeta */
+    margin-bottom: 20px; /* Más espacio */
+    border-bottom: 2px solid var(--color-acento); /* Línea de acento más notoria */
     padding-bottom: 10px;
+    font-weight: 600; /* Ligeramente más negrita */
 }
 
 .info-card p {
-    font-size: 0.95em;
-    line-height: 1.6;
+    font-size: 1em; /* Texto de párrafo en la tarjeta */
+    line-height: 1.7;
     color: var(--color-texto);
-    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible, empujando el contenido hacia abajo si es necesario */
 }
 
 
-/* Media Queries para Responsividad de la sección de Información */
+/* Media Queries para Responsividad de la sección de Información (AJUSTADAS) */
 @media (max-width: 992px) {
+    .info-block {
+        padding: 40px; /* Ajusta padding en tablets */
+        margin-bottom: 60px;
+    }
+
+    .info-block h3 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
     .info-content-wrapper {
         flex-direction: column; /* Apila el contenido (imagen y texto) en tablets */
         align-items: center; /* Centra los elementos apilados */
+        gap: 30px; /* Menos espacio apilado */
     }
 
     .info-image-container {
-        flex: none; /* Elimina la restricción de flex */
-        max-width: 70%; /* Ocupa más ancho en tablets */
-        margin-bottom: 30px; /* Espacio entre imagen y texto */
+        flex: none;
+        max-width: 80%; /* Más ancho en tablets */
+        margin-bottom: 20px; /* Espacio entre imagen y texto */
+        padding: 10px; /* Menos padding */
     }
 
     /* Invierte el orden solo en móviles y tablets para los bloques con 'reverse-on-mobile' */
     .info-content-wrapper.reverse-on-mobile {
         flex-direction: column-reverse; /* Pone la imagen debajo en móviles */
     }
+
+    .info-grid-content {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste de min-width */
+        gap: 30px;
+    }
 }
 
 @media (max-width: 768px) {
     #informacion {
-        padding: 60px 15px;
+        padding: 60px 15px; /* Más compacto en móviles */
+    }
+    #informacion .section-title {
+        font-size: 2.5em;
+        margin-bottom: 40px;
     }
     #informacion .introduccion-info {
         margin-bottom: 40px;
@@ -760,32 +828,52 @@ img {
     .info-block {
         padding: 25px;
         margin-bottom: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más sutil en móviles */
+    }
+    .info-block:hover {
+        transform: none; /* Deshabilita el hover en móviles */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .info-block h3 {
-        font-size: 1.8em;
+        font-size: 2em;
         margin-bottom: 20px;
-        padding-bottom: 10px;
     }
     .info-image-container {
-        max-width: 90%; /* Más ancho en móviles pequeños */
-        margin-bottom: 25px;
+        max-width: 95%; /* Más ancho en móviles pequeños */
+        margin-bottom: 20px;
+        padding: 8px;
+    }
+    .image-caption {
+        font-size: 0.85em;
+    }
+    .info-text-content ul li {
+        font-size: 1em;
+        padding-left: 25px;
+        margin-bottom: 10px;
+    }
+    .info-text-content ul li::before {
+        font-size: 1em;
+    }
+    .full-width-text p {
+        font-size: 1em;
     }
     .info-grid-content {
         grid-template-columns: 1fr; /* Una columna para las tarjetas en móviles */
         gap: 20px;
     }
+    .info-card {
+        padding: 20px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Sombra más sutil para tarjetas en móviles */
+    }
+    .info-card:hover {
+        transform: none; /* Deshabilita el hover en móviles */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
     .info-card h4 {
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin-bottom: 10px;
     }
     .info-card p {
         font-size: 0.9em;
     }
 }
-
-@media (max-width: 480px) {
-    .info-image-container {
-        max-width: 100%; /* Ocupa todo el ancho en los móviles más pequeños */
-    }
-}
-
