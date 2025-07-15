@@ -361,6 +361,7 @@ img {
   max-width: 700px;
   margin: 0 auto 2rem;
 }
+
 /* 🎯 Buttons */
 /* Styles call-to-action (CTA) buttons to make them visible and attractive. */
 .cta-button {
@@ -378,6 +379,7 @@ img {
   background-color: var(--color-acento);
   color: var(--color-secundario);
 }
+
 /* --- Nuevos y/o Modificados Estilos para la Sección de Aves (Poultry) y su Banner --- */
 
 /* Estilos para la nueva sección de Aves/Poultry */
@@ -876,8 +878,7 @@ img {
     .info-card p {
         font-size: 0.9em;
     }
-}
-  .clima { border: 2px solid #27ae60; background-color: #ecf9f1; }
+}.clima { border: 2px solid #27ae60; background-color: #ecf9f1; }
 .politica { border: 2px solid #2980b9; background-color: #eef5fc; }
 .logistica { border: 2px solid #e67e22; background-color: #fff2e6; }
 .demanda { border: 2px solid #8e44ad; background-color: #f5eef8; }
@@ -976,3 +977,4 @@ img {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+  
