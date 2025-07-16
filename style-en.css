@@ -1,0 +1,621 @@
+/* 🔄 Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌐 Typography and Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo-claro);
+}
+
+/* 🎨 Variables */
+:root {
+  --color-primario: #d88c00;
+  --color-secundario: #00334e;
+  --color-fondo-claro: #fdfaf6;
+  --color-texto: #2e2e2e;
+  --color-acento: #f4b860;
+  --color-banner: #ffe8b0;
+}
+
+/* 🔷 Navigation Menu and Submenu */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: var(--color-secundario);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: var(--color-fondo-claro);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--color-primario);
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-secundario);
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  min-width: 180px;
+  display: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.submenu li {
+  padding: 8px 20px;
+}
+
+.submenu li a {
+  color: var(--color-fondo-claro);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: var(--color-primario);
+  color: white;
+}
+
+.nav-links li:hover .submenu {
+  display: block;
+}
+
+/* 📢 Alert Banner */
+.banner-aviso {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 1rem;
+  border-bottom: 2px solid #ffeeba;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+  position: absolute;
+  top: 110px;
+  right: 20px;
+  z-index: 1001;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.language-switcher img {
+  width: 32px;
+  height: auto;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.language-switcher img:hover {
+  transform: scale(1.1);
+}
+
+/* 🧩 General Sections */
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.section-light {
+  background-color: var(--color-fondo-claro);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.section-title {
+  color: var(--color-primario);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+  color: var(--color-primario);
+  margin-bottom: 10px;
+}
+
+/* 🖼️ Images and Visual Content */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* "Quiénes Somos" (content-block) */
+.content-block {
+  display: block;
+  gap: 40px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.about-us-img {
+  width: 100%;
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#quienes-somos div, #about-us div {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 20px;
+}
+
+/* 🧃 Cards: Mission, Vision, and Values */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 30px 25px;
+  max-width: 320px;
+  flex: 1 1 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+}
+
+.info-card img {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.info-card p,
+.info-card ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card ul li::before {
+  content: "• ";
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
+/* 🛒 Services and Datasheets */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.service-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card img {
+  width: 360px !important;
+  height: auto;
+  margin-bottom: 20px;
+}
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--color-primario);
+}
+
+.service-card p,
+.service-card ul {
+  font-size: 1rem;
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+/* 🪟 Hero with Background and Image */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  z-index: 0;
+}
+
+.hero-logo {
+  width: 460px;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 30px;
+  position: relative;
+  top: 40px;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content {
+  color: var(--color-primario);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* 🎯 Buttons */
+.cta-button,
+.boton-cta {
+  background-color: #1a3b5d;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+}
+
+.cta-button:hover,
+.boton-cta:hover {
+  background-color: var(--color-acento);
+  color: var(--color-secundario);
+}
+
+.cta-azucar {
+  background: linear-gradient(270deg, #eaf6fc, #f9fcff, #eaf6fc);
+  background-size: 600% 600%;
+  border: 1px solid #cce3f5;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a3b5d;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+  margin-top: 40px;
+  animation: gradientShift 10s ease infinite, fadeInUp 1s ease forwards;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* --- Nuevos y/o Modificados Estilos para la Sección de Aves (Poultry) y su Banner --- */
+#pagina-aves, #pagina-poultry {
+  background-color: var(--color-fondo-claro);
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+#pagina-aves h2, #pagina-poultry h2 {
+  font-size: 2.5em;
+  color: var(--color-primario);
+  margin-bottom: 30px;
+}
+
+.banner-container {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto 40px auto;
+}
+
+.banner-titulo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.banner-container .banner-imagen {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.introduccion-aves {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+  line-height: 1.7;
+  color: var(--color-texto);
+}
+
+.introduccion-aves p {
+  margin-bottom: 15px;
+}
+
+.galeria-aves h3 {
+  font-size: 2em;
+  color: var(--color-primario);
+  margin-bottom: 30px;
+}
+
+.grid-aves {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.item-ave {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-ave:hover {
+  transform: translateY(-5px);
+}
+
+.item-ave img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.item-ave h4 {
+  font-size: 1.3em;
+  color: var(--color-primario);
+  margin-bottom: 10px;
+}
+
+.item-ave p {
+  font-size: 0.95em;
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+.info-aves {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  color: var(--color-texto);
+  line-height: 1.7;
+}
+
+.info-aves h3 {
+  font-size: 1.8em;
+  color: var(--color-primario);
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 15px;
+  }
+  .main-nav {
+    padding: 16px 20px;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .language-switcher {
+    top: 80px;
+  }
+  .hero-logo {
+    width: 300px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .about-us-img {
+    width: 95%;
+    max-width: 95%;
+  }
+  #quienes-somos div, #about-us div {
+    padding: 0 10px;
+  }
+  #pagina-aves h2, #pagina-poultry h2 {
+    font-size: 2em;
+  }
+  .banner-container {
+    width: 95%;
+  }
+  .banner-titulo {
+    font-size: 24px;
+    white-space: normal;
+    padding: 0 10px;
+  }
+  .grid-aves {
+    grid-template-columns: 1fr;
+  }
+  .item-ave img {
+    height: 150px;
+  }
+  .info-aves h3 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-titulo {
+    font-size: 20px;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-card img {
+    width: 100% !important;
+  }
+}
+
+/* Estilos para la sección de información general del azúcar */
+#informacion {
+  background-color: var(--color-fondo-claro);
+  padding: 100px 0;
+  text-align: center;
+}
+
+#informacion .section-title {
+  font-size: 3em;
+  color: var(--color-primario);
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+#informacion .section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-acento);
+  margin: 15px auto 0 auto;
+  border-radius: 2px;
+}
+
+#informacion .introduccion-info {
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  font-size: 1.2em;
+  line-height: 1.9;
+  color: var(--color-texto);
+  text-align: center;
+}
+
+/* Clases para factores clave */
+.clima { border: 2px solid #27ae60; background-color: #ecf9f1; }
+.politica { border: 2px solid #2980b9; background-color: #eef5fc; }
+.logistica { border: 2px solid #e67e22; background-color: #fff2e6; }
+.demanda { border: 2px solid #8e44ad; background-color: #f5eef8; }
+
+/* Accesibilidad para focus */
+a:focus, button:focus, .cta-button:focus, .boton-cta:focus {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 2px;
+}
