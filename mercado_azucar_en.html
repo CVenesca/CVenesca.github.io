@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Sugar Market: Interactive Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page dashboard with a fixed top navigation bar for smooth scrolling to thematic sections: 1) Global Overview, 2) Key Producers (interactive comparison), 3) Sugar Quality (interactive specs), 4) Logistics & Ports (interactive tables), and 5) Certification. This structure was chosen to transform a dense, linear report into an engaging, non-linear exploratory tool. It breaks down complex information into digestible, user-driven chunks, allowing different user profiles (traders, analysts, researchers) to quickly access the information they need without a full read-through, thus maximizing usability and comprehension. -->
+    <!-- Visualization & Content Choices: 
+        - Production Projections: Report Info -> Production data by country/year. Goal -> Compare production trends. Viz -> Interactive Bar Chart (Chart.js). Interaction -> User clicks a country button to dynamically update the chart and associated text cards. Justification -> Bar charts are ideal for comparing quantities across discrete periods. The interaction makes comparison direct and intuitive.
+        - ICUMSA Standards: Report Info -> Technical specs for sugar types. Goal -> Inform and allow for quick reference. Viz -> Structured HTML cards. Interaction -> User clicks a sugar type button to display its detailed specs. Justification -> Clear, formatted text is superior to a chart for technical data. The interaction acts as a filtering mechanism, keeping the UI clean.
+        - Port Logistics: Report Info -> Port capacity tables. Goal -> Organize and present logistical data. Viz -> Dynamic HTML tables. Interaction -> User selects a region to show the relevant port data table. Justification -> Tables are the standard for this data type; dynamic visibility prevents information overload.
+        - LLM-Powered ICUMSA Comparison: Report Info -> Technical specs and uses of different ICUMSA types. Goal -> Provide detailed, on-demand comparisons. Viz -> Textual output from LLM. Interaction -> User selects two ICUMSA types from dropdowns and clicks a button to get a generated comparison. Justification -> Leverages LLM for nuanced textual analysis and comparison beyond simple data display.
+        - Library/Method: Chart.js for visualizations, Vanilla JS for all interactions and DOM manipulation, Gemini API for LLM-powered comparison. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .tab-button.active {
+            background-color: #1e40af; /* blue-800 */
+            color: white;
+            border-color: #1e40af;
+        }
+        .spec-button.active {
+            background-color: #047857; /* emerald-700 */
+            color: white;
+            border-color: #047857;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #1e40af;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <!-- Integrated Logo -->
+                    <img src="images/Logo-cvenesca.webp" alt="CVenesca Logo" class="h-10 w-auto mr-3">
+                    <h1 class="text-xl font-bold text-blue-800">Sugar Market Analysis</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#overview" class="text-stone-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Global Overview</a>
+                        <a href="#producers" class="text-stone-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Producers</a>
+                        <a href="#quality" class="text-stone-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">ICUMSA Quality</a>
+                        <a href="#logistics" class="text-stone-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Logistics</a>
+                        <a href="#certification" class="text-stone-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Certification</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <section id="overview" class="my-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold tracking-tight text-blue-900 sm:text-5xl">Global Sugar Market Dynamics</h2>
+                <p class="mt-4 text-lg leading-8 text-stone-600">An interactive analysis of production, quality, and logistics for the 2024-2026 period.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="prose prose-lg text-stone-600 max-w-none">
+                    <p>The global sugar market is a complex network of climatic, political, and economic factors. Brazil, as the world leader, sets the pace, but its production faces climatic challenges. In contrast, Thailand shows a strong recovery, offering a vital counterbalance. Meanwhile, the European Union maintains stable beet sugar production, navigating environmental regulations and price volatility.</p>
+                    <p>This interactive dashboard breaks down key data to offer a clear view of the forces shaping global supply, the quality standards defining trade, and the logistical infrastructure that makes it all possible.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <img src="images/cosecha-cana-brasil.webp" alt="Mechanized sugarcane harvest in Brazil" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <section id="producers" class="my-16 pt-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl">Key Producers: Projections and Factors</h2>
+                <p class="mt-4 text-lg leading-8 text-stone-600">Select a country to explore its production data, projections, and main industrial players.</p>
+            </div>
+            
+            <div class="flex justify-center space-x-2 md:space-x-4 mb-8" id="producer-tabs">
+                <button data-country="brazil" class="tab-button active transition-all duration-200 ease-in-out border-2 border-blue-700 text-blue-700 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">Brazil</button>
+                <button data-country="thailand" class="tab-button transition-all duration-200 ease-in-out border-2 border-blue-700 text-blue-700 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">Thailand</button>
+                <button data-country="eu" class="tab-button transition-all duration-200 ease-in-out border-2 border-blue-700 text-blue-700 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">European Union</button>
+            </div>
+
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-stone-200">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-800" id="producer-chart-title">Sugar Production: Brazil</h3>
+                        <div class="chart-container">
+                            <canvas id="productionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-800">Key Information</h3>
+                        <div id="producer-info" class="space-y-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quality" class="my-16 pt-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl">Quality Standards: ICUMSA</h2>
+                <p class="mt-4 text-lg leading-8 text-stone-600">Explore the technical specifications of different sugar types, a global standard for trade.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8" id="spec-tabs">
+                <button data-spec="icumsa45" class="spec-button active transition-all duration-200 ease-in-out border-2 border-emerald-600 text-emerald-600 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">ICUMSA 45</button>
+                <button data-spec="icumsa100" class="spec-button transition-all duration-200 ease-in-out border-2 border-emerald-600 text-emerald-600 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">ICUMSA 100</button>
+                <button data-spec="icumsa150" class="spec-button transition-all duration-200 ease-in-out border-2 border-emerald-600 text-emerald-600 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">ICUMSA 150</button>
+                <button data-spec="vhp" class="spec-button transition-all duration-200 ease-in-out border-2 border-emerald-600 text-emerald-600 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">VHP</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div id="spec-details" class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-stone-200">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <img src="images/azucar-vhp-vs-refinado.webp" alt="Comparison of sugar types" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="mt-16 bg-white p-6 md:p-8 rounded-xl shadow-lg border border-stone-200">
+                <h3 class="text-2xl font-bold mb-4 text-blue-800">✨ ICUMSA Sugar Comparator ✨</h3>
+                <p class="mb-4 text-stone-600">Select two sugar types to get a detailed AI-powered comparison.</p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-6 items-center">
+                    <select id="compare-select-1" class="flex-1 block w-full px-3 py-2 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <option value="icumsa45">ICUMSA 45</option>
+                        <option value="icumsa100">ICUMSA 100</option>
+                        <option value="icumsa150">ICUMSA 150</option>
+                        <option value="vhp">VHP</option>
+                    </select>
+                    <span class="text-stone-600 font-semibold">vs.</span>
+                    <select id="compare-select-2" class="flex-1 block w-full px-3 py-2 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <option value="icumsa100">ICUMSA 100</option>
+                        <option value="icumsa45">ICUMSA 45</option>
+                        <option value="icumsa150">ICUMSA 150</option>
+                        <option value="vhp">VHP</option>
+                    </select>
+                    <button id="compare-button" class="mt-4 sm:mt-0 px-6 py-2 bg-blue-700 text-white font-semibold rounded-lg shadow-md hover:bg-blue-800 transition-colors duration-200 ease-in-out flex items-center justify-center">
+                        Compare <span id="loading-spinner" class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+                <div id="comparison-output" class="bg-stone-50 p-4 rounded-md border border-stone-200 min-h-[100px] text-stone-700">
+                    <p class="text-stone-500 italic">Select two sugar types and click "Compare" to see the analysis.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="logistics" class="my-16 pt-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl">Logistics and Ports</h2>
+                <p class="mt-4 text-lg leading-8 text-stone-600">Loading and storage capacities in the world's main export centers.</p>
+            </div>
+            
+            <div class="flex justify-center space-x-2 md:space-x-4 mb-8" id="logistics-tabs">
+                <button data-region="brazil" class="tab-button active transition-all duration-200 ease-in-out border-2 border-blue-700 text-blue-700 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">Brazil</button>
+                <button data-region="thailand" class="tab-button transition-all duration-200 ease-in-out border-2 border-blue-700 text-blue-700 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">Thailand</button>
+                <button data-region="eu" class="tab-button transition-all duration-200 ease-in-out border-2 border-blue-700 text-blue-700 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md">Europe</button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div class="bg-white rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-blue-800" id="logistics-title">Port Capacities: Brazil</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <div id="logistics-table-container"></div>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <img src="images/Logistica_puerto.webp" alt="Export logistics in port" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action Banner Section -->
+        <section class="my-16 pt-16">
+            <div class="bg-blue-700 text-white p-8 md:p-12 rounded-xl shadow-lg text-center">
+                <h3 class="text-3xl font-bold mb-4">Need More Information?</h3>
+                <p class="text-lg mb-6">Explore our comprehensive resources or contact us for personalized insights into the global sugar market.</p>
+                <a href="#" class="inline-block bg-white text-blue-700 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-100 transition-colors duration-200 ease-in-out">
+                    Contact CVenesca Group LLC
+                </a>
+            </div>
+        </section>
+
+        <section id="certification" class="my-16 pt-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl">Certification and Sustainability</h2>
+                <p class="mt-4 text-lg leading-8 text-stone-600">Key organizations ensuring quality and sustainable practices in the industry.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <img src="images/cosecha-remolacha-europa.webp" alt="Sugar beet harvest in Europe" class="w-full h-full object-cover">
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-stone-200">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-emerald-700">Bonsucro</h3>
+                            <p class="mt-2 text-stone-600">A global sugarcane sustainability platform offering a credible, metric-based certification process. Its standards cover farms, mills, traders, and refineries, with requirements on greenhouse gas emissions, water use, biodiversity, and worker rights.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-emerald-700">FoodChain ID</h3>
+                            <p class="mt-2 text-stone-600">A pioneering certification body approved by Bonsucro. It conducts audits for Bonsucro Production and Mass Balance Chain of Custody Standards, including EU Renewable Energy Directive (RED) compliance, crucial for bioethanol.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-emerald-700">Office of the Cane and Sugar Board (OCSB)</h3>
+                            <p class="mt-2 text-stone-600">A Thai government entity that supports and improves the sugarcane and sugar industry, focusing on managing cane and sugar production to promote sustainability and environmental responsibility. It plays a key role in government price guarantees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-blue-900 text-white">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2024 Interactive Sugar Market Analysis. All data for illustrative purposes.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sugarData = {
+                producers: {
+                    brazil: {
+                        title: "Sugar Production: Brazil",
+                        labels: ["2023/24 (Actual)", "2024/25 (Proj.)", "2025/26 (Proj.)"],
+                        data: [45.5, 31.1, 44.7],
+                        info: `
+                            <div class="space-y-4">
+                                <div><h4 class="font-bold text-lg">Main Origin:</h4><p>Sugarcane</p></div>
+                                <div><h4 class="font-bold text-lg">Key Factors:</h4><p>Vulnerability to droughts and irregular rainfall. Flexibility to divert production to ethanol based on prices.</p></div>
+                                <div><h4 class="font-bold text-lg">Main Producers:</h4><ul class="list-disc list-inside"><li>Cosan S.A.</li><li>Raízen</li><li>Grupo Equipav</li><li>Tereos</li><li>Biosev</li></ul></div>
+                            </div>
+                        `
+                    },
+                    thailand: {
+                        title: "Sugar Production: Thailand",
+                        labels: ["2023/24 (Actual)", "2024/25 (Proj.)", "2025/26 (Proj.)"],
+                        data: [8.8, 10.3, 10.3],
+                        info: `
+                            <div class="space-y-4">
+                                <div><h4 class="font-bold text-lg">Main Origin:</h4><p>Sugarcane</p></div>
+                                <div><h4 class="font-bold text-lg">Key Factors:</h4><p>Strong recovery after drought due to better rainfall. Government minimum price policies incentivize cultivation.</p></div>
+                                <div><h4 class="font-bold text-lg">Main Producers:</h4><ul class="list-disc list-inside"><li>Mitr Phol Group</li></ul></div>
+                            </div>
+                        `
+                    },
+                    eu: {
+                        title: "Sugar Production: European Union",
+                        labels: ["2022/23 (Actual)", "2023/24 (Actual)", "2024/25 (Proj.)"],
+                        data: [13.8, 14.8, 14.9],
+                        info: `
+                            <div class="space-y-4">
+                                <div><h4 class="font-bold text-lg">Main Origin:</h4><p>Sugar Beet</p></div>
+                                <div><h4 class="font-bold text-lg">Key Factors:</h4><p>Stable production but pressured by regulations (neonicotinoid ban) and imports.</p></div>
+                                <div><h4 class="font-bold text-lg">Main Producers:</h4><ul class="list-disc list-inside"><li>Südzucker AG</li><li>British Sugar Plc</li><li>Tereos</li><li>Nordzucker</li></ul></div>
+                            </div>
+                        `
+                    }
+                },
+                specs: {
+                    icumsa45: {
+                        title: "ICUMSA 45 - Refined White Sugar",
+                        color: "#FFFFFF",
+                        description: "The highest standard of refined sugar, used in a wide range of industrial and consumer applications for its high purity and bright white color.",
+                        details: {
+                            "Color": "Bright White (max. 45 ICUMSA)",
+                            "Polarity": "99.80° Minimum",
+                            "Moisture": "0.04% Maximum",
+                            "Ash Content": "0.04% Maximum",
+                            "Solubility": "100% Dry & Free Flowing",
+                            "Granulation": "Fine Standard",
+                            "Reducing Sugar": "0.010% Maximum on Dry Mass",
+                            "SO2": "20 mg/kg",
+                            "Heavy Metals/Toxic Elements": "Arsenic 0.50, Cadmium 0.05, Copper 1.00, Lead 1.00, Mercury 0.01, Zinc 3.00 (max. mg/kg)",
+                            "Microbiological Limits": "Pathogenic Bacteria (incl. Salmonella) Nil per 25 grams; Bacillus Nil per gram",
+                            "Origin": "Refined from raw sugar (Cane)"
+                        }
+                    },
+                    icumsa100: {
+                        title: "ICUMSA 100 - White Crystal Sugar",
+                        color: "#FCFBF4",
+                        description: "A high-quality white sugar, less refined than ICUMSA 45. It is a cost-effective alternative for the food and beverage industry.",
+                        details: {
+                            "Color": "White (max. 100 ICUMSA)",
+                            "Polarization": "99.8% Minimum",
+                            "Moisture": "0.10% Maximum",
+                            "Ash Content": "0.04% Maximum",
+                            "Solubility": "100% water soluble, dry & free flowing",
+                            "Reducing Sugar": "0.05% Maximum",
+                            "SO2": "70 mg/kg Maximum",
+                            "Granulation": "Fine and consistent granules",
+                            "Origin": "Crystallization (Cane)"
+                        }
+                    },
+                    icumsa150: {
+                        title: "ICUMSA 150 - White Crystal Sugar",
+                        color: "#F8F4E3",
+                        description: "White crystal sugar commonly used in large-scale baking and food production where color is not the most critical factor.",
+                        details: {
+                           "Color": "Bright white (max. 150 RBU)",
+                           "Polarization": "99.70% Degrees Minimum",
+                           "Conductivity Ash": "0.08% Maximum (on dry basis)",
+                           "Moisture": "0.08% Maximum",
+                           "Solubility": "100% dry and free flowing",
+                           "Granulation": "Fine to medium white crystals",
+                           "Reducing Sugar": "0.05% Maximum by Weight",
+                           "SO2": "70 mg/kg Maximum",
+                           "Origin": "Crystallization (Cane)"
+                        }
+                    },
+                    vhp: {
+                        title: "VHP - Very High Polarity Raw Sugar",
+                        color: "#D2B48C",
+                        description: "Raw sugar with a high sucrose concentration. It is the main raw material for refineries worldwide to produce white sugar.",
+                        details: {
+                            "Color": "Light brown (600-1500 ICUMSA)",
+                            "Polarity (Pol)": "99.3-99.4%",
+                            "Moisture": "0.15% Maximum",
+                            "Ash Content": "0.15% Maximum",
+                            "Solubility": "95% dry and free flowing",
+                            "Granulation": "0.6 mm regular square (average size)",
+                            "Reducing Sugar": "0.05% Maximum by Weight",
+                            "SO2": "60 mg/kg",
+                            "Origin": "First crystallization (Cane)"
+                        }
+                    }
+                },
+                logistics: {
+                    brazil: {
+                        title: "Port Capacities: Brazil (Port of Santos)",
+                        headers: ["Terminal", "Storage Cap. (MT)", "Loading Rate (MT/day)"],
+                        rows: [
+                            ["TEG", "194,000", "35,000"],
+                            ["TEAG", "110,000", "25,000"],
+                            ["TES", "250,000", "30,000"],
+                            ["CUTRALE", "197,000", "40,000-50,000"],
+                            ["COFCO 12A", "65,000", "30,000-35,000"],
+                            ["RUMO 16&19", "260,000", "35,000-50,000"],
+                            ["Grain Elevator (Sugar)", "2,400,000+", "20,000-50,000"]
+                        ]
+                    },
+                    thailand: {
+                        title: "Port Capacities: Thailand",
+                        headers: ["Port/Terminal", "Capacity", "Loading Rate (MT/day)", "Notes"],
+                        rows: [
+                            ["Thai Ports (General)", "N/A", "~33,333", "General cargo handling capacity"],
+                            ["Laem Chabang (Raw Sugar)", "N/A", "3,000", "Specific loading rate for sugar batches"],
+                            ["A4 AAWTHAI WAREHOUSE CO., LTD. (Laem Chabang)", "128,000 MT", "N/A", "Storage for molasses and sugar"]
+                        ]
+                    },
+                    eu: {
+                        title: "Port Capacities: Europe",
+                        headers: ["Port/Terminal", "Country", "Storage Cap. (MT)", "Loading/Shipping (MT/day)"],
+                        rows: [
+                            ["Rotterdam (EMO Dry Bulk)", "Netherlands", "7,000,000 (general dry bulk)", "200,000 (general dry bulk discharge)"],
+                            ["Hamburg Sugar Terminal", "Germany", "40,000", "≥1,500"],
+                            ["Zeeland Sugar Terminal", "Netherlands", "130,000", "N/A"],
+                            ["Antwerp (Euroports Sugar Terminal)", "Belgium", "+/- 380,000", "N/A"],
+                            ["Le Havre (Sucre Océane)", "France", "60,000", "N/A"],
+                            ["Gdansk Sugar Terminal", "Poland", "50,000 (silo) + 8,000 (warehouse)", "3,000 (receipt) / 3,000 (shipment)"]
+                        ]
+                    }
+                }
+            };
+
+            let productionChartInstance = null;
+            const productionChartCanvas = document.getElementById('productionChart').getContext('2d');
+            const producerInfoDiv = document.getElementById('producer-info');
+            const producerChartTitle = document.getElementById('producer-chart-title');
+            const producerTabs = document.getElementById('producer-tabs');
+
+            const specDetailsDiv = document.getElementById('spec-details');
+            const specTabs = document.getElementById('spec-tabs');
+            const compareSelect1 = document.getElementById('compare-select-1');
+            const compareSelect2 = document.getElementById('compare-select-2');
+            const compareButton = document.getElementById('compare-button');
+            const comparisonOutput = document.getElementById('comparison-output');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            
+            const logisticsTitle = document.getElementById('logistics-title');
+            const logisticsTableContainer = document.getElementById('logistics-table-container');
+            const logisticsTabs = document.getElementById('logistics-tabs');
+
+            function renderProductionChart(country) {
+                const producerData = sugarData.producers[country];
+                producerChartTitle.textContent = producerData.title;
+                producerInfoDiv.innerHTML = producerData.info;
+
+                if (productionChartInstance) {
+                    productionChartInstance.destroy();
+                }
+                productionChartInstance = new Chart(productionChartCanvas, {
+                    type: 'bar',
+                    data: {
+                        labels: producerData.labels,
+                        datasets: [{
+                            label: 'Sugar Production (MMT)',
+                            data: producerData.data,
+                            backgroundColor: 'rgba(30, 64, 175, 0.8)',
+                            borderColor: 'rgba(30, 64, 175, 1)',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.dataset.label}: ${context.parsed.y} MMT`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Million Metric Tons (MMT)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function renderSpecDetails(specType) {
+                const specData = sugarData.specs[specType];
+                let detailsHtml = `<h3 class="text-2xl font-bold text-emerald-800 mb-2">${specData.title}</h3>`;
+                detailsHtml += `<div class="flex items-center gap-4 mb-4"><div class="w-8 h-8 rounded-full border-2 border-stone-300" style="background-color: ${specData.color};"></div><p class="text-stone-600 italic">${specData.description}</p></div>`;
+                detailsHtml += '<div class="space-y-3">';
+                for (const [key, value] of Object.entries(specData.details)) {
+                    detailsHtml += `<div class="flex justify-between border-b pb-2"><span class="font-semibold text-stone-700">${key}:</span><span class="text-right text-stone-600">${value}</span></div>`;
+                }
+                detailsHtml += '</div>';
+                specDetailsDiv.innerHTML = detailsHtml;
+            }
+            
+            function renderLogisticsTable(region) {
+                const logisticsData = sugarData.logistics[region];
+                logisticsTitle.textContent = logisticsData.title;
+                
+                let tableHtml = `<table class="min-w-full divide-y divide-stone-200">`;
+                tableHtml += `<thead class="bg-stone-100"><tr>`;
+                logisticsData.headers.forEach(header => {
+                    tableHtml += `<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">${header}</th>`;
+                });
+                tableHtml += `</tr></thead><tbody class="bg-white divide-y divide-stone-200">`;
+                logisticsData.rows.forEach(row => {
+                    tableHtml += `<tr>`;
+                    row.forEach(cell => {
+                        tableHtml += `<td class="px-6 py-4 whitespace-nowrap text-sm text-stone-700">${cell}</td>`;
+                    });
+                    tableHtml += `</tr>`;
+                });
+                tableHtml += `</tbody></table>`;
+                logisticsTableContainer.innerHTML = tableHtml;
+            }
+
+            producerTabs.addEventListener('click', (e) => {
+                if (e.target.tagName === 'BUTTON') {
+                    const country = e.target.dataset.country;
+                    if (country) {
+                        producerTabs.querySelector('.active').classList.remove('active');
+                        e.target.classList.add('active');
+                        renderProductionChart(country);
+                    }
+                }
+            });
+
+            specTabs.addEventListener('click', (e) => {
+                if (e.target.tagName === 'BUTTON') {
+                    const spec = e.target.dataset.spec;
+                    if (spec) {
+                        specTabs.querySelector('.active').classList.remove('active');
+                        e.target.classList.add('active');
+                        renderSpecDetails(spec);
+                    }
+                }
+            });
+            
+            logisticsTabs.addEventListener('click', (e) => {
+                if (e.target.tagName === 'BUTTON') {
+                    const region = e.target.dataset.region;
+                    if (region) {
+                        logisticsTabs.querySelector('.active').classList.remove('active');
+                        e.target.classList.add('active');
+                        renderLogisticsTable(region);
+                    }
+                }
+            });
+
+            compareButton.addEventListener('click', async () => {
+                const spec1Key = compareSelect1.value;
+                const spec2Key = compareSelect2.value;
+
+                if (spec1Key === spec2Key) {
+                    comparisonOutput.innerHTML = '<p class="text-red-600">Please select two different sugar types to compare.</p>';
+                    return;
+                }
+
+                const spec1 = sugarData.specs[spec1Key];
+                const spec2 = sugarData.specs[spec2Key];
+
+                loadingSpinner.classList.remove('hidden');
+                compareButton.disabled = true;
+                comparisonOutput.innerHTML = '<p class="text-stone-500 italic">Generating comparison...</p>';
+
+                const prompt = `Compare in detail ${spec1.title} and ${spec2.title} in terms of their technical characteristics (ICUMSA color, polarity, moisture, ash content, solubility, granulation, reducing sugar, SO2, heavy metals/toxic elements, microbiological limits) and their origin. Also, describe their main uses and their relevance in the global sugar market. Provide the information concisely and clearly in English.`;
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = "";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        comparisonOutput.innerHTML = `<div class="prose max-w-none">${text}</div>`;
+                    } else {
+                        comparisonOutput.innerHTML = '<p class="text-red-600">Could not generate comparison. Please try again.</p>';
+                    }
+                } catch (error) {
+                    console.error('Error calling Gemini API:', error);
+                    comparisonOutput.innerHTML = '<p class="text-red-600">An error occurred while generating the comparison. Please check the console for more details.</p>';
+                } finally {
+                    loadingSpinner.classList.add('hidden');
+                    compareButton.disabled = false;
+                }
+            });
+
+            function init() {
+                renderProductionChart('brazil');
+                renderSpecDetails('icumsa45');
+                renderLogisticsTable('brazil');
+            }
+
+            init();
+        });
+    </script>
+</body>
+</html>

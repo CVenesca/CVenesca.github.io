@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Product Technical Data Sheets - CVENESCA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <aside id="sidebar" class="w-full md:w-64 bg-white border-r border-gray-200 p-4 md:p-6 transition-all duration-300">
+            <div class="mb-6 flex flex-col items-center md:items-start">
+                <img src="images/logo-cvenesca.webp" alt="CVENESCA Logo" class="h-12 w-auto mb-3">
+                <h1 class="text-xl font-bold text-gray-900 text-center md:text-left">Poultry Products</h1>
+            </div>
+            <nav id="product-nav" class="space-y-2">
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-4 md:p-8">
+            <header class="mb-8">
+                <h2 id="main-title" class="text-3xl font-bold text-gray-900">Technical Data Sheet</h2>
+                <p id="main-subtitle" class="text-gray-600 mt-1">Select a product to view its detailed specifications.</p>
+            </header>
+            
+            <div id="product-details-container">
+            </div>
+
+            <section class="mt-12 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Shelf Life Comparison</h3>
+                <p class="text-gray-600 mb-6">This chart compares the maximum frozen shelf life ($-18^\circ C$) for different products. It allows for a quick evaluation of each cut's durability.</p>
+                <div class="chart-container">
+                    <canvas id="shelfLifeChart"></canvas>
+                </div>
+            </section>
+              <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl">
+        <p class="text-sm">&copy; 2025 CVenesca Group LLc. All rights reserved.</p>
+        <div class="contacto-emails" data-aos="fade-right" data-aos-delay="850">
+            <p>📧 <strong>Commercial Email:</strong> <a href="mailto:negocios@cvenesca.com">negocios@cvenesca.com</a></p>
+            <p>📧 <strong>Sales Support:</strong> <a href="mailto:ventas@cvenesca.com">ventas@cvenesca.com</a></p>
+            <p>📧 <strong>General Information:</strong> <a href="mailto:info@cvenesca.com">info@cvenesca.com</a></p>
+          </div>
+    </footer>
+        </main>
+    </div>
+
+    <script>
+        const productData = [
+            {
+                id: 'whole-chicken',
+                name: 'Whole Chicken',
+                image: 'pollo-entero.webp',
+                details: {
+                    presentation: 'Whole eviscerated chicken, without head or feet. May include giblets (liver, gizzard, heart) in an individual bag inside the cavity.',
+                    average_weights: '1.0 kg - 2.5 kg per unit.',
+                    origin: 'Brazil, Russia, Iran (variable by supplier)',
+                    packaging: 'Individual polyethylene bags, in 10-15 kg corrugated cardboard boxes.',
+                    transport: '20 and 40 foot refrigerated containers ($-18^\circ C$ or below).',
+                    frozen_shelf_life: '12 - 18 months',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'paws',
+                name: 'Chicken Paws',
+                image: 'patas-pollo.webp',
+                details: {
+                    presentation: 'Clean, processed chicken paws without hard outer skin or nails (Category A).',
+                    average_weights: '30 gr - 50 gr per unit.',
+                    origin: 'Brazil, Russia, Iran (variable by supplier)',
+                    packaging: 'Bulk polyethylene bags, in 15-20 kg corrugated cardboard boxes.',
+                    transport: '20 and 40 foot refrigerated containers ($-18^\circ C$ or below).',
+                    frozen_shelf_life: '12 - 18 months',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'breast',
+                name: 'Chicken Breast',
+                image: 'pechuga-pollo.webp',
+                details: {
+                    presentation: 'Boneless and skinless chicken breast (fillet) or with bone and skin.',
+                    average_weights: 'Fillet: 150 - 300 gr. With bone: 400 - 800 gr.',
+                    origin: 'Brazil, Russia, Iran (variable by supplier)',
+                    packaging: 'Individual Quick Frozen (IQF) or bulk packaging, in 10-15 kg cardboard boxes.',
+                    transport: '20 and 40 foot refrigerated containers ($-18^\circ C$ or below).',
+                    frozen_shelf_life: '12 - 18 months',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'wings',
+                name: 'Chicken Wings',
+                image: 'pollo-congelado.webp', // Using a generic image if no specific one for wings
+                details: {
+                    presentation: 'Whole chicken wing (3 phalanges) or sectioned into drumette, flat, and tip.',
+                    average_weights: '80 gr - 150 gr per unit (whole wing).',
+                    origin: 'Brazil, Russia, Iran (variable by supplier)',
+                    packaging: 'Bulk in polyethylene bags, in 10-15 kg cardboard boxes.',
+                    transport: '20 and 40 foot refrigerated containers ($-18^\circ C$ or below).',
+                    frozen_shelf_life: '12 - 18 months',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'legs-thighs',
+                name: 'Legs and/or Thighs',
+                image: 'muslo-pollo.webp',
+                details: {
+                    presentation: 'Chicken leg (drumstick), thigh, or leg-thigh (quarter) with bone and skin.',
+                    average_weights: 'Leg: 100-200 gr. Thigh: 150-250 gr. Quarter: 250-450 gr.',
+                    origin: 'Brazil, Russia, Iran (variable by supplier)',
+                    packaging: 'Bulk in polyethylene bags, in 10-15 kg cardboard boxes.',
+                    transport: '20 and 40 foot refrigerated containers ($-18^\circ C$ or below).',
+                    frozen_shelf_life: '12 - 18 months',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'heart-liver',
+                name: 'Heart and Liver',
+                image: 'pollo-congelado-servicio.webp', // Using a generic image if no specific one
+                details: {
+                    presentation: 'Clean chicken hearts and/or chicken livers, without excess fat.',
+                    average_weights: 'Heart: 5-10 gr. Liver: 15-25 gr.',
+                    origin: 'Brazil, Russia, Iran (variable by supplier)',
+                    packaging: 'Bulk in bags or trays, in 5-10 kg cardboard boxes.',
+                    transport: '20 and 40 foot refrigerated containers ($-18^\circ C$ or below).',
+                    frozen_shelf_life: '9 - 12 months',
+                    shelfLifeMax: 12
+                }
+            },
+            {
+                id: 'neck',
+                name: 'Neck',
+                image: 'pollo-congelado.webp', // Using a generic image if no specific one
+                details: {
+                    presentation: 'Clean chicken necks, with or without skin.',
+                    average_weights: '50 gr - 100 gr per unit.',
+                    origin: 'Brazil, Russia, Iran (variable by supplier)',
+                    packaging: 'Bulk in polyethylene bags, in 10-15 kg cardboard boxes.',
+                    transport: '20 and 40 foot refrigerated containers ($-18^\circ C$ or below).',
+                    frozen_shelf_life: '12 - 18 months',
+                    shelfLifeMax: 18
+                }
+            }
+        ];
+
+        const icons = {
+            presentation: '🧊',
+            average_weights: '⚖️',
+            origin: '🌍',
+            packaging: '📦',
+            transport: '🚚',
+            frozen_shelf_life: '⏳'
+        };
+
+        const englishLabels = {
+            presentation: 'Presentation',
+            average_weights: 'Average Weights',
+            origin: 'Origin',
+            packaging: 'Packaging Type',
+            transport: 'Transport Method',
+            frozen_shelf_life: 'Frozen Shelf Life'
+        };
+
+        const navContainer = document.getElementById('product-nav');
+        const detailsContainer = document.getElementById('product-details-container');
+        const mainTitle = document.getElementById('main-title');
+        const mainSubtitle = document.getElementById('main-subtitle');
+
+        function showProduct(productId) {
+            const product = productData.find(p => p.id === productId);
+            if (!product) return;
+
+            // Hide all product cards
+            document.querySelectorAll('.product-card').forEach(card => card.classList.add('hidden'));
+            
+            // Show the selected product card
+            const cardToShow = document.getElementById(`card-${productId}`);
+            if(cardToShow) {
+                cardToShow.classList.remove('hidden');
+            }
+
+            // Update main title and subtitle
+            mainTitle.textContent = product.name;
+            mainSubtitle.textContent = `Detailed technical data sheet for ${product.name.toLowerCase()}.`;
+
+            // Update navigation button active state
+            document.querySelectorAll('#product-nav button').forEach(button => {
+                if (button.dataset.productId === productId) {
+                    button.classList.add('bg-blue-100', 'text-blue-800', 'font-semibold');
+                    button.classList.remove('text-gray-600', 'hover:bg-gray-100');
+                } else {
+                    button.classList.remove('bg-blue-100', 'text-blue-800', 'font-semibold');
+                    button.classList.add('text-gray-600', 'hover:bg-gray-100');
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            productData.forEach(product => {
+                // Create navigation button
+                const navButton = document.createElement('button');
+                navButton.dataset.productId = product.id;
+                navButton.className = 'w-full text-left px-4 py-2 rounded-md text-gray-600 hover:bg-gray-100 transition-colors duration-200';
+                navButton.textContent = product.name;
+                navButton.onclick = () => showProduct(product.id);
+                navContainer.appendChild(navButton);
+                
+                // Create product details card
+                const detailCard = document.createElement('div');
+                detailCard.id = `card-${product.id}`;
+                detailCard.className = 'product-card hidden bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                
+                // Add image to the top of the details card
+                let detailsHtml = `
+                    <div class="flex flex-col items-center mb-6">
+                        <img src="images/${product.image}" alt="${product.name}" class="w-48 h-48 object-contain rounded-lg shadow-sm mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900">${product.name}</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                `;
+                
+                for (const [key, value] of Object.entries(product.details)) {
+                    if (key !== 'shelfLifeMax') {
+                       detailsHtml += `
+                        <div class="flex items-start space-x-4">
+                            <span class="text-2xl mt-1 text-blue-500">${icons[key] || '🔹'}</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">${englishLabels[key]}</h4>
+                                <p class="text-gray-600">${value}</p>
+                            </div>
+                        </div>
+                       `;
+                    }
+                }
+                detailsHtml += '</div>';
+                detailCard.innerHTML = detailsHtml;
+                detailsContainer.appendChild(detailCard);
+            });
+            
+            // Show the first product by default on page load
+            showProduct(productData[0].id);
+
+            // Chart.js configuration
+            const ctx = document.getElementById('shelfLifeChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: productData.map(p => p.name),
+                    datasets: [{
+                        label: 'Maximum Frozen Shelf Life (Months)',
+                        data: productData.map(p => p.shelfLifeMax),
+                        backgroundColor: 'rgba(59, 130, 246, 0.6)', // A shade of blue
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Makes the chart horizontal bars
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Months'
+                            },
+                            ticks: {
+                                stepSize: 3 // 3-month interval on the X-axis
+                            }
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.raw} months`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

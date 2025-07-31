@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.cvenesca.com/sitemap.xml
+Sitemap: https://www.cvenesca.com/sitemap-en.xml

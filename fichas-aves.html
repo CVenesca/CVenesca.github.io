@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fichas Técnicas de Productos Avícolas - CVENESCA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <aside id="sidebar" class="w-full md:w-64 bg-white border-r border-gray-200 p-4 md:p-6 transition-all duration-300">
+            <div class="mb-6 flex flex-col items-center md:items-start">
+                <img src="images/logo-cvenesca.webp" alt="Logo CVENESCA" class="h-12 w-auto mb-3">
+                <h1 class="text-xl font-bold text-gray-900 text-center md:text-left">Productos Avícolas</h1>
+            </div>
+            <nav id="product-nav" class="space-y-2">
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-4 md:p-8">
+            <header class="mb-8">
+                <h2 id="main-title" class="text-3xl font-bold text-gray-900">Ficha Técnica</h2>
+                <p id="main-subtitle" class="text-gray-600 mt-1">Seleccione un producto para ver sus especificaciones detalladas.</p>
+            </header>
+            
+            <div id="product-details-container">
+            </div>
+
+            <section class="mt-12 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Comparativa de Duración</h3>
+                <p class="text-gray-600 mb-6">Este gráfico compara el tiempo máximo de vida útil en condiciones de congelación ($-18^\circ C$) para los diferentes productos. Permite una rápida evaluación de la durabilidad de cada corte.</p>
+                <div class="chart-container">
+                    <canvas id="shelfLifeChart"></canvas>
+                </div>
+            </section>
+            <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl">     
+        <p class="text-sm">&copy; 2025 CVenesca Group LLc. Todos los derechos reservados.</p>
+        <div class="contacto-emails" data-aos="fade-right" data-aos-delay="850">
+            <p>📧 <strong>Correo Comercial:</strong> <a href="mailto:negocios@cvenesca.com">negocios@cvenesca.com</a></p>
+            <p>📧 <strong>Soporte de ventas:</strong> <a href="mailto:ventas@cvenesca.com">ventas@cvenesca.com</a></p>
+            <p>📧 <strong>Información General:</strong> <a href="mailto:info@cvenesca.com">info@cvenesca.com</a></p>
+          </div>
+    </footer>
+        </main>
+    </div>
+
+    <script>
+        const productData = [
+            {
+                id: 'pollo-entero',
+                name: 'Pollo Entero',
+                image: 'pollo-entero.webp',
+                details: {
+                    presentacion: 'Pollo entero eviscerado, sin cabeza ni patas. Puede incluir menudos (hígado, molleja, corazón) en bolsa individual dentro de la cavidad.',
+                    pesos_promedios: '1.0 kg - 2.5 kg por unidad.',
+                    origen: 'Brasil, Rusia, Irán (variable según proveedor)',
+                    empacado: 'Bolsas individuales de polietileno, en cajas de cartón corrugado de 10-15 kg.',
+                    transporte: 'Contenedores refrigerados de 20 y 40 pies ($-18^\circ C$ o inferior).',
+                    duracion_congelado: '12 - 18 meses',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'garras',
+                name: 'Garras de Pollo',
+                image: 'patas-pollo.webp',
+                details: {
+                    presentacion: 'Garras de pollo limpias, procesadas y sin piel exterior dura ni uñas (Categoría A).',
+                    pesos_promedios: '30 gr - 50 gr por unidad.',
+                    origen: 'Brasil, Rusia, Irán (variable según proveedor)',
+                    empacado: 'Bolsas a granel de polietileno, en cajas de cartón corrugado de 15-20 kg.',
+                    transporte: 'Contenedores refrigerados de 20 y 40 pies ($-18^\circ C$ o inferior).',
+                    duracion_congelado: '12 - 18 meses',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'pechuga',
+                name: 'Pechuga de Pollo',
+                image: 'pechuga-pollo.webp',
+                details: {
+                    presentacion: 'Pechuga de pollo deshuesada y sin piel (filete) o con hueso y piel.',
+                    pesos_promedios: 'Filete: 150 - 300 gr. Con hueso: 400 - 800 gr.',
+                    origen: 'Brasil, Rusia, Irán (variable según proveedor)',
+                    empacado: 'Empaque individual (IQF) o a granel, en cajas de cartón de 10-15 kg.',
+                    transporte: 'Contenedores refrigerados de 20 y 40 pies ($-18^\circ C$ o inferior).',
+                    duracion_congelado: '12 - 18 meses',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'alas',
+                name: 'Alas de Pollo',
+                image: 'pollo-congelado.webp', // Usando una imagen genérica si no hay una específica para alas
+                details: {
+                    presentacion: 'Ala de pollo entera (3 falanges) o seccionada en drumette, flat y tip.',
+                    pesos_promedios: '80 gr - 150 gr por unidad (ala entera).',
+                    origen: 'Brasil, Rusia, Irán (variable según proveedor)',
+                    empacado: 'A granel en bolsas de polietileno, en cajas de cartón de 10-15 kg.',
+                    transporte: 'Contenedores refrigerados de 20 y 40 pies ($-18^\circ C$ o inferior).',
+                    duracion_congelado: '12 - 18 meses',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'piernas-muslos',
+                name: 'Piernas y/o Muslos',
+                image: 'muslo-pollo.webp',
+                details: {
+                    presentacion: 'Pierna (drumstick), muslo (thigh), o pierna-muslo (cuarto trasero) con hueso y piel.',
+                    pesos_promedios: 'Pierna: 100-200 gr. Muslo: 150-250 gr. Cuarto: 250-450 gr.',
+                    origen: 'Brasil, Rusia, Irán (variable según proveedor)',
+                    empacado: 'A granel en bolsas de polietileno, en cajas de cartón de 10-15 kg.',
+                    transporte: 'Contenedores refrigerados de 20 y 40 pies ($-18^\circ C$ o inferior).',
+                    duracion_congelado: '12 - 18 meses',
+                    shelfLifeMax: 18
+                }
+            },
+            {
+                id: 'corazon-higado',
+                name: 'Corazón e Hígado',
+                image: 'pollo-congelado-servicio.webp', // Usando una imagen genérica si no hay una específica
+                details: {
+                    presentacion: 'Corazones de pollo y/o hígados de pollo, limpios y sin exceso de grasa.',
+                    pesos_promedios: 'Corazón: 5-10 gr. Hígado: 15-25 gr.',
+                    origen: 'Brasil, Rusia, Irán (variable según proveedor)',
+                    empacado: 'A granel en bolsas o tarrinas, en cajas de cartón de 5-10 kg.',
+                    transporte: 'Contenedores refrigerados de 20 y 40 pies ($-18^\circ C$ o inferior).',
+                    duracion_congelado: '9 - 12 meses',
+                    shelfLifeMax: 12
+                }
+            },
+            {
+                id: 'cuello',
+                name: 'Cuello / Pescuezo',
+                image: 'pollo-congelado.webp', // Usando una imagen genérica si no hay una específica
+                details: {
+                    presentacion: 'Cuellos/pescuezos de pollo limpios, con o sin piel.',
+                    pesos_promedios: '50 gr - 100 gr por unidad.',
+                    origen: 'Brasil, Rusia, Irán (variable según proveedor)',
+                    empacado: 'A granel en bolsas de polietileno, en cajas de cartón de 10-15 kg.',
+                    transporte: 'Contenedores refrigerados de 20 y 40 pies ($-18^\circ C$ o inferior).',
+                    duracion_congelado: '12 - 18 meses',
+                    shelfLifeMax: 18
+                }
+            }
+        ];
+
+        const icons = {
+            presentacion: '🧊',
+            pesos_promedios: '⚖️',
+            origen: '🌍',
+            empacado: '📦',
+            transporte: '🚚',
+            duracion_congelado: '⏳'
+        };
+
+        const spanishLabels = {
+            presentacion: 'Presentación',
+            pesos_promedios: 'Pesos Promedios',
+            origen: 'Origen',
+            empacado: 'Tipo de Empacado',
+            transporte: 'Forma de Transporte',
+            duracion_congelado: 'Duración Congelado'
+        };
+
+        const navContainer = document.getElementById('product-nav');
+        const detailsContainer = document.getElementById('product-details-container');
+        const mainTitle = document.getElementById('main-title');
+        const mainSubtitle = document.getElementById('main-subtitle');
+
+        function showProduct(productId) {
+            const product = productData.find(p => p.id === productId);
+            if (!product) return;
+
+            // Ocultar todas las tarjetas de producto
+            document.querySelectorAll('.product-card').forEach(card => card.classList.add('hidden'));
+            
+            // Mostrar la tarjeta del producto seleccionado
+            const cardToShow = document.getElementById(`card-${productId}`);
+            if(cardToShow) {
+                cardToShow.classList.remove('hidden');
+            }
+
+            // Actualizar el título y subtítulo principal
+            mainTitle.textContent = product.name;
+            mainSubtitle.textContent = `Ficha técnica detallada para ${product.name.toLowerCase()}.`;
+
+            // Actualizar el estado de los botones de navegación
+            document.querySelectorAll('#product-nav button').forEach(button => {
+                if (button.dataset.productId === productId) {
+                    button.classList.add('bg-blue-100', 'text-blue-800', 'font-semibold');
+                    button.classList.remove('text-gray-600', 'hover:bg-gray-100');
+                } else {
+                    button.classList.remove('bg-blue-100', 'text-blue-800', 'font-semibold');
+                    button.classList.add('text-gray-600', 'hover:bg-gray-100');
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            productData.forEach(product => {
+                // Crear botón de navegación
+                const navButton = document.createElement('button');
+                navButton.dataset.productId = product.id;
+                navButton.className = 'w-full text-left px-4 py-2 rounded-md text-gray-600 hover:bg-gray-100 transition-colors duration-200';
+                navButton.textContent = product.name;
+                navButton.onclick = () => showProduct(product.id);
+                navContainer.appendChild(navButton);
+                
+                // Crear la tarjeta de detalles del producto
+                const detailCard = document.createElement('div');
+                detailCard.id = `card-${product.id}`;
+                detailCard.className = 'product-card hidden bg-white p-6 rounded-lg shadow-md border border-gray-200';
+                
+                // Añadir imagen al inicio de la tarjeta de detalles
+                let detailsHtml = `
+                    <div class="flex flex-col items-center mb-6">
+                        <img src="images/${product.image}" alt="${product.name}" class="w-48 h-48 object-contain rounded-lg shadow-sm mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900">${product.name}</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                `;
+                
+                for (const [key, value] of Object.entries(product.details)) {
+                    if (key !== 'shelfLifeMax') {
+                       detailsHtml += `
+                        <div class="flex items-start space-x-4">
+                            <span class="text-2xl mt-1 text-blue-500">${icons[key] || '🔹'}</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">${spanishLabels[key]}</h4>
+                                <p class="text-gray-600">${value}</p>
+                            </div>
+                        </div>
+                       `;
+                    }
+                }
+                detailsHtml += '</div>';
+                detailCard.innerHTML = detailsHtml;
+                detailsContainer.appendChild(detailCard);
+            });
+            
+            // Mostrar el primer producto por defecto al cargar la página
+            showProduct(productData[0].id);
+
+            // Configuración del gráfico de Chart.js
+            const ctx = document.getElementById('shelfLifeChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: productData.map(p => p.name),
+                    datasets: [{
+                        label: 'Duración Máxima Congelado (Meses)',
+                        data: productData.map(p => p.shelfLifeMax),
+                        backgroundColor: 'rgba(59, 130, 246, 0.6)', // Un tono de azul
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Hace que el gráfico sea de barras horizontales
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Meses'
+                            },
+                            ticks: {
+                                stepSize: 3 // Intervalo de 3 meses en el eje X
+                            }
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.raw} meses`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
