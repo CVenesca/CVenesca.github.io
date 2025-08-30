@@ -2,8 +2,8 @@
 Developer: Edgar
 Company: CVenesca Group LLC
 Website: https://www.cvenesca.com
-Contact: contacto@cvenesca.com
-Location: Venezuela · EE. UU.
+Contact: info@cvenesca.com
+Location: Venezuela · EE. UU.
 
 /* SITE */
 Last update: 2025-07-06

@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.cvenesca.com/index-en.html">
-    <title>CVenesca Group LLC | Global Trade & Strategic Logistics</title>
-    <meta name="description" content="CVenesca Group LLC connects global markets through ICUMSA sugar trading, DDP import services in the USA, GACC certifications for China, and strategic logistics solutions.">
+    <link rel="canonical" href="https://www.cvenesca.com/index.html" >
+    <title>CVenesca Group LLC | Global Trade and Strategic Logistics</title>
+    <meta name="description" content="CVenesca Group LLC connects global markets through the commercialization of ICUMSA sugar, DDP import services in the US, GACC certifications for China, and strategic logistics solutions.">
     <meta name="keywords" content="ICUMSA sugar, international trade, DDP, GACC, export, import, logistics, CVenesca">
     <meta name="author" content="CVenesca Group LLC">
     <meta name="theme-color" content="#fdfaf6"> 
@@ -16,16 +16,19 @@
     <link rel="alternate" hreflang="x-default" href="https://www.cvenesca.com/index-en.html">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    
     <link rel="stylesheet" href="style.css">
 
-    <link rel="icon" type="image/svg+xml" href="favicon.io/favicon.svg">
-    <link rel="icon" href="favicon.io/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="favicon.io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.io/favicon-16x16.png">
+    <!-- Corrected Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <!-- The rest of your code -->
     <script type="application/ld+json">
     [
       {
@@ -89,10 +92,48 @@
           "availability": "https://schema.org/InStock",
           "url": "https://www.cvenesca.com/#aves"
         }
+      },
+      <!-- New Service Schemas for the missing sections -->
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Essential Goods",
+        "name": "Essential Goods Trading",
+        "description": "We offer the import and export of essential goods for the global market, including agricultural products and raw materials, connecting producers with high-demand distributors.",
+        "provider": {
+          "@type": "Organization",
+          "name": "CVenesca Group LLC"
+        },
+        "url": "https://www.cvenesca.com/#essential-goods"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Global Financial Structure Consulting",
+        "name": "Global Financial Structure Consulting",
+        "description": "Specialized advice on structuring international businesses, planning global expansion strategies, and optimizing supply chains for companies seeking to enter new markets.",
+        "provider": {
+          "@type": "Organization",
+          "name": "CVenesca Group LLC"
+        },
+        "url": "https://www.cvenesca.com/#global-financial-structure"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Sales Procedures",
+        "name": "Sales Procedure Management",
+        "description": "Comprehensive support in the international product sales process, from contract negotiation to document management and logistics, to ensure successful and efficient transactions.",
+        "provider": {
+          "@type": "Organization",
+          "name": "CVenesca Group LLC"
+        },
+        "url": "https://www.cvenesca.com/#sales-procedures"
       }
     ]
     </script>
 </head>
+
 
 <body class="font-lato">
 <header class="main-header">
@@ -115,6 +156,7 @@
         <ul class="dropdown-menu">
             <li><a href="#servicios">Our Services</a></li>
             <li><a href="#procedimientos">Sales Procedures</a></li>
+            <li><a href="#estructura-financiera">Financial Structure</a></li>
             <li><a href="#informacion">Information</a></li>
             <li><a href="#banner-bienes">Essential Goods</a></li>
         </ul>
@@ -143,7 +185,9 @@
                 <ul id="mobile-submenu" class="mobile-submenu">
                     <li><a href="#servicios">Our Services</a></li>
                     <li><a href="#procedimientos">Sales Procedures</a></li>
+                    <li><a href="#estructura-financiera">Financial Structure</a></li>
                     <li><a href="#informacion">Information</a></li>
+                    <li><a href="#banner-bienes">Essential Goods</a></li>
                 </ul>
             </li>
             <li><a href="#contacto">Contact</a></li>
@@ -151,25 +195,23 @@
     </div>
 </header>
 
-<div class="announcement-and-language-switcher">
-    <div class="banner-aviso" data-aos="fade-down">
-        🌐 We are finalizing our domain configuration. Soon you will be able to enjoy the full experience at <strong>www.cvenesca.com</strong>.
-    </div>
-
-    <div class="language-switcher">
-        <a href="index.html" aria-label="Español" class="language-flag"><img src="images/flag-es.svg" alt="Español"></a>
-        <a href="index-en.html" aria-label="English" class="language-flag"><img src="images/flag-en.svg" alt="English"></a>
-    </div>
-</div>
-
 <section id="inicio" class="hero-section">
     <img src="images/portada-cvenesca.webp" alt="Cover" class="hero-bg">
     <div class="hero-overlay"></div>
+
+    <!-- Container for language buttons, positioned outside of hero-content for correct placement -->
+    <div class="language-switcher">
+        <a href="/index.html" aria-label="Español" class="language-flag"><img src="images/flag-es.svg" alt="Spanish"></a>
+        <a href="/" aria-label="English" class="language-flag"><img src="images/flag-en.svg" alt="English"></a>
+    </div>
+
+    <!-- Main homepage content -->
     <div class="hero-content" data-aos="fade-up">
+        <h2 class="hero-welcome">Welcome to!</h2>
         <img src="images/logos-footer-1.webp" alt="CVenesca Group LLC Logo" class="hero-logo">
         <h1 class="hero-title">Connecting the World Through Trade</h1>
         <p class="hero-description">
-            We drive international trade of essential foods and goods by connecting producers with high-value markets.
+            We drive international trade of food and essential goods by connecting producers with high-value markets.
         </p>
         <div class="hero-cta-buttons">
             <a href="#icumsa" class="cta-button primary">Our Products</a>
@@ -177,6 +219,7 @@
         </div>
     </div>
 </section>
+
 
 <section id="quienes-somos" class="about-us" data-aos="fade-up" data-aos-once="true">
     <div class="presentacion-cvenesca">
@@ -192,12 +235,14 @@
         <p>
           From direct factory sales to DDP logistics in the USA and GACC certifications for China, our experience ensures profitable, safe, and efficient processes.
         </p>
-      </div>
+      </div>         
     </div>
 </section>
 
 <section id="mision-vision-valores" class="section-light" data-aos="fade-up" data-aos-once="true">
     <div class="container">
+<div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div>
       <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Mission, Vision, and Values</h2>
       <div class="card-grid">
         <article class="info-card" data-aos="fade-up" data-aos-delay="200">
@@ -218,35 +263,37 @@
             <li>Responsibility</li>
             <li>Transparency</li>
             <li>Commitment</li>
-            <li>Innovation</li>
-          </ul>
+            </ul>
         </article>
       </div>
     </div>
 </section>
 
 <section id="servicios" class="section" data-aos="fade-up">
+  <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div>
     <h2 data-aos="fade-up" data-aos-delay="100">Our Services</h2>
     <h3 data-aos="fade-up" data-aos-delay="200">Connecting Global Markets with Logistics Solutions</h3>
     <div class="service-grid">
-      <article class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <img src="images/icumsa-trade.webp" alt="ICUMSA sugar bags in a warehouse ready for global distribution" loading="lazy">
-        <h3>Global ICUMSA Sugar Trading</h3>
+      <!-- Ahora cada artículo tiene una clase de color específica -->
+      <article class="service-card color-comercializacion" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/icumsa-trade.webp" alt="ICUMSA sugar bags in a warehouse ready for global distribution" loading="lazy" style="height: 200px; object-fit: cover;">
+        <h3><strong>Global ICUMSA Sugar Trading</strong></h3>
         <p>Access the best prices and qualities of <strong>ICUMSA sugar (45, 150, 600–1200)</strong>. We supply the food, pharmaceutical, and bioenergy industries worldwide, guaranteeing quality and efficiency in every transaction.</p>
       </article>
-      <article class="service-card" data-aos="fade-up" data-aos-delay="400">
-        <img src="images/ddp-usa.webp" alt="A delivery truck delivering goods in the United States under DDP service" loading="lazy">
-        <h3>DDP Import Services in the USA</h3>
+      <article class="service-card color-importacion" data-aos="fade-up" data-aos-delay="400">
+        <img src="images/ddp-usa.webp" alt="A delivery truck delivering goods in the United States under DDP service" loading="lazy" style="height: 200px; object-fit: cover;">
+        <h3><strong>DDP Import Services in the USA</strong></h3>
         <p>Simplify your <strong>imports to the USA</strong> with our <strong>Delivery Duty Paid (DDP)</strong> service. We handle all management, from logistics to customs compliance and final delivery, without worries for you.</p>
       </article>
-      <article class="service-card" data-aos="fade-up" data-aos-delay="500">
-        <img src="images/gacc-china.webp" alt="An approved GACC certification seal for food export to China" loading="lazy">
-        <h3>GACC Certification for Export to China</h3>
+      <article class="service-card color-certificacion" data-aos="fade-up" data-aos-delay="500">
+        <img src="images/gacc-china.webp" alt="An approved GACC certification seal for food export to China" loading="lazy" style="height: 200px; object-fit: cover;">
+        <h3><strong>GACC Certification for Export to China</strong></h3>
         <p>We facilitate your entry into the Chinese market. We offer <strong>GACC registration</strong>, Chinese labeling advice, CIQ inspection management, and local agent support for your <strong>food exports to China</strong>.</p>
       </article>
-      <article class="service-card" data-aos="fade-up" data-aos-delay="600">
-        <img src="images/consultoria.webp" alt="Two professionals analyzing market charts for strategic consulting" loading="lazy">
-        <h3>Strategic International Trade Consulting</h3>
+      <article class="service-card color-consultoria" data-aos="fade-up" data-aos-delay="600">
+        <img src="images/consultoria.webp" alt="Two professionals analyzing market charts for strategic consulting" loading="lazy" style="height: 200px; object-fit: cover;">
+        <h3><strong>Strategic International Trade Consulting</strong></h3>
         <p>Boost your growth with our <strong>expert advice</strong>. We conduct detailed market studies, plan your global expansion, and provide support in complying with international regulations to optimize your operations.</p>
       </article>
     </div>
@@ -254,7 +301,9 @@
 
 <section id="icumsa" class="section content-block" data-aos="fade-up">
     <div class="container">
-      <h1 class="titulo text-color-dark-blue">ICUMSA / SUGAR</h1>
+      <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div>
+      <h2 class="titulo text-color-dark-blue">ICUMSA / SUGAR</h2>
       <div class="banner-container">
         <div class="banner-texto" data-aos="fade-right" data-aos-delay="100">
           <h2 class="banner-titulo text-color-icumsa-origin">ORIGIN<br>BRAZIL / THAILAND / EUROPE</h2>
@@ -345,6 +394,8 @@
 
 <section id="informacion" class="section informacion-block" data-aos="fade-up">
     <div class="container">
+     <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div> 
       <h2 class="text-color-dark-blue" data-aos="fade-up" data-aos-delay="100">ICUMSA / SUGAR</h2>
       <div class="banner-container">
         <div class="banner-texto" data-aos="fade-right" data-aos-delay="200">
@@ -375,26 +426,27 @@
           <p>We provide stable supply with competitive prices and regulatory compliance for each destination country.</p>
         </div>
       </section>
-      <section class="regiones-azucar">
-        <h2 data-aos="fade-up" data-aos-delay="600">Main Producing Regions</h2>
-        <div class="grid-aves">
-          <article class="item-ave" data-aos="zoom-in-up" data-aos-delay="700">
-            <img src="images/cosecha-cana-brasil.webp" alt="Mechanized sugarcane harvesting in Brazil" loading="lazy">
-            <h4>Brazil</h4>
-            <p>World leader with mechanized terminals and focus on refined sugar from ports like Santos and Paranaguá.</p>
-          </article>
-          <article class="item-ave" data-aos="zoom-in-up" data-aos-delay="800">
-            <img src="images/logistica-puerto.webp" alt="Laem Chabang port in Thailand" loading="lazy">
-            <h4>Thailand</h4>
-            <p>Efficient production and recovery after drought, exports via Laem Chabang and Bangkok.</p>
-          </article>
-          <article class="item-ave" data-aos="zoom-in-up" data-aos-delay="900">
+  <section class="regiones-azucar">
+    <h2 data-aos="fade-up" data-aos-delay="600">Main Producing Regions</h2>
+    <div class="regiones-grid">
+        <article class="region-card color-brasil" data-aos="zoom-in-up" data-aos-delay="700">
+            <img src="images/cosecha-cana-brasil.webp" alt="Mechanized sugarcane harvest in Brazil" loading="lazy">
+            <h2>Brazil</h2>
+            <p>World leader with mechanized terminals and a focus on refined sugar from ports like Santos and Paranaguá.</p>
+        </article>
+        <article class="region-card color-tailandia" data-aos="zoom-in-up" data-aos-delay="800">
+            <img src="images/logistica-puerto.webp" alt="Laem Chabang cargo port in Thailand" loading="lazy">
+            <h2>Thailand</h2>
+            <p>Efficient production and post-drought recovery, with exports via Laem Chabang and Bangkok.</p>
+        </article>
+        <article class="region-card color-union-europea" data-aos="zoom-in-up" data-aos-delay="900">
             <img src="images/cosecha-remolacha-europa.webp" alt="Sugar beet harvest in a European field" loading="lazy">
-            <h4>European Union</h4>
+            <h2>European Union</h2>
             <p>Beet sugar with a focus on internal consumption, led by France and Germany.</p>
-          </article>
-        </div>
-      </section>
+        </article>
+    </div>
+</section>
+
       <section class="contenido-brasil">
         <h2 data-aos="fade-right" data-aos-delay="1000">🇧🇷 Brazil: Production, Logistics, and Certification</h2>
         <article class="produccion-br" data-aos="fade-right" data-aos-delay="1100">
@@ -460,6 +512,7 @@
           </ul>
         </article>
       </section>
+
       <section class="factores-clave">
         <h3 data-aos="fade-up" data-aos-delay="2300">Key Market Factors</h3>
         <div class="grid-aves">
@@ -488,10 +541,12 @@
 </section>
 
 <section id="aves" class="section aves-section" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-title text-color-dark-blue" data-aos="fade-up" data-aos-delay="100">Poultry</h2>
-      <div class="banner-container">
+    <div class="container"></div>
+     <h2 class="section-title text-color-dark-blue" data-aos="fade-up" data-aos-delay="100">POULTRY</h2>
+      <div class="banner-container">        
         <div class="banner-texto" data-aos="fade-right" data-aos-delay="200">
+          <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div>
           <h2 class="banner-titulo text-color-aves-title">POULTRY<br>FROZEN CHICKEN</h2>
           <p>
             We supply high-quality frozen chicken and its parts (whole, thighs, breasts, wings) for the global market.
@@ -518,17 +573,19 @@
         <a href="#contacto" class="cta-button" data-aos="zoom-in" data-aos-delay="700">Request Frozen Chicken Quote</a>
       </div>
       <div class="galeria-aves" data-aos="fade-up" data-aos-delay="800">
+        <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div>
         <h2>Our Premium Chicken Selection</h2>
         <div class="grid-aves">
           <article class="item-ave" data-aos="fade-up" data-aos-delay="900"><img src="images/pollo-entero.webp" alt="Whole frozen chicken, export quality" loading="lazy"><h4>Whole Chicken</h4><p>Ideal for roasting or butchering.</p></article>
           <article class="item-ave" data-aos="fade-up" data-aos-delay="950"><img src="images/muslo-pollo.webp" alt="Fresh and juicy chicken thighs ready for export" loading="lazy"><h4>Thighs</h4><p>Juicy and flavorful.</p></article>
-          <article class="item-ave" data-aos="fade-up" data-aos-delay="1000"><img src="images/pechuga-pollo.webp" alt="Boneless chicken breasts, lean and versatile" loading="lazy"><h4>Breasts</h4><p>Lean and versatile.</p></article>
+          <article class="item-ave" data-aos="fade-up" data-aos-delay="1250"><img src="images/patas-pollo.webp" alt="Collagen-rich chicken feet" loading="lazy"><h4>Feet</h4><p>Rich in collagen for exotic dishes.</p></article>          
           <article class="item-ave" data-aos="fade-up" data-aos-delay="1050"><img src="images/alas-pollo.webp" alt="Whole and sectioned chicken wings" loading="lazy"><h4>Wings</h4><p>Whole or in sections.</p></article>
           <article class="item-ave" data-aos="fade-up" data-aos-delay="1100"><img src="images/cuello-pollo.webp" alt="Chicken necks for broths and soups" loading="lazy"><h4>Necks</h4><p>For soups and broths.</p></article>
           <article class="item-ave" data-aos="fade-up" data-aos-delay="1150"><img src="images/higado-pollo.webp" alt="Nutrient-rich chicken livers" loading="lazy"><h4>Livers</h4><p>Rich in nutrients.</p></article>
           <article class="item-ave" data-aos="fade-up" data-aos-delay="1200"><img src="images/corazon-pollo.jpg" alt="Fresh chicken hearts" loading="lazy"><h4>Hearts</h4><p>Flavorful and versatile.</p></article>
-          <article class="item-ave" data-aos="fade-up" data-aos-delay="1250"><img src="images/patas-pollo.webp" alt="Collagen-rich chicken feet" loading="lazy"><h4>Feet</h4><p>Rich in collagen for exotic dishes.</p></article>
-        </div>
+          <article class="item-ave" data-aos="fade-up" data-aos-delay="1000"><img src="images/pechuga-pollo.webp" alt="Boneless chicken breasts, lean and versatile" loading="lazy"><h4>Breasts</h4><p>Lean and versatile.</p></article>
+         </div>
       </div>
      <div class="info-aves" data-aos="fade-up" data-aos-delay="1300">
         <div class="banner-fichas">
@@ -537,11 +594,12 @@
           <a href="fichas-aves-en.html" target="_blank" rel="noopener noreferrer" class="cta-button cta-fichas">View Poultry Technical Data Sheets</a>
         </div>
       </div>
-    </div>
 </section>
 
 <section id="banner-bienes" class="banner-bienes" data-aos="fade-up">
     <div class="header-bienes">
+      <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div>
         <span class="etiqueta-destacado" data-aos="fade-right" data-aos-delay="100">🔰 FEATURED</span>
         <h2 data-aos="fade-left" data-aos-delay="200">Trade of Essential Goods and Raw Materials</h2>
         <p data-aos="fade-up" data-aos-delay="300">At <strong>CVenesca Group LLC</strong>, we expand our portfolio to include premium products that are part of <strong>Essential Goods</strong>, complying with the highest international market standards in hygiene and food safety.</p>
@@ -550,10 +608,13 @@
 
     <div class="bienes-contenido-principal">
         <div class="imagen-banner" data-aos="zoom-in" data-aos-delay="500">
+           <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy">
+      </div>
             <img src="images/banner-alimentos.webp" alt="Composition of essential goods: corn, rice, grains, and vegetable oil" loading="lazy">
         </div>
         <div class="contenido-productos">
-            <h3 data-aos="fade-left" data-aos-delay="600">Our High-Quality Products</h3>
+            <h2 data-aos="fade-left" data-aos-delay="600">Our High-Quality Products</h2>
             <ul class="lista-productos">
                 <li data-aos="fade-left" data-aos-delay="700"><strong>Rice:</strong> Standard and premium caliber.</li>
                 <li data-aos="fade-left" data-aos-delay="750"><strong>Corn:</strong> White and yellow / Human and animal consumption / GMO and Non-GMO.</li>
@@ -567,7 +628,7 @@
             <a href="#contacto" class="boton-banner" data-aos="zoom-in" data-aos-delay="1200">Request a Quote</a>
         </div>
     </div>
-</section>
+
 
 <div class="info-bienes" data-aos="fade-up" data-aos-delay="1300">
     <div class="banner-fichas">
@@ -576,29 +637,177 @@
         <a href="fichas-bienes-en.html" class="cta-button cta-fichas">View Technical Data Sheets</a>
     </div>
 </div>
-
+</section>
 <section id="procedimientos" class="section" data-aos="fade-up">
     <div class="container">
-        <h2 data-aos="fade-up" data-aos-delay="100">Sales Procedures</h2>
-        <h3 data-aos="fade-up" data-aos-delay="200">Detailed Guide for Our Commercial Partners</h3>
-        <p data-aos="fade-up" data-aos-delay="300">At CVenesca Group LLC, transparency and efficiency are fundamental pillars of our operations. To facilitate a smooth and successful commercial process, we have developed a set of clear and concise sales procedures. Here you can access our comprehensive guide detailing each step of our methodology, from initial inquiry to final product delivery.</p>
-        <p data-aos="fade-up" data-aos-delay="400">We invite you to download our Sales Procedures document for a complete understanding of how we work for you.</p>
+        <!-- Main Flexbox container -->
+        <div class="procedures-content-wrapper">
+            <!-- Text container on the left -->
+            <div class="procedures-text-content">
+              <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div>
+                <h2 data-aos="fade-up" data-aos-delay="100">Sales Procedures</h2>
+                <h3 data-aos="fade-up" data-aos-delay="200">Detailed Guide for Our Business Partners</h3>
+                <p data-aos="fade-up" data-aos-delay="300">At CVenesca Group LLC, transparency and efficiency are fundamental pillars of our operations. To facilitate a fluid and successful business process, we have developed a set of clear and concise sales procedures. Here you can access our complete guide that details each step of our methodology, from the initial consultation to the final product delivery.</p>
+                <p data-aos="fade-up" data-aos-delay="400">We invite you to download our Sales Procedures document to gain a comprehensive understanding of how we work for you.</p>
 
+                <div class="document-download" data-aos="fade-up" data-aos-delay="500">
+                    <a href="/docs/procedimiento-ventas-en.pdf" target="_blank" rel="noopener noreferrer" class="button button-primary">
+                        <svg class="download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Download Sales Procedures (English)
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cover image container on the right -->
+            <div class="cover-image-container" data-aos="fade-up" data-aos-delay="50">
+                <img src="images/procedimiento-venta.webp" alt="Cover image for Sales Procedures" class="img-fluid">
+            </div>
+        </div>
+
+        <!-- The original procedure diagram remains below -->
         <div class="procedure-image-container" data-aos="fade-up" data-aos-delay="500">
-    <img src="images/procedimiento-ventas-diagrama.webp" alt="Sales Procedure Diagram" class="img-fluid">
-</div>
+            <img src="images/procedimiento-ventas-diagrama.webp" alt="Sales Procedures Diagram" class="img-fluid">
+        </div>
+    </div>
+</section>
 
-        <div class="document-download" data-aos="fade-up" data-aos-delay="500">
-            <a href="/docs/procedimiento-ventas-en.pdf" target="_blank" rel="noopener noreferrer" class="button button-primary">
-                <svg class="download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                Download Sales Procedures (English)
-            </a>
+<section id="estructura-financiera" class="section" data-aos="fade-up">
+    <div class="container">
+        <div class="financial-structure-intro-wrapper">
+            <div class="financial-structure-image-container" data-aos="fade-up" data-aos-delay="50">
+                <img src="images/estructura_financiera.webp" alt="Imagen de Estructura Financiera" class="img-fluid">
+            </div>
+            
+            <div class="financial-structure-intro-content">
+                <div class="text-left" data-aos="fade-up" data-aos-delay="100">
+                 <div class="footer-logo" data-aos="fade-right" data-aos-delay="200">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div> 
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#071430] mb-4">Global Financial Structure</h2>
+                    <h3 class="text-2xl md:text-3xl font-bold text-[#1d4ed8] mb-4">CVenesca Group LLC: Your Partner in Global Trade</h3>
+                    <p class="text-lg text-gray-700">
+                        Our operational solidity is based on a network of top-tier banking partners, selected from the world's Top 50. This strategic alliance with financial giants from **America, Europe, and Asia**, along with key partners like **Emirates NBD** in Dubai, allows us to guarantee maximum security, liquidity, and reliability in every transaction. Below, we break down the tools and compliance framework that protect your international trade operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="financial-structure-details">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <article class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold text-[#1d4ed8] mb-2">Bank Guarantees</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Financial instruments that ensure the fulfillment of payment obligations and minimize risk in large-scale commercial transactions.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>
+                            <strong>SBLC (Standby Letter of Credit) MT 760:</strong> A payment guarantee from the issuing bank that is activated only if the buyer defaults on their obligations. It acts as a safety net against non-compliance.
+                        </li>
+                        <li>
+                            <strong>DLC (Documentary Letter of Credit) MT 700:</strong> A letter of credit that guarantees payment to the seller once they present the agreed-upon shipping documents. It is the most secure tool for international trade.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-bold text-[#1d4ed8] mb-2">Pillars of Security</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Regulatory frameworks that ensure the stability and transparency of the global financial system.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>
+                            <strong>Basel III:</strong> Requires banks to maintain high levels of capital and liquidity to withstand economic crises, ensuring their solvency.
+                        </li>
+                        <li>
+                            <strong>AML and KYC:</strong> "Anti-Money Laundering" and "Know Your Customer" protocols to verify identity and prevent financial crimes.
+                        </li>
+                         <li>
+                            <strong>SWIFT CSCF:</strong> A cybersecurity framework with 25 mandatory controls to protect all transactions conducted through the SWIFT network.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-2xl font-bold text-[#1d4ed8] mb-2">SWIFT Messages and Payments</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Standardized and secure communications that form the backbone of international finance.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>
+                            <strong>MT 799 (Pre-advice):</strong> A message confirming that funds are ready, sent before the formal transaction.
+                        </li>
+                        <li>
+                            <strong>MT 103 (Transfer):</strong> Confirmation of a direct international bank transfer, ensuring that the payment has been completed.
+                        </li>
+                        <li>
+                            <strong>MT 199 (Query):</strong> A free-format message used for clarifications or queries between banks, ensuring fluid communication.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="text-2xl font-bold text-[#1d4ed8] mb-2">Performance Bond</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                        A guarantee from a bank or an insurance company to the client (*principal*) of a contract. It ensures that the contractor (*obligor*) will fulfill the obligations set forth in the contract.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>
+                            **Purpose:** Protects the contracting party from economic losses if the supplier fails to meet their contractual obligations, such as delivery deadlines or product quality.
+                        </li>
+                        <li>
+                            **Common Use:** It is frequently used in construction projects, large-scale goods supply contracts, and other transactions where contractual compliance is critical.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="text-2xl font-bold text-[#1d4ed8] mb-2">Escrow Account</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                        A guarantee deposit account managed by an impartial third party.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>
+                            The money or assets are held in this account until the conditions established by both parties in a contract are met.
+                        </li>
+                         <li>
+                            Strategic Location: We offer the possibility of managing these accounts through banking partners in Portugal.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="700">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-[#071430] mb-4">Payment Methods</h3>
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-4 max-w-2xl mx-auto">
+                    <li>
+                        <strong>100% Payment at Origin Port:</strong> The full payment is made at the moment the goods are loaded at the port of departure.
+                    </li>
+                    <li>
+                        <strong>50% Payment at Origin Port and 50% at Destination Port:</strong> An initial payment is made upon loading the goods, and the balance is settled upon arrival at the destination port.
+                    </li>
+                    <li>
+                        <strong>100% Payment at Destination Port:</strong> The total payment is made when the goods arrive at their destination port.
+                    </li>
+                </ul>
+                <p class="text-gray-500 mt-6 italic">
+                    <strong>*Note:</strong> Payment methods apply under certain conditions and are negotiable.
+                </p>
+            </div>
+
+            <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="800">
+                <p class="text-xl text-gray-800 font-semibold">
+                    For more information, see our sales procedures or contact us.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
 <section id="contacto" class="section contacto-section" data-aos="fade-up">
     <div class="container">
+      <div class="footer-logo" data-aos="fade-right" data-aos-delay="100">
+        <img src="images/logos-footer.png" alt="logo of CVenesca Group LLC for the footer" loading="lazy"></div>
       <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Contact Us</h2>
       <div class="contacto-info">
           <p class="intro-text" data-aos="fade-up" data-aos-delay="200">Do you have questions, want a personalized quote, or are you interested in working with us?</p>
@@ -667,23 +876,64 @@
               </a>
             </div>
           </div>
+                    
+          <p class="separator-text" data-aos="fade-up" data-aos-delay="800">
+  You can also send us your details and we’ll be in touch:
+</p>
 
-          <p class="separator-text" data-aos="fade-up" data-aos-delay="800">Or contact us by email:</p>
+<section id="contact" class="cv-contacto">
+  <h2 class="cv-titulo">Get in Touch</h2>
+  <form id="formulario-contacto">
+    <div class="cv-campo">
+      <label for="user_name">Name</label>
+      <input type="text" name="user_name" id="user_name" placeholder="Your name" required>
+    </div>
 
-          <div class="contacto-emails" data-aos="fade-right" data-aos-delay="850">
-            <p>📧 <strong>Commercial Email:</strong> <a href="mailto:negocios@cvenesca.com">negocios@cvenesca.com</a></p>
-            <p>📧 <strong>Sales Support:</strong> <a href="mailto:ventas@cvenesca.com">ventas@cvenesca.com</a></p>
-            <p>📧 <strong>General Information:</strong> <a href="mailto:info@cvenesca.com">info@cvenesca.com</a></p>
-          </div>
-          
-          <p class="separator-text" data-aos="fade-up" data-aos-delay="900">You can also send your details and we will get in touch:</p>
-          <form action="https://formsubmit.co/info@cvenesca.com" method="POST" class="contacto-form" data-aos="fade-up" data-aos-delay="950">
-            <input type="text" name="name" placeholder="Your Name" required data-aos="fade-up" data-aos-delay="1000">
-            <input type="email" name="email" placeholder="Your Email" required data-aos="fade-up" data-aos-delay="1050">
-            <textarea name="message" rows="4" placeholder="Write your message here..." required data-aos="fade-up" data-aos-delay="1100"></textarea>
-            <button type="submit" class="cta-button" data-aos="zoom-in" data-aos-delay="1150">Send Message</button>
-          </form>
-      </div>
+    <div class="cv-campo">
+      <label for="user_email">Email</label>
+      <input type="email" name="user_email" id="user_email" placeholder="Your-email@example.com" required>
+    </div>
+
+    <div class="cv-campo">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+    </div>
+
+    <button type="submit" class="cv-boton">
+      <span class="cv-icono">&#10003;</span> Send Message
+    </button>
+    <p id="form-response" class="cv-confirmacion"></p>
+  </form>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // PASO 1: Reemplaza "tu_public_key_aqui" con tu Public Key real de EmailJS
+  emailjs.init("cStvsE1payUf5YGEG");
+
+  const form = document.getElementById("formulario-contacto");
+  const confirm = document.getElementById("form-response");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+     // Envía la notificación a tu correo
+    emailjs.sendForm("service_dtzyoif" ,"notificacion_cvenesca" , this);
+
+    // PASO 2: Asegúrate de que los IDs aquí coincidan con los de tu cuenta de EmailJS
+    emailjs.sendForm("service_cmn7477", "cv-contacto", this)
+      .then(function() {
+        confirm.textContent ="Your message was sent correctly!";
+        confirm.style.display = "block";
+        form.reset(); // Limpia los campos del formulario
+      }, function(error) {
+        confirm.textContent = "Error sending message. Please try later.";
+        confirm.style.display = "block";
+        console.error("Error al enviar:", error);
+      });
+  });
+</script>
+     </div>
     </div>
 </section>
 <footer id="footer" class="footer-section" data-aos="fade-up">
@@ -706,8 +956,9 @@
         </a>
       </div>
       <div class="footer-credit" data-aos="fade-left" data-aos-delay="300">
-        <p>&copy; 2025 CVenesca Group LLC. All rights reserved.</p>
-        <p>Site developed with institutional structure and high-standard commercial vision.</p>
+      <p>&copy; 2025 CVenesca Group LLC. All rights reserved.</p>               
+      <p>New Mexico / Albuquerque / USA.</p>
+      <a href="privacy-policy.html" class="cv-footer-link">Privacy Policy</a>
       </div>
     </div>
 </footer>

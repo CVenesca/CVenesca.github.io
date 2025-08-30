@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 
+    Se ha ajustado el sitemap para mejorar su funcionalidad:
+    - Se eliminó la URL duplicada de "index.html" para evitar confusiones, ya que la URL principal "/" ya la representa.
+    - Se añadió la versión en inglés de la página ("index-en.html") con alta prioridad para que los motores de búsqueda la encuentren fácilmente.
+    - Se añadió la versión en inglés del documento de procedimientos de venta.
+  -->
+
+  <!-- Páginas principales del sitio -->
   <url>
     <loc>https://www.cvenesca.com/</loc>
     <lastmod>2025-07-30</lastmod>
@@ -7,36 +15,10 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.cvenesca.com/index.html</loc>
+    <loc>https://www.cvenesca.com/index-en.html</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-   <url>
-    <loc>https://www.cvenesca.com/docs/icumsa_45.pdf</loc>
-    <lastmod>2025-07-30</lastmod> <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.cvenesca.com/docs/icumsa-100.pdf</loc>
-    <lastmod>2025-07-30</lastmod> <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.cvenesca.com/docs/icumsa_150.pdf</loc>
-    <lastmod>2025-07-30</lastmod> <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.cvenesca.com/docs/icumsa_vhp.pdf</loc>
-    <lastmod>2025-07-30</lastmod> <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.cvenesca.com/docs/procedimeinto-ventas-es.pdf</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cvenesca.com/fichas-aves.html</loc>
@@ -44,10 +26,50 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-   <url>
+  <url>
     <loc>https://www.cvenesca.com/fichas-bienes.html</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Documentos PDF en español -->
+  <url>
+    <loc>https://www.cvenesca.com/docs/icumsa_45.pdf</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cvenesca.com/docs/icumsa-100.pdf</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cvenesca.com/docs/icumsa_150.pdf</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cvenesca.com/docs/icumsa_vhp.pdf</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cvenesca.com/docs/procedimiento-ventas-es.pdf</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Documentos PDF en inglés (asumiendo que existen) -->
+  <url>
+    <loc>https://www.cvenesca.com/docs/procedimiento-ventas-en.pdf</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
 
 Sitemap: https://www.cvenesca.com/sitemap.xml
 Sitemap: https://www.cvenesca.com/sitemap-en.xml

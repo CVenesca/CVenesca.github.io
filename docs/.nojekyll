@@ -1,0 +1,3 @@
+git add .nojekyll
+git commit -m "Agrego archivo .nojekyll para evitar procesamiento Jekyll"
+git push
