@@ -19,12 +19,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="style.css">
 
-    <link rel="icon" type="image/svg+xml" href="favicon.io/favicon.svg">
-    <link rel="icon" href="favicon.io/favicon.ico" sizes="any">
-    <link rel="manifest" href="favicon.io/site.webmanifest">
-    <link rel="apple-touch-icon" href="favicon.io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.io/favicon-16x16.png">
     <!-- Corrected Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -882,23 +876,64 @@
               </a>
             </div>
           </div>
+                    
+          <p class="separator-text" data-aos="fade-up" data-aos-delay="800">
+  You can also send us your details and we’ll be in touch:
+</p>
 
-          <p class="separator-text" data-aos="fade-up" data-aos-delay="800">Or contact us by email:</p>
+<section id="contact" class="cv-contacto">
+  <h2 class="cv-titulo">Get in Touch</h2>
+  <form id="formulario-contacto">
+    <div class="cv-campo">
+      <label for="user_name">Name</label>
+      <input type="text" name="user_name" id="user_name" placeholder="Your name" required>
+    </div>
 
-          <div class="contacto-emails" data-aos="fade-right" data-aos-delay="850">
-            <p>📧 <strong>Commercial Email:</strong> <a href="mailto:negocios@cvenesca.com">negocios@cvenesca.com</a></p>
-            <p>📧 <strong>Sales Support:</strong> <a href="mailto:ventas@cvenesca.com">ventas@cvenesca.com</a></p>
-            <p>📧 <strong>General Information:</strong> <a href="mailto:info@cvenesca.com">info@cvenesca.com</a></p>
-          </div>
-          
-          <p class="separator-text" data-aos="fade-up" data-aos-delay="900">You can also send your details and we will get in touch:</p>
-          <form action="https://formsubmit.co/info@cvenesca.com" method="POST" class="contacto-form" data-aos="fade-up" data-aos-delay="950">
-            <input type="text" name="name" placeholder="Your Name" required data-aos="fade-up" data-aos-delay="1000">
-            <input type="email" name="email" placeholder="Your Email" required data-aos="fade-up" data-aos-delay="1050">
-            <textarea name="message" rows="4" placeholder="Write your message here..." required data-aos="fade-up" data-aos-delay="1100"></textarea>
-            <button type="submit" class="cta-button" data-aos="zoom-in" data-aos-delay="1150">Send Message</button>
-          </form>
-      </div>
+    <div class="cv-campo">
+      <label for="user_email">Email</label>
+      <input type="email" name="user_email" id="user_email" placeholder="Your-email@example.com" required>
+    </div>
+
+    <div class="cv-campo">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+    </div>
+
+    <button type="submit" class="cv-boton">
+      <span class="cv-icono">&#10003;</span> Send Message
+    </button>
+    <p id="form-response" class="cv-confirmacion"></p>
+  </form>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // PASO 1: Reemplaza "tu_public_key_aqui" con tu Public Key real de EmailJS
+  emailjs.init("cStvsE1payUf5YGEG");
+
+  const form = document.getElementById("formulario-contacto");
+  const confirm = document.getElementById("form-response");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+     // Envía la notificación a tu correo
+    emailjs.sendForm("service_dtzyoif" ,"notificacion_cvenesca" , this);
+
+    // PASO 2: Asegúrate de que los IDs aquí coincidan con los de tu cuenta de EmailJS
+    emailjs.sendForm("service_cmn7477", "cv-contacto", this)
+      .then(function() {
+        confirm.textContent ="Your message was sent correctly!";
+        confirm.style.display = "block";
+        form.reset(); // Limpia los campos del formulario
+      }, function(error) {
+        confirm.textContent = "Error sending message. Please try later.";
+        confirm.style.display = "block";
+        console.error("Error al enviar:", error);
+      });
+  });
+</script>
+     </div>
     </div>
 </section>
 <footer id="footer" class="footer-section" data-aos="fade-up">
@@ -921,8 +956,9 @@
         </a>
       </div>
       <div class="footer-credit" data-aos="fade-left" data-aos-delay="300">
-        <p>&copy; 2025 CVenesca Group LLC. All rights reserved.</p>
-        <p>Site developed with institutional structure and high-standard commercial vision.</p>
+      <p>&copy; 2025 CVenesca Group LLC. All rights reserved.</p>               
+      <p>New Mexico / Albuquerque / USA.</p>
+      <a href="privacy-policy.html" class="cv-footer-link">Privacy Policy</a>
       </div>
     </div>
 </footer>
