@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="style.css">
 
+    <link rel="icon" type="image/svg+xml" href="favicon.io/favicon.svg">
+    <link rel="icon" href="favicon.io/favicon.ico" sizes="any">
+    <link rel="manifest" href="favicon.io/site.webmanifest">
+    <link rel="apple-touch-icon" href="favicon.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.io/favicon-16x16.png">
     <!-- Enlaces de Favicones Corregidos -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -851,21 +857,23 @@
       <input type="text" name="user_name" id="user_name" placeholder="Tu nombre" required>
     </div>
 
-    <div class="cv-campo">
-      <label for="user_email">Correo Electrónico</label>
-      <input type="email" name="user_email" id="user_email" placeholder="tu-correo@ejemplo.com" required>
-    </div>
+          <p class="separator-text" data-aos="fade-up" data-aos-delay="800">O contáctanos por correo electrónico:</p>
 
-    <div class="cv-campo">
-      <label for="message">Mensaje</label>
-      <textarea name="message" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          <div class="contacto-emails" data-aos="fade-right" data-aos-delay="850">
+            <p>📧 <strong>Correo Comercial:</strong> <a href="mailto:negocios@cvenesca.com">negocios@cvenesca.com</a></p>
+            <p>📧 <strong>Soporte de ventas:</strong> <a href="mailto:ventas@cvenesca.com">ventas@cvenesca.com</a></p>
+            <p>📧 <strong>Información General:</strong> <a href="mailto:info@cvenesca.com">info@cvenesca.com</a></p>
+          </div>
+          
+          <p class="separator-text" data-aos="fade-up" data-aos-delay="900">También puedes enviar tus datos y nos pondremos en contacto:</p>
+          <form action="https://formsubmit.co/info@cvenesca.com" method="POST" class="contacto-form" data-aos="fade-up" data-aos-delay="950">
+            <input type="text" name="nombre" placeholder="Tu nombre" required data-aos="fade-up" data-aos-delay="1000">
+            <input type="email" name="email" placeholder="Tu correo" required data-aos="fade-up" data-aos-delay="1050">
+            <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required data-aos="fade-up" data-aos-delay="1100"></textarea>
+            <button type="submit" class="cta-button" data-aos="zoom-in" data-aos-delay="1150">Enviar Mensaje</button>
+          </form>
+      </div>
     </div>
-
-    <button type="submit" class="cv-boton">
-      <span class="cv-icono">&#10003;</span> Enviar Mensaje
-    </button>
-    <p id="form-response" class="cv-confirmacion"></p>
-  </form>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -917,8 +925,7 @@
       </div>
       <div class="footer-credit" data-aos="fade-left" data-aos-delay="300">
         <p>&copy; 2025 CVenesca Group LLC. Todos los derechos reservados.</p>
-        <p>Nuevo Mexico / Albuquerque / USA.</p>
-        <a href="politica-de-privacidad.html" class="cv-footer-link">Política de Privacidad</a>        
+        <p>Sitio desarrollado con estructura institucional y visión comercial de alto estándar.</p>
       </div>
     </div>
   </footer>
@@ -1003,7 +1010,6 @@ document.addEventListener('click', (event) => {
             if (mobileMenuButton) mobileMenuButton.querySelector('svg').classList.remove('is-active');
         }
     });
-  </script>
-  </body>
-  </html>
- 
+</script>
+</body>
+</html>
