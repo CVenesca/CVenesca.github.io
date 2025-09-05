@@ -70,12 +70,17 @@
           "@type": "Brand",
           "name": "CVenesca Group LLC"
         },
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": solicitar informacion "USD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://www.cvenesca.com/#icumsa"
-        }
+        {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.cvenesca.com/#icumsa",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "minPrice": "[precio_minimo]",
+            "maxPrice": "[precio_maximo]"
+          }
       },
       {
         "@context": "https://schema.org",
@@ -92,6 +97,11 @@
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "url": "https://www.cvenesca.com/#aves"
+         "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "minPrice": "[precio_minimo]",
+            "maxPrice": "[precio_maximo]"
         }
       }
     ]
@@ -1007,5 +1017,6 @@ document.addEventListener('click', (event) => {
   </body>
   </html>
  
+
 
 
