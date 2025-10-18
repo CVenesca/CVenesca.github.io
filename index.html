@@ -32,76 +32,75 @@
     <script type="application/ld+json">
 
     [
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "CVenesca Group LLC",
-        "url": "https://www.cvenesca.com",
-        "logo": "https://www.cvenesca.com/images/logo-cvenesca.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+58-422-150-4216",
-          "contactType": "Customer Service",
-          "email": "info@cvenesca.com"
-        },
-        "sameAs": [
-          "https://www.facebook.com/cvenesca",
-          "https://www.instagram.com/cvenesca",
-          "https://www.linkedin.com/company/cvenesca"
-        ]
+     "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "CVenesca Group LLC",
+      "url": "https://www.cvenesca.com",
+      "logo": "https://www.cvenesca.com/images/logo-cvenesca.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+58-422-150-4216",
+        "contactType": "Customer Service",
+        "email": "info@cvenesca.com"
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://www.cvenesca.com/",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.cvenesca.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+      "sameAs": [
+        "https://www.facebook.com/cvenesca",
+        "https://www.instagram.com/cvenesca",
+        "https://www.linkedin.com/company/cvenesca"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://www.cvenesca.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.cvenesca.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Azúcar ICUMSA (45, 150, VHP)",
+      "image": "https://www.cvenesca.com/images/banner-azucar.webp",
+      "description": "Suministro global de azúcar de caña de alta calidad, incluyendo ICUMSA 45, 100, 150 y VHP, con origen en Brasil, Tailandia y Europa. Ideal para industrias alimentarias y de bebidas.",
+      "brand": {
+        "@type": "Brand",
+        "name": "CVenesca Group LLC"
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Azúcar ICUMSA (45, 150, VHP)",
-        "image": "https://www.cvenesca.com/images/banner-azucar.webp",
-        "description": "Suministro global de azúcar de caña de alta calidad, incluyendo ICUMSA 45, 100, 150 y VHP, con origen en Brasil, Tailandia y Europa. Ideal para industrias alimentarias y de bebidas.",
-        "brand": {
-          "@type": "Brand",
-          "name": "CVenesca Group LLC"
-        },
-        {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://www.cvenesca.com/#icumsa",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "priceCurrency": "USD",
-            "minPrice": 300,
-            "maxPrice": 650
-          }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Pollo Congelado y sus Partes",
-        "image": "https://www.cvenesca.com/images/pollo-congelado.webp",
-        "description": "Proveedor de pollo congelado de alta calidad y sus partes (enteros, muslos, pechugas, alas) para el mercado global. Cumple con estrictos estándares sanitarios para distribuidores e industrias alimentarias.",
-        "brand": {
-          "@type": "Brand",
-          "name": "CVenesca Group LLC"
-        },
-        "offers": {
-          "@type": "Offer",
+      "offers": {  <-- Clave "offers" agregada y corrige el error 1
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.cvenesca.com/#icumsa",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
           "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://www.cvenesca.com/#aves"
-         "priceSpecification": {
-            "@type": "PriceSpecification",
-            "priceCurrency": "USD",
-            "minPrice": 2950,
-            "maxPrice": 4850
+          "minPrice": 300,
+          "maxPrice": 650
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Pollo Congelado y sus Partes",
+      "image": "https://www.cvenesca.com/images/pollo-congelado.webp",
+      "description": "Proveedor de pollo congelado de alta calidad y sus partes (enteros, muslos, pechugas, alas) para el mercado global. Cumple con estrictos estándares sanitarios para distribuidores e industrias alimentarias.",
+      "brand": {
+        "@type": "Brand",
+        "name": "CVenesca Group LLC"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.cvenesca.com/#aves",  <-- COMA corregida para error 2
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": 2950,
+          "maxPrice": 4850
         }
       }
     ]
@@ -1017,6 +1016,7 @@ document.addEventListener('click', (event) => {
   </body>
   </html>
  
+
 
 
 
